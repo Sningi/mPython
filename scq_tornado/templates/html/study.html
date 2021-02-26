@@ -1,0 +1,263 @@
+<DOCTYPE HTML>
+<html >
+<head>
+<!--
+　　 へ　　　　　／|
+　　/＼7　　∠＿/
+　 /　│　　 ／　／
+　│　Z ＿,＜　／　　 /`ヽ
+　│　　　　　ヽ　　 /　　〉
+　 Y　　　　　`　 /　　/
+　?●　?　●　　??〈　　/
+　()　 へ　　　　|　＼〈
+　　>? ?_　 ィ　 │ ／／
+　 / へ　　 /　?＜| ＼＼
+　 ヽ_?　　(_／　 │／／
+　　7　　　　　　　|／
+　　＞―r￣￣`?―＿
+皮卡丘,对偷看者使用十万伏特
+-->
+<title>Study</title>
+<link href="../css/header.css" rel="stylesheet" type="text/css"/>
+<link href="../css/second.css" rel="stylesheet" type="text/css"/>
+<style>
+.gray{
+position:absolute;
+width:100%;
+background:rgba(0,0,0,0.04);
+}
+.above{
+position:absolute;
+height:70px;
+top:80px;
+left:270px;
+width:900px;
+
+}
+.above  img{                                 
+position:relative;
+border-radius:6px;
+width:270px;
+}
+.above .case{
+position:relative;
+top:30px;
+left:200px;
+height:400px;
+width:900px;
+display:flex;
+flex-direction:row;
+justify-content:space-around;
+align-items:center;
+}
+.above .canvas{
+display:inline-block;
+width:270px;
+height:400px;
+background:white;
+border-radius:6px;
+filter: drop-shadow(1px 1px 2px gray);
+}
+.above .danmu{
+display:inline-block;
+width:270px;
+height:400px;
+background:white;
+border-radius:6px;
+filter: drop-shadow(1px 1px 2px gray);
+}
+.above .heart{
+display:inline-block;
+width:270px;
+height:400px;
+background:white;
+border-radius:6px;
+filter: drop-shadow(1px 1px 2px gray);
+}
+.below{
+position:absolute;
+height:70px;
+top:510px;
+left:270px;
+width:900px;
+}
+.below  img{                                 
+position:relative;
+border-radius:6px;
+width:270px;
+}
+.below .case{
+position:relative;
+top:30px;
+left:200px;
+height:400px;
+width:900px;
+display:flex;
+flex-direction:row;
+justify-content:space-around;
+align-items:center;
+}
+.below .canvas{
+display:inline-block;
+width:270px;
+height:400px;
+background:white;
+border-radius:6px;
+filter: drop-shadow(1px 1px 2px gray);
+}
+.below .danmu{
+display:inline-block;
+width:270px;
+height:400px;
+background:white;
+border-radius:6px;
+filter: drop-shadow(1px 1px 2px gray);
+}
+.below .heart{
+display:inline-block;
+width:270px;
+height:400px;
+background:white;
+border-radius:6px;
+filter: drop-shadow(1px 1px 2px gray);
+}
+ footer{
+position:relative;
+top:650px;
+}
+
+</style>
+</head>
+<body onload="inquery()">
+<header class="header" id="header">
+<div class="hide">
+<input type="text" Size=100 placeholder="输入搜索内容..."/><hr/>
+<p class="hide_p">回车也没用不会这个</p>
+<img class="xxx" src="../images/x.png"/>
+</div>
+<div class="show">
+<span style="position:absolute;left:-150px;top:-10px;font-size:26px;font-weight:bold;font-family:'方正舒体'">Blog</span>
+<span><a href="../index.html">主页</a></span>
+<span><a href="note.html">笔记</a></span>
+<span><a href="case.html">特效案例</a></span>
+<span><a href="software.html">软件分享</a></span>
+<span><a href="reform.html">后期更改</a></span>
+<span><a href="study.html">个人学习</a></span>
+<div class="show2">
+<span class="show_1"><img src="../images/show.png"/></span>
+<span><a href="http://baike.baidu.com/link?url=PT3YBu363oA8DSzPYPBqaZHaShaNBRsB3HKiMINNTdPqFj8lvSoebaAzkEZfOijnK4lWYc3FgA-58P2B8r1cH_" target="_blank"><img src="../images/cat.png"/></a></span>
+<span><a href="http://wpa.qq.com/msgrd?v=3&uin=956328059&site=qq&menu=yes" target="_blank"><img src="../images/qq.png"/></a></span>
+<span><img id="weixin" src="../images/weixin.png"/></span>
+<span><img src="../images/weibo.png" onclick="weibo()" value=null/></span>
+<span><img src="../images/xin.png" onclick="foreach()"/></span>
+</div>
+</div>
+</header>
+
+
+
+<div class="left">
+<p class="left_p">最新文章</p>
+<hr class="left_hr"/>
+<div class="items">
+<p ><img src="../images/num1.png" width=40px height=40px/><a class='items_a1' href='statement.html'>&nbsp 关于这个网站</a></p>
+<p ><img src="../images/num2.png" width=40px height=40px/><a class='items_a2' href='webview.html'>&nbsp 安卓&nbspwebview小结</a></p>
+<p ><img src="../images/num3.png" width=40px height=40px/><a class='items_a3' href='prototype.html'>&nbsp javascript&nbsp原型与原型链</a></p>   
+<p ><img src="../images/num4.png" width=40px height=40px/><a class='items_a4' href='flashlight.html'>&nbsp 安卓&nbsp手电筒小案例</a></p>
+<p ><img src="../images/num5.png" width=40px height=40px/><a class='items_a4' href='animation.html'>&nbsp css&nbspanimation的使用</a></p>
+<p ><img src="../images/num6.png" width=40px height=40px/><a class='items_a4' href='database.html'>&nbsp Java&nbsp数据库</a></p>
+<p ><img src="../images/num7.png" width=40px height=40px/><a class='items_a4' href='paomo.html'>&nbsp 七彩泡泡</a></p>
+<p ><img src="../images/num8.png" width=40px height=40px/><a class='items_a4' href='../case/cube/cube.html'>&nbsp 3d立体效果</a></p>
+<p ><img src="../images/num9.png" width=40px height=40px/><a class='items_a4' href='firework.html'>&nbsp canvas烟花特效</a></p>
+<p ><img src="../images/num10.png" width=40px height=40px/></p>
+</div>
+</div>
+
+<div class="above">
+<div class="case">
+<div class="canvas">
+<a href="https://ke.qq.com/course/197151" target="_blank"><img src="../images/muke.jpg"  height=200px width=330px/></a><p style="font-size:19px; position:relative;top:20px;text-align:center;"><a href="paomo.html" target="_blank
+" style="text-decoration:none;color:black;font-weight:bold;">&#9756 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp  JS &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp &#9758</a></p>
+</div>
+<div class="danmu">
+<a href="http://www.imooc.com/learn/96" target="_blank"><img src="../images/android.png" height=200px width=330px /></a><p style="font-size:19px; position:relative;top:20px;text-align:center;"><a href="http://www.imooc.com/learn/96" target="_blank
+" style="text-decoration:none;color:black;font-weight:bold;">&#9756&nbsp&nbsp&nbsp Android &nbsp&nbsp&nbsp&nbsp&#9758</a></p>
+</div>
+<div class="heart">
+<a href="https://ke.qq.com/course/147646" target="_blank"><img src="../images/Java1.png" height=200px width=330px/></a><p style="font-size:19px; position:relative;top:20px;text-align:center;"><a href="https://ke.qq.com/course/147646" target="_blank
+" style="text-decoration:none;color:black;font-weight:bold;">&#9756&nbsp&nbsp&nbsp Java &nbsp&nbsp&nbsp&nbsp&#9758</a></p>
+</div>
+</div>
+</div>
+
+<div class="out">
+  <div id="con">
+  <p id="year"></p><p id="month"></p><p id="season"></p>
+  <ul class="week">
+  <li>一</li>
+  <li>二</li>
+  <li>三</li>
+  <li>四</li>
+  <li>五</li>
+  <li>六</li>
+  <li>日</li>
+  </ul>
+  <ul class="day">
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  </ul>
+  </div>
+  </div>
+
+<footer>
+<div class="foot">
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<p class="foot_p">Copyright &nbsp 2017-2018 &nbsp   All &nbsp Rights &nbsp Reserved.豫ICP备<a class="footer_a" href="http://www.miitbeian.gov.cn/">17021583</a>号-1</p><div>
+</footer>
+
+
+</body>
+<script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+<script src="../js/header.js"></script>
+<script src="../js/second.js"></script>
+</html>

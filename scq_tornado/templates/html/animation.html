@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>animation</title>
+  <link href="../css/header.css" rel="stylesheet" type="text/css"/>
+  <link href="../css/thrid.css" rel="stylesheet" type="text/css"/>
+  <style>
+
+.gray{
+width:100%;
+height:1800px;
+background:rgba(0,0,0,0.07);
+}
+.content{
+border-radius:10px;
+width:920px;
+position:relative;
+left:105px;
+top:100px;
+margin:0 auto;
+height:1600px;
+background:white;
+display:inline-block;
+filter: drop-shadow(1px 1px 1px gray);
+}
+ </style>
+ </head>
+ <body onload="inquery()">
+ <div class="gray">
+ <header class="header" id="header">
+<div class="hide">
+<input type="text" Size=100 placeholder="输入搜索内容..."/><hr/>
+<p class="hide_p" style="font-family:'楷体'">回车也没用不会这个</p>
+<img class="xxx" src="../images/x.png"/>
+</div>
+<div class="show">
+<span style="position:absolute;left:-150px;top:-10px;font-size:26px;font-weight:bold;font-family:'方正舒体'">Blog</span>
+<span><a href="../index.html">主页</a></span>
+<span><a href="note.html">笔记</a></span>
+<span><a href="case.html">特效案例</a></span>
+<span><a href="software.html">软件分享</a></span>
+<span><a href="reform.html">后期更改</a></span>
+<span><a href="study.html">个人学习</a></span>
+
+<div class="show2">
+<span class="show_1"><img src="../images/show.png"/></span>
+<span><a href="http://baike.baidu.com/link?url=PT3YBu363oA8DSzPYPBqaZHaShaNBRsB3HKiMINNTdPqFj8lvSoebaAzkEZfOijnK4lWYc3FgA-58P2B8r1cH_" target="_blank"><img src="../images/cat.png"/></a></span>
+<span><a href="http://wpa.qq.com/msgrd?v=3&uin=956328059&site=qq&menu=yes" target="_blank"><img src="../images/qq.png"/></a></span>
+<span><img id="weixin" src="../images/weixin.png"/></span>
+<span><img src="../images/weibo.png" onclick="weibo()" value=null/></span>
+<span><img src="../images/xin.png" onclick="foreach()"/></span>
+</div>
+</div>
+</header>
+<div class="content">
+<p class="con_top">当前位置： 首页 > 笔记 > CSS3 > 正文</p>
+<p class='con_header' ><span>css &nbsp&nbsp&nbsp animation</span>的使用</p><hr class="con_hr"/>
+<div class="content_inner">
+<div class="banner">
+<img  src="../images/banner.png"style=" position:relative;top:0px;height:50px;width:5px;display:inline-block"/>
+<p class="banner_p">animation复合属性</p>
+</div>
+<p><img src="../images/con_img1.png" />animation-name: 规定动画名称；</p>
+<p><img src="../images/con_img1.png" />animation-duration: 动画执行完成所需时间，单位s；</p>
+<p><img src="../images/con_img1.png" />animation-timing-function: 动画运动曲线，默认为ease；</p>
+<p>&nbsp&nbsp&nbsp&nbsp<img src="../images/con_img2.png" />animation-timing-function:linear（匀速）</p>
+<p>&nbsp&nbsp&nbsp&nbsp<img src="../images/con_img2.png" />animation-timing-function:ease（慢速开始，然后加快，慢速结束）</p>
+<p>&nbsp&nbsp&nbsp&nbsp<img src="../images/con_img2.png" />animation-timing-function:ease-in（慢速开始）</p>
+<p>&nbsp&nbsp&nbsp&nbsp<img src="../images/con_img2.png" />animation-timing-function:ease-out（慢速结束）</p>
+<p>&nbsp&nbsp&nbsp&nbsp<img src="../images/con_img2.png" />animation-timing-function:ease-in-out（慢速开始，慢速结束）</p>
+<p>&nbsp&nbsp&nbsp&nbsp<img src="../images/con_img2.png" />animation-timing-function:cubic-bezier（cubic-bezier函数中自定义值）</p>
+<p><img src="../images/con_img1.png" />animation-delay: 规定是否延迟执行，默认为0；</p>
+<p><img src="../images/con_img1.png" />animation-iteration-count: 动画执行次数；</p>
+<p>&nbsp&nbsp&nbsp&nbsp<img src="../images/con_img2.png" />animation-iteration-count: 1（一次）</p>
+<p>&nbsp&nbsp&nbsp&nbsp<img src="../images/con_img2.png" />animation-iteration-count: infinite（无限循环）</p>
+<p><img src="../images/con_img1.png" />animation-direction: 动画是否逆向播放，默认normal；</p>
+<p>&nbsp&nbsp&nbsp&nbsp<img src="../images/con_img2.png" />animation-direction: normal（默认值不反向）</p>
+<p>&nbsp&nbsp&nbsp&nbsp<img src="../images/con_img2.png" />animation-direction: alternate（反向）</p>
+<p><img src="../images/con_img1.png" />animation-play-state: 动画执行状态；paused(暂停) | running(运行)</p>
+<p><img src="../images/con_img1.png" />animation-fill-mode: 动画执行完成的状态；</p>
+<p>&nbsp&nbsp&nbsp&nbsp<img src="../images/con_img2.png" />animation-fill-mode: none（无动作）</p>
+<p>&nbsp&nbsp&nbsp&nbsp<img src="../images/con_img2.png" />animation-fill-mode: forwards（停留在执行完成的最后一帧）</p>
+<p>&nbsp&nbsp&nbsp&nbsp<img src="../images/con_img2.png" />animation-fill-mode: backwards（返回起始位置）</p>
+<p>&nbsp&nbsp&nbsp&nbsp<img src="../images/con_img2.png" />animation-fill-mode: both（向前、向后填充模式都被应用）</p>
+<p><img src="../images/con_img1.png" />@keyframes name{} 执行动画；</p>
+<p>&nbsp&nbsp&nbsp&nbsp<img src="../images/con_img2.png" />第一种</p>
+  <table cellspacing="0" cellpadding="0" class="table1">
+  <tr>
+  <td class="table_left">
+  <div class="left_div">1<br />2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/></div>
+  </td>
+  <td class="table_center">
+  </td>
+  <td class="table_right">
+<div class="right_div">
+@keyframes name&#123;<br/>
+from&#123;<br/>
+width: 10px;<br/>
+&#125;<br/>
+to&#123;<br/>
+width: &nbsp&nbsp 50px<br/>
+&#125;<br/>
+&#125;
+<div>
+</td>
+</tr>
+</table>
+<p style="position:relative;top:20px;left:10px;">&nbsp&nbsp&nbsp&nbsp<img src="../images/con_img2.png" />第二种</p>
+  <table cellspacing="0" cellpadding="0" class="table2">
+  <tr>
+  <td class="table_left">
+  <div class="left_div">1<br />2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9<br/>10<br/>11<br/>12<br/>13<br/>14<br/></div>
+  </td>
+  <td class="table_center">
+  </td>
+  <td class="table_right">
+<div class="right_div">
+@keyframes name&#123;<br/>
+10%&#123;<br/>
+width: 10px;<br/>
+&#125;<br/>
+30%&#123;<br/>
+width: &nbsp&nbsp 40px;<br/>
+&#125;<br/>
+60% &#123<br/>
+width:  80%;<br/>
+&#125<br/>
+100%&#123<br/>
+width:  50px;<br/>
+&#125<br/>
+&#125;
+<div>
+</td>
+</tr>
+</table>
+<p style="position:relative;top:30px;"><img src="../images/con_img1.png"/>利用第二种方式，合理设计时间，能够很好的实现缓冲，回弹等特殊移动方式</p>
+<p style="position:relative;top:30px;"><img src="../images/con_img1.png"/>通过本节的学习，希望我们能够一起进步，熟练掌握animation的运用，在css中就能实现运动效果，当然在javascript也能通过使用aninate属性，达到相同的效果，animate属性的使用和animation十分相似</p>
+
+
+
+</div>
+
+
+</div>
+<div class="right_above">
+
+<div class="left">
+<p class="left_p">最新文章</p>
+<hr class="left_hr"/>
+<div class="items">
+<p ><img src="../images/num1.png" width=40px height=40px/><a class='items_a1' href='statement.html'>&nbsp 关于这个网站</a></p>
+<p ><img src="../images/num2.png" width=40px height=40px/><a class='items_a2' href='webview.html'>&nbsp 安卓&nbspwebview小结</a></p>
+<p ><img src="../images/num3.png" width=40px height=40px/><a class='items_a3' href='prototype.html'>&nbsp javascript&nbsp原型与原型链</a></p>   
+<p ><img src="../images/num4.png" width=40px height=40px/><a class='items_a4' href='flashlight.html'>&nbsp 安卓&nbsp手电筒小案例</a></p>
+<p ><img src="../images/num5.png" width=40px height=40px/><a class='items_a4' href='animation.html'>&nbsp css&nbspanimation的使用</a></p>
+<p ><img src="../images/num6.png" width=40px height=40px/><a class='items_a4' href='database.html'>&nbsp Java&nbsp数据库</a></p>
+<p ><img src="../images/num7.png" width=40px height=40px/><a class='items_a4' href='paomo.html'>&nbsp 七彩泡泡</a></p>
+<p ><img src="../images/num8.png" width=40px height=40px/><a class='items_a4' href='../case/cube/cube.html'>&nbsp 3d立体效果</a></p>
+<p ><img src="../images/num9.png" width=40px height=40px/><a class='items_a4' href='firework.html'>&nbsp canvas烟花特效</a></p>
+<p ><img src="../images/num10.png" width=40px height=40px/></p>
+</div>
+</div>
+</div>
+<div class="right_below">
+<div class="out">
+  <div id="con">
+  <p id="year"></p><p id="month"></p><p id="season"></p>
+  <ul class="week">
+  <li>一</li>
+  <li>二</li>
+  <li>三</li>
+  <li>四</li>
+  <li>五</li>
+  <li>六</li>
+  <li>日</li>
+  </ul>
+  <ul class="day">
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  </ul>
+  </div>
+  </div>
+
+</div>
+
+
+  </div>
+ </body>
+ <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+<script src="../js/header.js"></script>
+<script src="../js/thrid.js"></script>
+<script>
+$(".con_header").hover(function(){$(".con_header").css({color:"#16C0F8"})},function(){$(".con_header").css({color:"black"})});
+</script>
+</html>

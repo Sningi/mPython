@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Database</title>
+  <link href="../css/header.css" rel="stylesheet" type="text/css"/>
+  <link href="../css/thrid.css" rel="stylesheet" type="text/css"/>
+  <style>
+.gray{
+width:100%;
+height:3200px;
+background:rgba(0,0,0,0.07);
+}
+.content{
+border-radius:10px;
+width:920px;
+position:relative;
+left:105px;
+top:100px;
+margin:0 auto;
+height:3000px;
+background:white;
+display:inline-block;
+filter: drop-shadow(1px 1px 1px gray);
+}
+ </style>
+ </head>
+ <body onload="inquery()">
+ <div class="gray">
+ <header class="header" id="header">
+<div class="hide">
+<input type="text" Size=100 placeholder="输入搜索内容..."/><hr/>
+<p class="hide_p" style="font-family:'楷体'">回车也没用不会这个</p>
+<img class="xxx" src="../images/x.png"/>
+</div>
+<div class="show">
+<span style="position:absolute;left:-150px;top:-10px;font-size:26px;font-weight:bold;font-family:'方正舒体'">Blog</span>
+<span><a href="../index.html">主页</a></span>
+<span><a href="note.html">笔记</a></span>
+<span><a href="case.html">特效案例</a></span>
+<span><a href="software.html">软件分享</a></span>
+<span><a href="reform.html">后期更改</a></span>
+<span><a href="study.html">个人学习</a></span>
+<div class="show2">
+<span class="show_1"><img src="../images/show.png"/></span>
+<span><a href="http://baike.baidu.com/link?url=PT3YBu363oA8DSzPYPBqaZHaShaNBRsB3HKiMINNTdPqFj8lvSoebaAzkEZfOijnK4lWYc3FgA-58P2B8r1cH_" target="_blank"><img src="../images/cat.png"/></a></span>
+<span><a href="http://wpa.qq.com/msgrd?v=3&uin=956328059&site=qq&menu=yes" target="_blank"><img src="../images/qq.png"/></a></span>
+<span><img id="weixin" src="../images/weixin.png"/></span>
+<span><img src="../images/weibo.png" onclick="weibo()" value=null/></span>
+<span><img src="../images/xin.png" onclick="foreach()"/></span>
+</div>
+</div>
+</header>
+<div class="content">
+<p class="con_top">当前位置： 首页 > 笔记 > CSS3 > 正文</p>
+<p class='con_header' ><span>Java &nbsp&nbsp&nbsp </span>数据库</p><hr class="con_hr"/>
+<div class="content_inner">
+<p> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp本只是想写一下老师课上的代码，运行时发现出现了众多问题，下面说一下解决方案</p>
+
+<div class="banner">
+<img  src="../images/banner.png"style=" position:relative;top:0px;height:50px;width:5px;display:inline-block"/>
+<p class="banner_p">jar资源问题</p>
+</div>
+<p>由于拷贝老师的jar包，只能自己百度去哪下载，找到了这个链接 &nbsp&nbsp<a href='https://www.microsoft.com/zh-cn/download/details.aspx?id=11774'   style="text-decoration:none;color:red;font-size:17px;font-family:'微软雅黑';font-weight:300;">https://www.microsoft.com/zh-cn/download/details<br/>.aspx?id=11774</a>,亲测可用</p>
+
+
+<div class="banner">
+<img  src="../images/banner.png"style=" position:relative;top:0px;height:50px;width:5px;display:inline-block"/>
+<p class="banner_p">连接异常</p>
+</div>
+<p>在运行时，一直出现<span style="text-decoration:none;color:red;font-size:16px;font-family:'微软雅黑';font-weight:300;">通过端口 1433 连接到主机 localhost 的 TCP/IP 连接失败。错误:“Connection refused: connect<br/>的问题</span>这个异常</p>
+<p><img src="../images/con_img1.png" />解决方案</p>
+<p>&nbsp&nbsp&nbsp&nbsp<img src="../images/con_img2.png" />1.确认下面几行代码的正确性</p>
+<p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");</p>
+<p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp String url="jdbc:sqlserver://localhost:1433;DatabaseName=Test";</p>
+<p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp conn = DriverManager.getConnection(String url,
+        String user, String password);其中user是数据库账户，password<br/> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 是数据库密码</p>
+
+<p>&nbsp&nbsp&nbsp&nbsp<img src="../images/con_img2.png" />2.确认并修改使此端口接受 TCP/IP 连接</p>
+<p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp ①首先找到SQL Server配置管理器,如右图所示</p>
+<img src="../images/sql1.png" style="width:180px;height:140px;position:relative;top:-30px;left:600px;"/>
+<p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp　②找到SQL Server网络配置目录下的tcp/ip协议，如下图所示</p>
+<br/>
+<img src="../images/sql2.png" style="width:500px;height:160px;position:relative;top:10px;left:120px;"/>
+<p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 若如图所示，为禁止，调成启用</p>
+<br/><br/><br/><br/>
+<p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp ③找到SQL Server服务，并重启此下图中的项目，使上述行为生效</p>
+<img src="../images/sql3.png" style="width:500px;height:190px;position:relative;top:10px;left:120px;"/>
+
+<div class="banner">
+<img  src="../images/banner.png"style=" position:relative;top:0px;height:50px;width:5px;display:inline-block"/>
+<p class="banner_p">上课代码</p>
+</div>
+  <table cellspacing="0" cellpadding="0" class="table2">
+  <tr>
+  <td class="table_left">
+  <div class="left_div">1<br />2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9<br/>10<br/>11<br/>12<br/>13<br/>14<br/>15<br/>16<br/>17<br/>18<br/>19<br/>20<br/>21<br/>22<br/>23<br/>24<br/>25<br/>26<br/>27<br/>28<br/>29<br/>30<br/>31<br/>32<br/>33<br/>34<br/>35<br/>36<br/>37<br/>38<br/>39<br/>40<br/>41<br/>42<br/>43<br/>44<br/>45<br/>46<br/>47<br/>48<br/>49<br/>50<br/>51<br/>52<br/>53<br/>54<br/>55<br/>56<br/>57<br/>58<br/>59<br/>60<br/>61<br/>62<br/>63<br/>64<br/>65<br/>66<br/>67<br/></div>
+  </td>
+  <td class="table_center">
+  </td>
+  <td class="table_right">
+<div class="right_div">
+import java.sql.Connection;<br/>
+import java.sql.DriverManager;<br/>
+import java.sql.ResultSet;<br/>
+import java.sql.SQLException;<br/>
+import java.sql.Statement;<br/>
+<br/>
+public class SqlserverDemo {<br/>
+	public static void main(String[] args)  {<br/>
+		try {<br/>
+			Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");<br/>
+		} catch (ClassNotFoundException e) {<br/>
+			// TODO 自动生成的 catch 块<br/>
+			e.printStackTrace();<br/>
+		}<br/>
+		String url="jdbc:sqlserver://localhost:1433;DatabaseName=Test";<br/>
+		Connection conn=null;<br/>
+		try {<br/>
+			conn = DriverManager.getConnection(url, "sa", "123456");<br/>
+		} catch (SQLException e) {<br/>
+			// TODO 自动生成的 catch 块<br/>
+			e.printStackTrace();<br/>
+		}<br/>
+		Statement stmt=null;<br/>
+		try {<br/>
+			stmt = conn.createStatement();<br/>
+		} catch (SQLException e) {<br/>
+			// TODO 自动生成的 catch 块<br/>
+			e.printStackTrace();<br/>
+		}<br/>
+		ResultSet rs=null;	<br/>
+		String sql="select * from student";<br/>
+		try {<br/>
+			rs=stmt.executeQuery(sql);<br/>
+		} catch (SQLException e) {<br/>
+			// TODO 自动生成的 catch 块<br/>
+			e.printStackTrace();<br/>
+		}<br/>
+		try {<br/>
+			while(rs.next()){<br/>
+				System.out.println(rs.getInt(1));<br/>
+				System.out.println(rs.getString(2));<br/>
+				System.out.println(rs.getString(3));<br/>
+			}<br/>
+		} catch (SQLException e) {<br/>
+			// TODO 自动生成的 catch 块<br/>
+			e.printStackTrace();<br/>
+		}<br/>
+		try {<br/>
+			conn.close();<br/>
+		} catch (SQLException e) {<br/>
+			// TODO 自动生成的 catch 块<br/>
+			e.printStackTrace();<br/>
+		}<br/>
+		try {<br/>
+			stmt.close();<br/>
+		} catch (SQLException e) {<br/>
+			// TODO 自动生成的 catch 块<br/>
+			e.printStackTrace();<br/>
+		}<br/>
+		try {<br/>
+			rs.close();<br/>
+		} catch (SQLException e) {<br/>
+			// TODO 自动生成的 catch 块<br/>
+			e.printStackTrace();<br/>
+		}<br/>
+	}<br/>
+}<br/>
+<div>
+</td>
+</tr>
+</table>
+<br/><br/>
+<p><img src="../images/con_img1.png" />希望和我一样遇到这些问题的初学者，可以参考一下,希望会有所帮助</p>
+
+</div>
+
+
+</div>
+<div class="right_above">
+
+<div class="left">
+<p class="left_p">最新文章</p>
+<hr class="left_hr"/>
+<div class="items">
+<p ><img src="../images/num1.png" width=40px height=40px/><a class='items_a1' href='statement.html'>&nbsp 关于这个网站</a></p>
+<p ><img src="../images/num2.png" width=40px height=40px/><a class='items_a2' href='webview.html'>&nbsp 安卓&nbspwebview小结</a></p>
+<p ><img src="../images/num3.png" width=40px height=40px/><a class='items_a3' href='prototype.html'>&nbsp javascript&nbsp原型与原型链</a></p>   
+<p ><img src="../images/num4.png" width=40px height=40px/><a class='items_a4' href='flashlight.html'>&nbsp 安卓&nbsp手电筒小案例</a></p>
+<p ><img src="../images/num5.png" width=40px height=40px/><a class='items_a4' href='animation.html'>&nbsp css&nbspanimation的使用</a></p>
+<p ><img src="../images/num6.png" width=40px height=40px/><a class='items_a4' href='database.html'>&nbsp Java&nbsp数据库</a></p>
+<p ><img src="../images/num7.png" width=40px height=40px/><a class='items_a4' href='paomo.html'>&nbsp 七彩泡泡</a></p>
+<p ><img src="../images/num8.png" width=40px height=40px/><a class='items_a4' href='../case/cube/cube.html'>&nbsp 3d立体效果</a></p>
+<p ><img src="../images/num9.png" width=40px height=40px/><a class='items_a4' href='firework.html'>&nbsp canvas烟花特效</a></p>
+<p ><img src="../images/num10.png" width=40px height=40px/></p>
+</div>
+</div>
+</div>
+<div class="right_below">
+<div class="out">
+  <div id="con">
+  <p id="year"></p><p id="month"></p><p id="season"></p>
+  <ul class="week">
+  <li>一</li>
+  <li>二</li>
+  <li>三</li>
+  <li>四</li>
+  <li>五</li>
+  <li>六</li>
+  <li>日</li>
+  </ul>
+  <ul class="day">
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  </ul>
+  </div>
+  </div>
+
+</div>
+
+
+  </div>
+ </body>
+ <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+<script src="../js/header.js"></script>
+<script src="../js/thrid.js"></script>
+<script>
+$(".con_header").hover(function(){$(".con_header").css({color:"#16C0F8"})},function(){$(".con_header").css({color:"black"})});
+</script>
+</html>

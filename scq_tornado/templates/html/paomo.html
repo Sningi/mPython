@@ -1,0 +1,104 @@
+﻿<!doctype html>
+<html>
+ <head>
+  <title>斑斓泡泡</title>
+  <style>
+  body{
+  width:100%;
+  height:100%;
+  background:black;
+  overflow:hidden;}
+  </style>
+ </head>
+ <body>
+<canvas></canvas>
+ </body>
+ <script>
+var canvas=document.querySelector('canvas');//获取canvas元素
+var ctx=canvas.getContext('2d');//获取canvas画布
+var wW=window.innerWidth;//浏览器宽度
+var wH=window.innerHeight;//浏览器高度
+var COLORS=['#69d2e7','#a7dbd8','#e0e4cc','#f38630','#fa6900','#ff4e50','#f9d423'];
+var particles=[];
+cInit();
+function cInit(){
+canvas.width=wW;
+canvas.height=wH;
+requestAnimationFrame(render);
+}
+
+function Particle(){//构造函数内部储存对象属性
+	//写属性
+}
+Particle.prototype={
+init:function(x,y,radius){
+	this.x=x||0.0;
+	this.y=y||0.0;
+	this.radius=radius||1;
+	this.color=random(COLORS);
+
+
+	this.theta=random(0,Math.PI*2);
+	this.force=random(8,15);
+	this.vx=Math.cos(this.theta)*this.force;
+	this.vy=Math.sin(this.theta)*this.force;
+	},
+	updata:function(){
+		this.x+=this.vx;
+		this.y+=this.vy;
+		this.vx+=Math.sin(this.theta)*.1;
+		this.vy+=Math.cos(this.theta)*.1;
+		this.vx*=.92;
+		this.vy*=.92;
+		this.radius*=.96;
+
+	},
+	draw:function(){
+		ctx.beginPath();
+		ctx.arc(this.x,this.y,this.radius,0,Math.PI*2);//创建圆形
+		ctx.fillStyle=this.color;//设置颜色
+		ctx.globalCompositeOperation='lighter';
+		ctx.fill();//填充
+
+	}
+}
+	canvas.onmousemove=function(e){
+		e=e||window.event;
+		var eX=e.pageX;
+		var eY=e.pageY;		
+		if(particles.length>=800){
+			particles.shift();
+		}
+		for(var i=0;i<random(5,15);i++){
+			spawn(eX,eY);
+		}
+	}
+
+function spawn(x,y){
+	var particle=new Particle();
+	particle.init(x,y,random(5,50));
+	
+	particles.push(particle);
+}
+function render(){
+ctx.clearRect(0,0,wW,wH);
+for(var i=0,len=particles.length;i<len;i++){
+	particles[i].draw();
+	particles[i].updata();
+}
+requestAnimationFrame(render);
+}
+function random(min,max){
+	if(isArray(min)){
+		return min[Math.floor(Math.random()*min.length)];
+		
+	}else{
+return min+Math.random()*(max-min);}
+}
+function isArray(object){
+
+return Object.prototype.toString.call(object)=='[object Array]';
+
+}
+</script>
+</html>

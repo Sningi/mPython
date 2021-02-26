@@ -1,0 +1,75 @@
+1548653233783	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.NzWcAcz3ZRtl"
+1548653234974	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid host permission: resource://pdf.js/
+1548653234975	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid host permission: about:reader*
+1548653236739	Marionette	INFO	Listening on port 42987
+1548653236798	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: http://apps.bdimg.com/libs/jquery/2.0.3/jquery.min.js, line 1: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+console.error: BroadcastService: 
+  receivedBroadcastMessage: handler for
+  remote-settings/monitor_changes
+  threw error:
+  Message: Error: Polling for changes failed: NetworkError when attempting to fetch resource..
+  Stack:
+    remoteSettingsFunction/remoteSettings.pollChanges@resource://services-settings/remote-settings.js:750:13
+
+1548653435386	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.0BHVgw03KnPT"
+1548653435874	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid host permission: resource://pdf.js/
+1548653435874	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid host permission: about:reader*
+1548653437344	Marionette	INFO	Listening on port 45929
+1548653437400	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: http://apps.bdimg.com/libs/jquery/2.0.3/jquery.min.js, line 1: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript error: http://cdn.jandan.net/static/min/dd5e908cb78904f79df0095e4da4a35aMJX0jRkg.09100001.js, line 1: TypeError: time is not a function
+JavaScript error: http://cdn.jandan.net/static/min/dd5e908cb78904f79df0095e4da4a35aMJX0jRkg.09100001.js, line 1: TypeError: time is not a function
+JavaScript error: http://cdn.jandan.net/static/min/dd5e908cb78904f79df0095e4da4a35aMJX0jRkg.09100001.js, line 1: TypeError: time is not a function
+JavaScript error: http://cdn.jandan.net/static/min/dd5e908cb78904f79df0095e4da4a35aMJX0jRkg.09100001.js, line 1: TypeError: time is not a function
+JavaScript error: http://cdn.jandan.net/static/min/dd5e908cb78904f79df0095e4da4a35aMJX0jRkg.09100001.js, line 1: TypeError: time is not a function
+JavaScript error: http://cdn.jandan.net/static/min/dd5e908cb78904f79df0095e4da4a35aMJX0jRkg.09100001.js, line 1: TypeError: time is not a function
+JavaScript error: http://cdn.jandan.net/static/min/dd5e908cb78904f79df0095e4da4a35aMJX0jRkg.09100001.js, line 1: TypeError: time is not a function
+JavaScript error: http://cdn.jandan.net/static/min/dd5e908cb78904f79df0095e4da4a35aMJX0jRkg.09100001.js, line 1: TypeError: time is not a function
+JavaScript error: http://cdn.jandan.net/static/min/dd5e908cb78904f79df0095e4da4a35aMJX0jRkg.09100001.js, line 1: TypeError: time is not a function
+JavaScript error: http://cdn.jandan.net/static/min/dd5e908cb78904f79df0095e4da4a35aMJX0jRkg.09100001.js, line 1: TypeError: time is not a function
+JavaScript error: http://cdn.jandan.net/static/min/dd5e908cb78904f79df0095e4da4a35aMJX0jRkg.09100001.js, line 1: TypeError: time is not a function
+JavaScript error: http://cdn.jandan.net/static/min/dd5e908cb78904f79df0095e4da4a35aMJX0jRkg.09100001.js, line 1: TypeError: time is not a function
+JavaScript error: http://cdn.jandan.net/static/min/dd5e908cb78904f79df0095e4da4a35aMJX0jRkg.09100001.js, line 1: TypeError: time is not a function
+JavaScript error: http://cdn.jandan.net/static/min/dd5e908cb78904f79df0095e4da4a35aMJX0jRkg.09100001.js, line 1: TypeError: time is not a function
+JavaScript error: http://cdn.jandan.net/static/min/dd5e908cb78904f79df0095e4da4a35aMJX0jRkg.09100001.js, line 1: TypeError: time is not a function
+JavaScript error: http://cdn.jandan.net/static/min/dd5e908cb78904f79df0095e4da4a35aMJX0jRkg.09100001.js, line 1: TypeError: time is not a function
+JavaScript error: http://cdn.jandan.net/static/min/dd5e908cb78904f79df0095e4da4a35aMJX0jRkg.09100001.js, line 1: TypeError: time is not a function
+JavaScript error: http://cdn.jandan.net/static/min/dd5e908cb78904f79df0095e4da4a35aMJX0jRkg.09100001.js, line 1: TypeError: time is not a function
+JavaScript error: http://cdn.jandan.net/static/min/dd5e908cb78904f79df0095e4da4a35aMJX0jRkg.09100001.js, line 1: TypeError: time is not a function
+JavaScript error: http://cdn.jandan.net/static/min/dd5e908cb78904f79df0095e4da4a35aMJX0jRkg.09100001.js, line 1: TypeError: time is not a function
+JavaScript error: http://cdn.jandan.net/static/min/dd5e908cb78904f79df0095e4da4a35aMJX0jRkg.09100001.js, line 1: TypeError: time is not a function
+JavaScript error: http://cdn.jandan.net/static/min/dd5e908cb78904f79df0095e4da4a35aMJX0jRkg.09100001.js, line 1: TypeError: time is not a function
+JavaScript error: http://cdn.jandan.net/static/min/dd5e908cb78904f79df0095e4da4a35aMJX0jRkg.09100001.js, line 1: TypeError: time is not a function
+JavaScript error: http://cdn.jandan.net/static/min/dd5e908cb78904f79df0095e4da4a35aMJX0jRkg.09100001.js, line 1: TypeError: time is not a function
+JavaScript error: http://cdn.jandan.net/static/min/dd5e908cb78904f79df0095e4da4a35aMJX0jRkg.09100001.js, line 1: TypeError: time is not a function
+JavaScript error: http://cdn.jandan.net/static/min/dd5e908cb78904f79df0095e4da4a35aMJX0jRkg.09100001.js, line 1: TypeError: time is not a function
+1548653487128	Marionette	INFO	Stopped listening on port 42987
+console.error: BroadcastService: 
+  receivedBroadcastMessage: handler for
+  remote-settings/monitor_changes
+  threw error:
+  Message: Error: Polling for changes failed: NetworkError when attempting to fetch resource..
+  Stack:
+    remoteSettingsFunction/remoteSettings.pollChanges@resource://services-settings/remote-settings.js:750:13
+
+1548653540331	Marionette	INFO	Stopped listening on port 45929
+1548738531834	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.qcAIAmSWAVL9"
+1548738532378	addons.xpi-utils	WARN	Add-on uBlock0@raymondhill.net is not correctly signed.
+1548738532379	addons.xpi-utils	WARN	Add-on uBlock0@raymondhill.net is not correctly signed.
+1548738532379	addons.xpi-utils	WARN	addMetadata: Add-on uBlock0@raymondhill.net is invalid: Error: Extension uBlock0@raymondhill.net is not correctly signed(resource://gre/modules/addons/XPIDatabase.jsm:2426:17) JS Stack trace: addMetadata@XPIDatabase.jsm:2426:17
+processFileChanges@XPIDatabase.jsm:2769:21
+checkForChanges@XPIProvider.jsm:2556:34
+startup@XPIProvider.jsm:2134:25
+callProvider@AddonManager.jsm:203:12
+_startProvider@AddonManager.jsm:651:5
+startup@AddonManager.jsm:804:9
+startup@AddonManager.jsm:2774:5
+observe@addonManager.js:66:9
+1548738532397	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid host permission: resource://pdf.js/
+1548738532397	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid host permission: about:reader*
+JavaScript error: resource://gre/modules/addons/XPIProvider.jsm, line 2600: TypeError: addon is null
+1548738533778	Marionette	INFO	Listening on port 34167
+1548738533858	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: http://apps.bdimg.com/libs/jquery/2.0.3/jquery.min.js, line 1: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+1548738555389	Marionette	INFO	Stopped listening on port 34167

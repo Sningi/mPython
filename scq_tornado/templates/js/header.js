@@ -1,0 +1,10 @@
+$(function(){
+$(".show_1").click(function(){
+$(".header").animate(
+	{top:"0px"},1000);
+});
+$(".xxx").click(function(){
+$(".header").animate({
+	top:-130},1000);
+});	
+});

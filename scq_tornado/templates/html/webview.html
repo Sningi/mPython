@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>android     webview的使用</title>
+  <link href="../css/header.css" rel="stylesheet" type="text/css"/>
+  <link href="../css/thrid.css" rel="stylesheet" type="text/css"/>
+  <style>
+.gray{
+width:100%;
+height:2300px;
+background:rgba(0,0,0,0.07);
+}
+.content{
+border-radius:10px;
+width:920px;
+position:relative;
+left:105px;
+top:100px;
+margin:0 auto;
+height:2150px;
+background:white;
+display:inline-block;
+filter: drop-shadow(1px 1px 1px gray);
+}
+ </style>
+ </head>
+ <body onload="inquery()">
+ <div class="gray">
+ <header class="header" id="header">
+<div class="hide">
+<input type="text" Size=100 placeholder="输入搜索内容..."/><hr/>
+<p class="hide_p" style="font-family:'楷体'">回车也没用不会这个</p>
+<img class="xxx" src="../images/x.png"/>
+</div>
+<div class="show">
+<span style="position:absolute;left:-150px;top:-10px;font-size:26px;font-weight:bold;font-family:'方正舒体'">Blog</span>
+<span><a href="../index.html">主页</a></span>
+<span><a href="note.html">笔记</a></span>
+<span><a href="case.html">特效案例</a></span>
+<span><a href="software.html">软件分享</a></span>
+<span><a href="reform.html">后期更改</a></span>
+<span><a href="study.html">个人学习</a></span>
+
+<div class="show2">
+<span class="show_1"><img src="../images/show.png"/></span>
+<span><a href="http://baike.baidu.com/link?url=PT3YBu363oA8DSzPYPBqaZHaShaNBRsB3HKiMINNTdPqFj8lvSoebaAzkEZfOijnK4lWYc3FgA-58P2B8r1cH_" target="_blank"><img src="../images/cat.png"/></a></span>
+<span><a href="http://wpa.qq.com/msgrd?v=3&uin=956328059&site=qq&menu=yes" target="_blank"><img src="../images/qq.png"/></a></span>
+<span><img id="weixin" src="../images/weixin.png"/></span>
+<span><img src="../images/weibo.png" onclick="weibo()" value=null/></span>
+<span><img src="../images/xin.png" onclick="foreach()"/></span>
+</div>
+</div>
+</header>
+<div class="content">
+<p class="con_top">当前位置： 首页 > 笔记 > CSS3 > 正文</p>
+<p class='con_header' ><span>android &nbsp&nbsp&nbsp webview</span>的使用</p><hr class="con_hr"/>
+<div class="content_inner">
+<div class="banner">
+<img  src="../images/banner.png"style=" position:relative;top:0px;height:50px;width:5px;display:inline-block"/>
+<p class="banner_p">常见的属性和使用方法</p>
+</div>
+<p><img src="../images/con_img1.png" />1.加载资源</p>
+<p>webView.loadUrl("file:///android_asset/song.html");<br/>
+本地资源就上的形式，web资源http：//
+</p>
+<p><img src="../images/con_img1.png" />2.关于setWebViewClient</p>
+<p>&nbsp&nbsp&nbsp&nbsp<img src="../images/con_img2.png" />重写方法一</p>
+<p>public boolean shouldOverrideUrlLoading(WebView view, String url) {<br/>
+    view.loadUrl(url);<br/>
+    return true;<br/>
+}<br/>
+设置成返回true，可以不调用第三方浏览器，直接在WebView中进行打开，<br/>
+</p>
+<p>&nbsp&nbsp&nbsp&nbsp<img src="../images/con_img2.png" />重写方法二</p>
+<p>
+public WebResourceResponse shouldInterceptRequest(WebView view, String url) { }<br/>
+可以处理获取的url怎么处理，默认是直接打开这个网址<br/>
+但是也可以把一些网页转而用作Intent<br/>
+if (url.startsWith("tencent") || url.startsWith("mqqwpa")) {<br/>
+    Intent in = new Intent(Intent.ACTION_VIEW, Uri.parse(url));<br/>
+    startActivity(in);<br/>
+return ；
+}<br/>
+</p>
+<p><img src="../images/con_img1.png" />3.关于WebSettings</p>
+<p style="color:red;">WebSettings settings = webView.getSettings();</p>
+<p>&nbsp&nbsp&nbsp&nbsp<img src="../images/con_img2.png" />1.使用javascipt</p>
+<p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp settings.setJavaScriptEnabled(true);</p>
+<p>&nbsp&nbsp&nbsp&nbsp<img src="../images/con_img2.png" />2.支持缩小放大问题</p>
+<p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp settings.setBuiltInZoomControls(true);// 设置WebView可触摸放大缩小</p>
+<p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp settings.setDisplayZoomControls(false);//不显示丑陋的放大缩小图标</p>
+<p>&nbsp&nbsp&nbsp&nbsp<img src="../images/con_img2.png" />3.手机屏</p>
+<p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp settings.setUseWideViewPort(false);</p>
+<p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp settings.setLoadWithOverviewMode(false);</p>
+<p>&nbsp&nbsp&nbsp&nbsp<img src="../images/con_img2.png" />4.进度条</p>
+<table cellspacing="0" cellpadding="0" class="table1">
+  <tr>
+  <td class="table_left">
+  <div class="left_div">1<br />2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9<br/>10<br/>11<br/>12<br/>13<br/>14<br/>15<br/>16<br/>17<br/>18<br/>19<br/>20<br/>21<br/>22<br/>23<br/>24<br/>25<br/>26<br/>27<br/>28<br/></div>
+  </td>
+  <td class="table_center">
+  </td>
+  <td class="table_right">
+<div class="right_div">
+webView.setWebChromeClient(new WebChromeClient(){<br/>
+    @Override<br/>
+    public void onProgressChanged(WebView view, int newProgress) {<br/>
+        if (newProgress==100){<br/>
+            closeDialog();<br/>
+        }else{<br/>
+            openDialog(newProgress);<br/>
+        }<br/>
+    }<br/>
+    private void closeDialog() {<br/>
+        if (dialog!=null&&dialog.isShowing()){<br/>
+            dialog.dismiss();<br/>
+            dialog=null;<br/>
+        }<br/>
+    }<br/>
+    private void openDialog(int newProgress) {<br/>
+        if (dialog==null){<br/>
+            dialog=new ProgressDialog(MainActivity.this);<br/>
+            dialog.setTitle("加载中......");<br/>
+            dialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);<br/>
+            dialog.setProgress(newProgress);<br/>
+            dialog.show();<br/>
+        }<br/>
+        //一个页面未完全打开时，去打开另外一个界面，只需要改数值，有点类似那个Toast<br/>
+        else{<br/>
+            dialog.setProgress(newProgress);<br/>
+        }<br/>
+    }<br/>
+});<br/>
+
+<div>
+</td>
+</tr>
+</table>
+<br/>
+<p>&nbsp&nbsp&nbsp&nbsp<img src="../images/con_img2.png" />5.改写物理按键返回的逻辑</p>
+<p style="color:red;"> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 不进行改写，无论页面在哪，都是按下后直接退出程序，改写后看代码的解释</p>
+  <table cellspacing="0" cellpadding="0" class="table1">
+  <tr>
+  <td class="table_left">
+  <div class="left_div">1<br />2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9<br/>10<br/>11<br/>12<br/>13<br/>14<br/></div>
+  </td>
+  <td class="table_center">
+  </td>
+  <td class="table_right">
+<div class="right_div">
+@Override<br/>
+public boolean onKeyDown(int keyCode, KeyEvent event) {<br/>
+    //页面进行了跳转<br/>
+    //Toast.makeText(this,webView.getUrl(),Toast.LENGTH_SHORT).show();<br/>
+    if (keyCode==KeyEvent.KEYCODE_BACK){<br/>
+        if (webView.canGoBack()){<br/>
+            webView.goBack();<br/>
+            return true;<br/>
+        }else{<br/>
+            System.exit(0);<br/>
+        }<br/>
+    }<br/>
+    return super.onKeyDown(keyCode, event);<br/>
+}<br/>
+
+<div>
+</td>
+</tr>
+</table>
+
+
+<p style="position:relative;top:30px;"><img src="../images/con_img1.png"/>上述内容来自个人笔记，由于时间过长，其中的内容可能存在错误，希望读者给予纠正</p>
+<p style="position:relative;top:30px;"><img src="../images/con_img1.png"/>同时，推荐一下学习资源《慕课网安卓攻城狮》</p>
+
+
+
+</div>
+
+
+</div>
+<div class="right_above">
+
+<div class="left">
+<p class="left_p">最新文章</p>
+<hr class="left_hr"/>
+<div class="items">
+<p ><img src="../images/num1.png" width=40px height=40px/><a class='items_a1' href='statement.html'>&nbsp 关于这个网站</a></p>
+<p ><img src="../images/num2.png" width=40px height=40px/><a class='items_a2' href='webview.html'>&nbsp 安卓&nbspwebview小结</a></p>
+<p ><img src="../images/num3.png" width=40px height=40px/><a class='items_a3' href='prototype.html'>&nbsp javascript&nbsp原型与原型链</a></p>   
+<p ><img src="../images/num4.png" width=40px height=40px/><a class='items_a4' href='flashlight.html'>&nbsp 安卓&nbsp手电筒小案例</a></p>
+<p ><img src="../images/num5.png" width=40px height=40px/><a class='items_a4' href='animation.html'>&nbsp css&nbspanimation的使用</a></p>
+<p ><img src="../images/num6.png" width=40px height=40px/><a class='items_a4' href='database.html'>&nbsp Java&nbsp数据库</a></p>
+<p ><img src="../images/num7.png" width=40px height=40px/><a class='items_a4' href='paomo.html'>&nbsp 七彩泡泡</a></p>
+<p ><img src="../images/num8.png" width=40px height=40px/><a class='items_a4' href='../case/cube/cube.html'>&nbsp 3d立体效果</a></p>
+<p ><img src="../images/num9.png" width=40px height=40px/><a class='items_a4' href='firework.html'>&nbsp canvas烟花特效</a></p>
+<p ><img src="../images/num10.png" width=40px height=40px/></p>
+</div>
+</div>
+</div>
+<div class="right_below">
+<div class="out">
+  <div id="con">
+  <p id="year"></p><p id="month"></p><p id="season"></p>
+  <ul class="week">
+  <li>一</li>
+  <li>二</li>
+  <li>三</li>
+  <li>四</li>
+  <li>五</li>
+  <li>六</li>
+  <li>日</li>
+  </ul>
+  <ul class="day">
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  </ul>
+  </div>
+  </div>
+
+</div>
+
+
+  </div>
+ </body>
+ <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+<script src="../js/header.js"></script>
+<script src="../js/thrid.js"></script>
+<script>
+$(".con_header").hover(function(){$(".con_header").css({color:"#16C0F8"})},function(){$(".con_header").css({color:"black"})});
+</script>
+</html>

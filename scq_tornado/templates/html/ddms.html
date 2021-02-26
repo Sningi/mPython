@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>AS中DDMS的使用</title>
+  <link href="../css/header.css" rel="stylesheet" type="text/css"/>
+  <link href="../css/thrid.css" rel="stylesheet" type="text/css"/>
+  <style>
+
+.gray{
+width:100%;
+height:1350px;
+background:rgba(0,0,0,0.07);
+}
+.content{
+border-radius:10px;
+width:920px;
+position:relative;
+left:105px;
+top:100px;
+margin:0 auto;
+height:1150px;
+background:white;
+display:inline-block;
+filter: drop-shadow(1px 1px 1px gray);
+}
+  .origin{
+  text-decoration:none;
+  font-size:17.5px;
+  }
+  .ddms
+  {
+  text-decoration:none;
+  font-family:'方正舒体';
+  font-size:19px;
+  color:green;
+  }
+
+
+ </style>
+ </head>
+ <body onload="inquery()">
+ <div class="gray">
+ <header class="header" id="header">
+<div class="hide">
+<input type="text" Size=100 placeholder="输入搜索内容..."/><hr/>
+<p class="hide_p" style="font-family:'楷体'">回车也没用不会这个</p>
+<img class="xxx" src="../images/x.png"/>
+</div>
+<div class="show">
+<span style="position:absolute;left:-150px;top:-10px;font-size:26px;font-weight:bold;font-family:'方正舒体'">Blog</span>
+<span><a href="../index.html">主页</a></span>
+<span><a href="note.html">笔记</a></span>
+<span><a href="case.html">特效案例</a></span>
+<span><a href="software.html">软件分享</a></span>
+<span><a href="reform.html">后期更改</a></span>
+<span><a href="study.html">个人学习</a></span>
+
+<div class="show2">
+<span class="show_1"><img src="../images/show.png"/></span>
+<span><a href="http://baike.baidu.com/link?url=PT3YBu363oA8DSzPYPBqaZHaShaNBRsB3HKiMINNTdPqFj8lvSoebaAzkEZfOijnK4lWYc3FgA-58P2B8r1cH_" target="_blank"><img src="../images/cat.png"/></a></span>
+<span><a href="http://wpa.qq.com/msgrd?v=3&uin=956328059&site=qq&menu=yes" target="_blank"><img src="../images/qq.png"/></a></span>
+<span><img id="weixin" src="../images/weixin.png"/></span>
+<span><img src="../images/weibo.png" onclick="weibo()" value=null/></span>
+<span><img src="../images/xin.png" onclick="foreach()"/></span>
+</div>
+</div>
+</header>
+<div class="content">
+<p class="con_top">当前位置： 首页 > 笔记 > Android > 正文</p>
+<p class='con_header' ><span>Android Studio &nbsp&nbsp</span>ddms的使用</p><hr class="con_hr"/>
+<div class="content_inner">
+<div class="banner">
+<img  src="../images/banner.png"style=" position:relative;top:0px;height:50px;width:5px;display:inline-block"/>
+<p class="banner_p">一. 如何打开DDMS</p>
+</div>
+
+
+<p><img src="../images/con_img2.png" /> 在Android Studio中通过工具栏依次打开Tools--Android--Android Device Monitor即可打开DDMS</p>
+
+
+<div class="banner">
+<img  src="../images/banner.png"style=" position:relative;top:0px;height:50px;width:5px;display:inline-block"/>
+<p class="banner_p">二. ddms中data文件夹打不开的原因及解决方法</p>
+</div>
+<p><img src="../images/con_img1.png" />无论是真机还是虚拟机都是没有进行获取权限</p>
+<p><img src="../images/con_img1.png" />解决方案：</p>
+<p>&nbsp&nbsp&nbsp&nbsp<img src="../images/con_img1.png" />1.虚拟机：</p>
+<p>&nbsp&nbsp&nbsp&nbsp<img src="../images/con_img2.png" /> 1.打开cmd，通过cd转到sdk\platform-tools目录下</p>
+<p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 2.输入adb shell<br/>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 3.输入su<br/>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 4.输入chmod -R 777 /data/　回车即可。<br/>
+&nbsp&nbsp&nbsp 通过4这种具体到某一个文件的操作，无需再使用adb root，adb remount的命令操作</p>
+
+<p>&nbsp&nbsp&nbsp&nbsp<img src="../images/con_img1.png" />2.真机：</p>
+
+<p>&nbsp&nbsp&nbsp&nbsp<img src="../images/con_img2.png" />真机的方式同上，不过在进行第3步时，如果该机没有获取root权限，无法进行</p>
+<p><img src="../images/con_img1.png" />注意：    <br/>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp有时通过chmod -R 777 /data/行不通，通过一步到位也不通，可以逐个打开，/data/,/data/data/,/data/data/<br/>com.example.scq.sqlitedemo/,/data/data/com.example.scq.sqlitedemo/databases,常见的就这三种方法</p>
+<div class="banner">
+<img  src="../images/banner.png"style=" position:relative;top:0px;height:50px;width:5px;display:inline-block"/>
+<p class="banner_p">三．对于sql类的数据的导出和打开</p>
+</div>
+<p><img src="../images/con_img1.png" />导出：</p>
+<p >选中文件，上面图标依次是导出，导入，删除</p>
+<p><img src="../images/con_img1.png" />打开：</p>
+<p>可以使用SQLite+viewer软件打开sql语句生成数据表</p>
+<p><img src="../images/con_img2.png" />注意：</p>
+<p>&nbsp&nbsp&nbsp&nbsp&nbsp SQLite+viewer在安装时，可能会出现MSVCP71.DLL缺失异常，出现此情况时，需下载该文件，若系统为32位，把该文件<br/>放在Windows\System32目录下，若系统为64位，放在Windows\sysWOW64目录下即可</p>
+
+<div class="banner">
+<img  src="../images/banner.png"style=" position:relative;top:0px;height:50px;width:5px;display:inline-block"/>
+<p class="banner_p">四．可能是用到的资源</p>
+</div>
+
+<p >&nbsp&nbsp&nbsp&nbsp<img src="../images/con_img2.png"/><a class="ddms" href="../source/SQLite+viewer.exe" target="_blank">SQLITE+VIEEWER的资源下载</a></p>
+
+<p >&nbsp&nbsp&nbsp&nbsp<img src="../images/con_img2.png"/><a  class='ddms' href="../source/Msvcp71.dll-And-Msvcr71.dll-files.zip" target="_blank">MSVCP71.DLL压缩包下载</a></p>
+</div>
+
+
+</div>
+<div class="right_above">
+
+<div class="left">
+<p class="left_p">最新文章</p>
+<hr class="left_hr"/>
+<div class="items">
+<p ><img src="../images/num1.png" width=40px height=40px/><a class='items_a1' href='statement.html'>&nbsp 关于这个网站</a></p>
+<p ><img src="../images/num2.png" width=40px height=40px/><a class='items_a2' href='webview.html'>&nbsp 安卓&nbspwebview小结</a></p>
+<p ><img src="../images/num3.png" width=40px height=40px/><a class='items_a3' href='prototype.html'>&nbsp javascript&nbsp原型与原型链</a></p>   
+<p ><img src="../images/num4.png" width=40px height=40px/><a class='items_a4' href='flashlight.html'>&nbsp 安卓&nbsp手电筒小案例</a></p>
+<p ><img src="../images/num5.png" width=40px height=40px/><a class='items_a4' href='animation.html'>&nbsp css&nbspanimation的使用</a></p>
+<p ><img src="../images/num6.png" width=40px height=40px/><a class='items_a4' href='database.html'>&nbsp Java&nbsp数据库</a></p>
+<p ><img src="../images/num7.png" width=40px height=40px/><a class='items_a4' href='paomo.html'>&nbsp 七彩泡泡</a></p>
+<p ><img src="../images/num8.png" width=40px height=40px/><a class='items_a4' href='../case/cube/cube.html'>&nbsp 3d立体效果</a></p>
+<p ><img src="../images/num9.png" width=40px height=40px/><a class='items_a4' href='firework.html'>&nbsp canvas烟花特效</a></p>
+<p ><img src="../images/num10.png" width=40px height=40px/></p>
+</div>
+</div>
+</div>
+<div class="right_below">
+<div class="out">
+  <div id="con">
+  <p id="year"></p><p id="month"></p><p id="season"></p>
+  <ul class="week">
+  <li>一</li>
+  <li>二</li>
+  <li>三</li>
+  <li>四</li>
+  <li>五</li>
+  <li>六</li>
+  <li>日</li>
+  </ul>
+  <ul class="day">
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  </ul>
+  </div>
+  </div>
+
+</div>
+
+
+  </div>
+ </body>
+ <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+<script src="../js/header.js"></script>
+<script src="../js/thrid.js"></script>
+<script>
+$(".con_header").hover(function(){$(".con_header").css({color:"#16C0F8"})},function(){$(".con_header").css({color:"black"})});
+$(".origin").hover(function(){$(".origin").css({color:"green"})},function(){$(".origin").css({color:"black"})});
+</script>
+</html>

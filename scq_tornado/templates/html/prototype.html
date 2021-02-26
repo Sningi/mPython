@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>javascript  原型与原型链</title>
+  <link href="../css/header.css" rel="stylesheet" type="text/css"/>
+  <link href="../css/thrid.css" rel="stylesheet" type="text/css"/>
+  <style>
+
+.gray{
+width:100%;
+height:3850px;
+background:rgba(0,0,0,0.07);
+}
+.content{
+border-radius:10px;
+width:920px;
+position:relative;
+left:105px;
+top:100px;
+margin:0 auto;
+height:3680px;
+background:white;
+display:inline-block;
+filter: drop-shadow(1px 1px 1px gray);
+}
+  .origin{
+  text-decoration:none;
+  font-size:17.5px;
+  }
+
+
+ </style>
+ </head>
+ <body onload="inquery()">
+ <div class="gray">
+ <header class="header" id="header">
+<div class="hide">
+<input type="text" Size=100 placeholder="输入搜索内容..."/><hr/>
+<p class="hide_p" style="font-family:'楷体'">回车也没用不会这个</p>
+<img class="xxx" src="../images/x.png"/>
+</div>
+<div class="show">
+<span style="position:absolute;left:-150px;top:-10px;font-size:26px;font-weight:bold;font-family:'方正舒体'">Blog</span>
+<span><a href="../index.html">主页</a></span>
+<span><a href="note.html">笔记</a></span>
+<span><a href="case.html">特效案例</a></span>
+<span><a href="software.html">软件分享</a></span>
+<span><a href="reform.html">后期更改</a></span>
+<span><a href="study.html">个人学习</a></span>
+
+<div class="show2">
+<span class="show_1"><img src="../images/show.png"/></span>
+<span><a href="http://baike.baidu.com/link?url=PT3YBu363oA8DSzPYPBqaZHaShaNBRsB3HKiMINNTdPqFj8lvSoebaAzkEZfOijnK4lWYc3FgA-58P2B8r1cH_" target="_blank"><img src="../images/cat.png"/></a></span>
+<span><a href="http://wpa.qq.com/msgrd?v=3&uin=956328059&site=qq&menu=yes" target="_blank"><img src="../images/qq.png"/></a></span>
+<span><img id="weixin" src="../images/weixin.png"/></span>
+<span><img src="../images/weibo.png" onclick="weibo()" value=null/></span>
+<span><img src="../images/xin.png" onclick="foreach()"/></span>
+</div>
+</div>
+</header>
+<div class="content">
+<p class="con_top">当前位置： 首页 > 笔记 > CSS3 > 正文</p>
+<p class='con_header' ><span>javascript &nbsp&nbsp&nbsp&nbsp</span>原型与原型链</p><hr class="con_hr"/>
+<div class="content_inner">
+<div class="banner">
+<img  src="../images/banner.png"style=" position:relative;top:0px;height:50px;width:5px;display:inline-block"/>
+<p class="banner_p">一. 普通对象与函数对象</p>
+</div>
+
+
+<p><img src="../images/con_img1.png" /> JavaScript 中，万物皆对象！但对象也是有区别的。分为普通对象和函数对象，Object ，Function 是JS自带的函数对象。<br/>下面举例说明:</p>
+ <table cellspacing="0" cellpadding="0" class="table1">
+  <tr>
+  <td class="table_left">
+  <div class="left_div">1<br />2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9<br/>10<br/>11<br/>12<br/>13<br/>14<br/>15<br/>16<br/></div>
+  </td>
+  <td class="table_center">
+  </td>
+  <td class="table_right">
+<div class="right_div">
+ function f1(){};<br/>
+ var f2 = function(){};<br/>
+ var f3 = new Function('str','console.log(str)');<br/>
+<br/>
+ var o3 = new f1();<br/>
+ var o1 = {};<br/>
+ var o2 =new Object();<br/>
+<br/>
+ console.log(typeof Object); //function<br/>
+ console.log(typeof Function); //function<br/>
+ console.log(typeof o1); //object<br/>
+ console.log(typeof o2); //object<br/>
+ console.log(typeof o3); //object<br/>
+ console.log(typeof f1); //function<br/>
+ console.log(typeof f2); //function<br/>
+ console.log(typeof f3); //function <br/>
+<div>
+</td>
+</tr>
+</table>
+<br/>
+<p>&nbsp&nbsp&nbsp&nbsp<img src="../images/con_img2.png" /> 在上面的例子中 o1 o2 o3 为普通对象，f1 f2 f3 为函数对象。怎么区分，其实很简单，凡是通过 new Function() 创建的<br/>对象都是函数对象，其他的都是普通对象。f1,f2,归根结底都是通过 new Function()的方式进行创建的。Function Object 也都<br/>是通过 New Function()创建的。</p>
+
+<div class="banner">
+<img  src="../images/banner.png"style=" position:relative;top:0px;height:50px;width:5px;display:inline-block"/>
+<p class="banner_p">二. 原型对象</p>
+</div>
+<p><img src="../images/con_img1.png" />在JavaScript 中，每当定义一个对象（函数）时候，对象中都会包含一些预定义的属性。其中函数对象的一个属性就是原型<br>对象 prototype。注：普通对象没有prototype,但有__proto__属性。</p>
+<br/>
+<p><img src="../images/con_img1.png" />原型对象其实就是普通对象（Function.prototype除外,它是函数对象，但它很特殊，他没有prototype属性（前面说道函数<br/>对象都有prototype属性））。看下面的例子：</p>
+
+  <table cellspacing="0" cellpadding="0" class="table1">
+  <tr>
+  <td class="table_left">
+  <div class="left_div">1<br />2<br/>3<br/>4<br/>5<br/>6<br/></div>
+  </td>
+  <td class="table_center">
+  </td>
+  <td class="table_right">
+<div class="right_div">
+ function f1(){};<br/>
+ console.log(f1.prototype) //f1{}<br/>
+ console.log(typeof f1. prototype) //Object<br/>
+ console.log(typeof Function.prototype) // Function，这个特殊<br/>
+ console.log(typeof Object.prototype) // Object<br/>
+ console.log(typeof Function.prototype.prototype) //undefined<br/>
+<div>
+</td>
+</tr>
+</table>
+<br/>
+
+<p>&nbsp&nbsp&nbsp&nbsp<img src="../images/con_img2.png" />从这句console.log(f1.prototype) //f1 {} 的输出就结果可以看出，f1.prototype就是f1的一个实例对象。就是在f1创建的时候,<br/>创建了一个它的实例对象并赋值给它的prototype，基本过程如下：</p>
+<p> var temp = new f1();<br/>
+ f1. prototype = temp;</p>
+<p>&nbsp&nbsp&nbsp&nbsp<img src="../images/con_img2.png" /> 所以，Function.prototype为什么是函数对象就迎刃而解了，上文提到凡是new Function ()产生的对象都是函数对象，所<br/>以temp1是函数对象。</p>
+<p>var temp1 = new Function ();<br/>
+ Function.prototype = temp1;</p>
+
+<p>&nbsp&nbsp&nbsp&nbsp<img src="../images/con_img2.png" />那原型对象是用来做什么的呢？主要作用是用于继承。举了例子：</p>
+<p>
+ var person = function(name){<br/>
+   this.name = name<br/>
+  };<br/>
+  person.prototype.getName = function(){<br/>
+     return this.name; <br/>
+  }<br/>
+  var zjh = new person(‘zhangjiahao’);<br/>
+  zjh.getName(); //zhangjiahao<br/>
+</p>
+<p>&nbsp&nbsp&nbsp&nbsp<img src="../images/con_img2.png" />   从这个例子可以看出，通过给person.prototype设置了一个函数对象的属性，那有person实例（例中：zjh）出来的普通<br/>对象就继承了这个属性。具体是怎么实现的继承，就要讲到下面的原型链了。</p>
+<div class="banner">
+<img  src="../images/banner.png"style=" position:relative;top:0px;height:50px;width:5px;display:inline-block"/>
+<p class="banner_p">三．原型链</p>
+</div>
+<p><img src="../images/con_img1.png" />JS在创建对象（不论是普通对象还是函数对象）的时候，都有一个叫做__proto__的内置属性，用于指向创建它的函数对象<br/>的原型对象prototype。以上面的例子为例：</p>
+<p style="color:red; ">  console.log(zjh.__proto__ === person.prototype) //true</p>
+<br/>
+<p >同样，person.prototype对象也有__proto__属性，它指向创建它的函数对象（Object）的prototype</p>
+<br/>
+<p style="color:red; ">  console.log(person.prototype.__proto__ === Object.prototype) //true</p>
+<br/>
+<p>继续，Object.prototype对象也有__proto__属性，但它比较特殊，为null</p>
+<br/>
+<p style="color:red; "> console.log(Object.prototype.__proto__) //null</p>
+<br/>
+<p>我们把这个有__proto__串起来的直到Object.prototype.__proto__为null的链叫做原型链。如下图：</p>
+<br/>
+<img src="../images/prototype1.png" style="width:700px;height:160px;" />
+<div class="banner">
+<img  src="../images/banner.png"style=" position:relative;top:0px;height:50px;width:5px;display:inline-block"/>
+<p class="banner_p">四．内存结构图</p>
+</div>
+
+<p><img src="../images/con_img1.png" />为了更加深入和直观的进行理解，下面我们画一下上面的内存结构图:</p>
+<br/>
+<img src="../images/prototype2.png" style="width:800px;height:720px;" />
+<p>画图约定：</p>
+<img src="../images/prototype3.png" style="width:554px;height:117px;" />
+<p>&nbsp&nbsp&nbsp&nbsp<img src="../images/con_img2.png" />疑点解释</p>
+<p>1.Object.__proto__ === Function.prototype // true<br/>
+  Object是函数对象，是通过new Function()创建，所以Object.__proto__指向Function.prototype。</p>
+  <br/>
+<p>2.Function.__proto__ === Function.prototype // true<br/>
+  Function 也是对象函数，也是通过new Function()创建，所以Function.__proto__指向Function.prototype。</p>
+  <br/>
+<p>3.Function.prototype.__proto__ === Object.prototype //true<br/>
+其实这一点我也有点困惑，不过也可以试着解释一下。<br/>
+Function.prototype是个函数对象，理论上他的__proto__应该指向 Function.prototype，就是他自己，自己指向自己，没有意义。<br/>
+JS一直强调万物皆对象，函数对象也是对象，给他认个祖宗，指向Object.prototype。Object.prototype.__proto__ === null，<br/>保证原型链能够正常结束。<br/>
+</p>
+<br/>
+<p><img src="../images/con_img1.png" />感觉这篇文章写的挺好，解释的很详细，希望大家能够有所收获</p>
+<br/>
+<p ><a class="origin" href="http://www.108js.com/article/article1/10201.html?id=1092" target="_blank">原文出自《JS原型与原型链终极详解》</a></p>
+</div>
+
+
+</div>
+<div class="right_above">
+
+<div class="left">
+<p class="left_p">最新文章</p>
+<hr class="left_hr"/>
+<div class="items">
+<p ><img src="../images/num1.png" width=40px height=40px/><a class='items_a1' href='statement.html'>&nbsp 关于这个网站</a></p>
+<p ><img src="../images/num2.png" width=40px height=40px/><a class='items_a2' href='webview.html'>&nbsp 安卓&nbspwebview小结</a></p>
+<p ><img src="../images/num3.png" width=40px height=40px/><a class='items_a3' href='prototype.html'>&nbsp javascript&nbsp原型与原型链</a></p>   
+<p ><img src="../images/num4.png" width=40px height=40px/><a class='items_a4' href='flashlight.html'>&nbsp 安卓&nbsp手电筒小案例</a></p>
+<p ><img src="../images/num5.png" width=40px height=40px/><a class='items_a4' href='animation.html'>&nbsp css&nbspanimation的使用</a></p>
+<p ><img src="../images/num6.png" width=40px height=40px/><a class='items_a4' href='database.html'>&nbsp Java&nbsp数据库</a></p>
+<p ><img src="../images/num7.png" width=40px height=40px/><a class='items_a4' href='paomo.html'>&nbsp 七彩泡泡</a></p>
+<p ><img src="../images/num8.png" width=40px height=40px/><a class='items_a4' href='../case/cube/cube.html'>&nbsp 3d立体效果</a></p>
+<p ><img src="../images/num9.png" width=40px height=40px/><a class='items_a4' href='firework.html'>&nbsp canvas烟花特效</a></p>
+<p ><img src="../images/num10.png" width=40px height=40px/></p>
+</div>
+</div>
+</div>
+<div class="right_below">
+<div class="out">
+  <div id="con">
+  <p id="year"></p><p id="month"></p><p id="season"></p>
+  <ul class="week">
+  <li>一</li>
+  <li>二</li>
+  <li>三</li>
+  <li>四</li>
+  <li>五</li>
+  <li>六</li>
+  <li>日</li>
+  </ul>
+  <ul class="day">
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  </ul>
+  </div>
+  </div>
+
+</div>
+
+
+  </div>
+ </body>
+ <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+<script src="../js/header.js"></script>
+<script src="../js/thrid.js"></script>
+<script>
+$(".con_header").hover(function(){$(".con_header").css({color:"#16C0F8"})},function(){$(".con_header").css({color:"black"})});
+$(".origin").hover(function(){$(".origin").css({color:"green"})},function(){$(".origin").css({color:"black"})});
+</script>
+</html>

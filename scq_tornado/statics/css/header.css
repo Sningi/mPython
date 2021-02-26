@@ -1,0 +1,59 @@
+*{
+font-family:"华文楷体";
+margin:0px;
+}
+header .hide{
+position:relative;
+left:400px;
+top:50px;
+}
+header .hide input{
+padding-left:30px;
+color:white;
+font-size:16px;
+outline:none;
+margin:10px;
+background:rgba(0,0,0,0);
+border-width:0 0  0 0;
+} 
+header .hide hr{
+color:white;
+width:800px;
+}
+header .hide_p{
+padding-left:30px;
+font-family:'方正舒体';
+}
+header .xxx{
+position:relative;
+top:-70px;
+left:900px;
+}
+header .show{
+position:relative;
+top:50px;
+left:250px;
+color:white;
+font-size:16px;
+}
+header .show>span{
+cursor:pointer;
+display:block;
+margin:15px;
+font-size:18px;
+float:left;}
+header .show .show2 {
+position:relative;
+left:340px;
+}
+header .show>span a{
+text-decoration:none;
+color:white;
+}
+header .show .show2 span{
+display:block;
+float:left;
+margin:12px;}
+header img{
+width:22px;
+cursor:pointer;}

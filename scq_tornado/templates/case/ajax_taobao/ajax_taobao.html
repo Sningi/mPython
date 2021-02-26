@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+  <script type="text/template" id='app_tpl'>
+  <div class="product">
+  <div class='imageContainer'>
+  <img src='{#img#}'/>
+  <div class="layer">
+  <p>找同款</p>
+  <p>找相似</p>
+  </div>
+  </div>
+  <div class='content'>
+  <p class="price">
+  <span class="price-text">￥{#price#}</span>
+  <span class="sum">{#sales#}</span>
+  </p>
+  <p class="title">{#title#}</p>
+  <p class="store">
+  <span class="store-title">{#store#}</span>
+  <span class="adress">{#adress#}</span>
+  </p>
+  </div>
+  </div> 
+  </script>
+  <style>
+  *{
+margin:0;
+padding:0;
+}
+#app{
+width:1088px;
+margin:50px auto;
+font-family:"微软雅黑";
+}
+.product{
+width:250px;
+height:360px;
+float:left;
+border:1px solid #ccc;
+margin:10px;
+
+}
+.product:hover{
+border:1px solid #F55B24;
+}
+.imageContainer{
+position:relative;
+width:250px;
+height:250px;
+}
+.layer{
+position:absolute;
+left:0;
+bottom:0;
+height:30px;
+width:250px;
+background:#F55B24;
+display:none;
+}
+.product:hover .layer{
+display:block;
+}
+.layer p{
+width:125px;
+float:left;
+line-height:30px;
+color:#fff;
+font-size:12px;
+text-align:center;
+}
+.content{
+padding:10px;
+}
+.content .price{
+width:100%;
+line-height:40px;
+height:40px;
+}
+.price .price-text{
+color:#f55b24;
+font-size:20px;
+float:left;
+font-weight:bold;
+}
+.price .price-text span{
+color:#fff;
+font-size:12px;
+background:#f55b24;
+font-weight:400;
+vertical-align:top;
+}
+.price .sum{
+color:#999;
+font-size:12px;
+float:right;
+}
+.title{
+color:#666;
+font-size:12px;
+}
+.store{
+width:100%;
+color:#999;
+font-size:12px;
+line-height:30px;
+}
+.store .store-title{
+float:left;
+}
+.store .adress{
+float:right;
+}
+  </style>
+ </head>
+ <body>
+  <div id='app'></div>
+ </body>
+ <script>
+ var Util={
+	 //封装选择元素的方法
+  id:function(id){
+  return document.getElementById(id);
+  },
+	 //封装ajax请求数据
+ ajax:function(url,callback){
+ var xhr=new XMLHttpRequest();
+ xhr.onreadystatechange=function(){
+ if(xhr.readyState===4){
+	 if(xhr.status===200){
+	 var data=JSON.parse(xhr.responseText); 
+	 //用户自己决定
+	 callback&&callback(data);
+	 }
+ }
+ }
+  //open方法
+  xhr.open('get',url,true);
+  //send
+  xhr.send(null);
+  }
+ }
+ //console.log(Util.id('app_tpl').innerHTML);
+ //封装格式化模板方法
+ var str=Util.id('app_tpl').innerHTML;
+ function formDataString(str,data){
+	 return str.replace(/\{#(\w+)#\}/g,function(match,$1){
+	 return data[$1]===undefined?'':data[$1];
+	 });
+ }
+ var html='';
+ Util.ajax('list.json',function(data){
+	 for(var i=0;i<data.list.length;i++){
+	 var list =data.list[i];
+	 html+=formDataString(str,list);
+	 }
+	 Util.id('app').innerHTML=html;
+	 
+ });
+ 
+ </script>
+</html>

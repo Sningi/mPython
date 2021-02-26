@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+ <head>
+<!--   <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content=""> -->
+  <title>Statement</title>
+  <link href="../css/header.css" rel="stylesheet" type="text/css"/>
+  <link href="../css/thrid.css" rel="stylesheet" type="text/css"/>
+<style>
+.gray{
+width:100%;
+height:1300px;
+background:rgba(0,0,0,0.07);
+}
+.content{
+border-radius:10px;
+width:920px;
+position:relative;
+left:105px;
+top:100px;
+margin:0 auto;
+height:1100px;
+background:white;
+display:inline-block;
+filter: drop-shadow(1px 1px 1px gray);
+}
+ </style>
+ </head>
+ <body onload="inquery()">
+ <div class="gray">
+ <header class="header" id="header">
+<div class="hide">
+<input type="text" Size=100 placeholder="输入搜索内容..."/><hr/>
+<p class="hide_p" style="font-family:'楷体'">回车也没用不会这个</p>
+<img class="xxx" src="../images/x.png"/>
+</div>
+<div class="show">
+<span style="position:absolute;left:-150px;top:-10px;font-size:26px;font-weight:bold;font-family:'方正舒体'">Blog</span>
+<span><a href="../index.html">主页</a></span>
+<span><a href="note.html">笔记</a></span>
+<span><a href="case.html">特效案例</a></span>
+<span><a href="software.html">软件分享</a></span>
+<span><a href="reform.html">后期更改</a></span>
+<span><a href="study.html">个人学习</a></span>
+
+<div class="show2">
+<span class="show_1"><img src="../images/show.png"/></span>
+<span><a href="http://baike.baidu.com/link?url=PT3YBu363oA8DSzPYPBqaZHaShaNBRsB3HKiMINNTdPqFj8lvSoebaAzkEZfOijnK4lWYc3FgA-58P2B8r1cH_" target="_blank"><img src="../images/cat.png"/></a></span>
+<span><a href="http://wpa.qq.com/msgrd?v=3&uin=956328059&site=qq&menu=yes" target="_blank"><img src="../images/qq.png"/></a></span>
+<span><img id="weixin" src="../images/weixin.png"/></span>
+<span><img src="../images/weibo.png" onclick="weibo()" value=null/></span>
+<span><img src="../images/xin.png" onclick="foreach()"/></span>
+</div>
+</div>
+</header>
+<div class="content">
+<p class="con_top">当前位置： 首页 > 笔记 > CSS3 > 正文</p>
+<p class='con_header' >关于这个网站</p><hr class="con_hr"/>
+<div class="content_inner">
+<div class="banner">
+<img  src="../images/banner.png"style=" position:relative;top:0px;height:50px;width:5px;display:inline-block"/>
+<p class="banner_p">站在巨人的肩膀上</p>
+</div>
+<p> &nbsp&nbsp&nbsp&nbsp首先，非常感谢我们的吴凌云网页设计老师，和谭州教育的玄武，海牙，新奇等各位老师，站在你们的肩膀上，我学会html的<br/>众多知识，对html产生了浓厚的兴趣，另外，也非常感谢轩陌学长，你写的网页带给我很大的震撼，所以仿制了此网页，但只<br/>是徒有其形，许多有深度的知识点尚未接触，或许对你来说，是一种羞辱，非常抱歉</p>
+
+<div class="banner">
+<img  src="../images/banner.png"style=" position:relative;top:0px;height:50px;width:5px;display:inline-block"/>
+<p class="banner_p">关于网站代码</p>
+</div>
+<p><img src="../images/con_img1.png" />代码借鉴方面</p>
+<p>&nbsp&nbsp<img src="../images/con_img2.png" />轩陌的博客</p>
+<p>
+&nbsp&nbsp&nbsp&nbsp1.网页的布局形式<br/>
+&nbsp&nbsp&nbsp&nbsp2.一个颜色#16C0F8<br/>
+&nbsp&nbsp&nbsp&nbsp3.没有抄博主任何代码<br/>
+</p>
+<p>&nbsp&nbsp<img src="../images/con_img2.png" />网络资源</p>
+<p>
+&nbsp&nbsp&nbsp&nbsp游戏栏的三个游戏均来自百度
+</p>
+<p>&nbsp&nbsp<img src="../images/con_img2.png" />特效方面</p>
+<p>
+&nbsp&nbsp&nbsp&nbsp该网页内的特效是课上跟学谭州教育的老师，课下自己摸索写出
+</p>
+
+<div class="banner">
+<img  src="../images/banner.png"style=" position:relative;top:0px;height:50px;width:5px;display:inline-block"/>
+<p class="banner_p">关于后期修改</p>
+</div>
+
+<p><img src="../images/con_img1.png" />个人认为代码存在以下问题</p>
+<p>&nbsp&nbsp&nbsp&nbsp<img src="../images/con_img2.png" />1.致命伤，没有处理屏幕自适应问题，排版在暗影精灵Ⅱ上，设计字体有微软雅黑，华文楷体，方正舒体</p>
+<p>&nbsp&nbsp&nbsp&nbsp<img src="../images/con_img2.png" />2.兼容性未作处理，只在谷歌浏览器上运行过，可能对其他版本的浏览器不支持</p>
+<p>&nbsp&nbsp&nbsp&nbsp<img src="../images/con_img2.png" />3.冗余问题，虽对代码进行了检查，但仍然存在冗余问题，例如，table表可以封装一个小的js文件，进行简化代码</p>
+<p><img src="../images/con_img1.png" />上述问题没有解决的原因，是因为目前还真不会，希望以后有所精进之后，再行补充</p>
+<div class="banner">
+<img  src="../images/banner.png"style=" position:relative;top:0px;height:50px;width:5px;display:inline-block"/>
+<p class="banner_p">关于收获</p>
+</div>
+<p>&nbsp&nbsp&nbsp&nbsp 首先非常感谢吴凌云老师，作为html的启蒙老师，你使繁琐复杂的网页变成了一个个代码标签，使我了解到网页的运行方<br/>式，并使我对网页产生了浓厚的兴趣，同时感谢腾讯视频公开课中谭州教育的老师，开阔我对网页的见解，学会了许多知识和<br/>学习方法，就像轩陌所说，学习没有捷径，我们应该珍惜美好时光，努力做一些对人生有意义的事，和志同道合的朋友一起相<br/>互勉励，共同提高</p>
+
+
+</div>
+
+
+</div>
+<div class="right_above">
+
+<div class="left">
+<p class="left_p">最新文章</p>
+<hr class="left_hr"/>
+<div class="items">
+<p ><img src="../images/num1.png" width=40px height=40px/><a class='items_a1' href='statement.html'>&nbsp 关于这个网站</a></p>
+<p ><img src="../images/num2.png" width=40px height=40px/><a class='items_a2' href='webview.html'>&nbsp 安卓&nbspwebview小结</a></p>
+<p ><img src="../images/num3.png" width=40px height=40px/><a class='items_a3' href='prototype.html'>&nbsp javascript&nbsp原型与原型链</a></p>   
+<p ><img src="../images/num4.png" width=40px height=40px/><a class='items_a4' href='flashlight.html'>&nbsp 安卓&nbsp手电筒小案例</a></p>
+<p ><img src="../images/num5.png" width=40px height=40px/><a class='items_a4' href='animation.html'>&nbsp css&nbspanimation的使用</a></p>
+<p ><img src="../images/num6.png" width=40px height=40px/><a class='items_a4' href='database.html'>&nbsp Java&nbsp数据库</a></p>
+<p ><img src="../images/num7.png" width=40px height=40px/><a class='items_a4' href='paomo.html'>&nbsp 七彩泡泡</a></p>
+<p ><img src="../images/num8.png" width=40px height=40px/><a class='items_a4' href='../case/cube/cube.html'>&nbsp 3d立体效果</a></p>
+<p ><img src="../images/num9.png" width=40px height=40px/><a class='items_a4' href='firework.html'>&nbsp canvas烟花特效</a></p>
+<p ><img src="../images/num10.png" width=40px height=40px/></p>
+</div>
+</div>
+</div>
+<div class="right_below">
+<div class="out">
+  <div id="con">
+  <p id="year"></p><p id="month"></p><p id="season"></p>
+  <ul class="week">
+  <li>一</li>
+  <li>二</li>
+  <li>三</li>
+  <li>四</li>
+  <li>五</li>
+  <li>六</li>
+  <li>日</li>
+  </ul>
+  <ul class="day">
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  </ul>
+  </div>
+  </div>
+
+</div>
+
+
+  </div>
+ </body>
+ <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+<script src="../js/header.js"></script>
+<script src="../js/thrid.js"></script>
+<script>
+$(".con_header").hover(function(){$(".con_header").css({color:"#16C0F8"})},function(){$(".con_header").css({color:"black"})});
+
+</script>
+</html>

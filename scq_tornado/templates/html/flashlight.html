@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>flashlight小案例</title>
+  <link href="../css/header.css" rel="stylesheet" type="text/css"/>
+   <link href="../css/thrid.css" rel="stylesheet" type="text/css"/>
+  <style>
+.gray{
+width:100%;
+height:4500px;
+background:rgba(0,0,0,0.07);
+}
+.content{
+border-radius:10px;
+width:920px;
+position:relative;
+left:105px;
+top:100px;
+margin:0 auto;
+height:4300px;
+background:white;
+display:inline-block;
+filter: drop-shadow(1px 1px 1px gray);
+}
+ .flashlight
+  {
+  text-decoration:none;
+  font-family:'方正舒体';
+  font-size:19px;
+  color:green;
+  }
+
+ </style>
+ </head>
+ <body onload="inquery()">
+ <div class="gray">
+ <header class="header" id="header">
+<div class="hide">
+<input type="text" Size=100 placeholder="输入搜索内容..."/><hr/>
+<p class="hide_p" style="font-family:'楷体'">回车也没用不会这个</p>
+<img class="xxx" src="../images/x.png"/>
+</div>
+<div class="show">
+<span style="position:absolute;left:-150px;top:-10px;font-size:26px;font-weight:bold;font-family:'方正舒体'">Blog</span>
+<span><a href="../index.html">主页</a></span>
+<span><a href="note.html">笔记</a></span>
+<span><a href="case.html">特效案例</a></span>
+<span><a href="software.html">软件分享</a></span>
+<span><a href="reform.html">后期更改</a></span>
+<span><a href="study.html">个人学习</a></span>
+
+<div class="show2">
+<span class="show_1"><img src="../images/show.png"/></span>
+<span><a href="http://baike.baidu.com/link?url=PT3YBu363oA8DSzPYPBqaZHaShaNBRsB3HKiMINNTdPqFj8lvSoebaAzkEZfOijnK4lWYc3FgA-58P2B8r1cH_" target="_blank"><img src="../images/cat.png"/></a></span>
+<span><a href="http://wpa.qq.com/msgrd?v=3&uin=956328059&site=qq&menu=yes" target="_blank"><img src="../images/qq.png"/></a></span>
+<span><img id="weixin" src="../images/weixin.png"/></span>
+<span><img src="../images/weibo.png" onclick="weibo()" value=null/></span>
+<span><img src="../images/xin.png" onclick="foreach()"/></span>
+</div>
+</div>
+</header>
+<div class="content">
+<p class="con_top">当前位置： 首页 > 笔记 > CSS3 > 正文</p>
+<p class='con_header' ><span>android &nbsp&nbsp&nbsp</span>手电筒简易小程序</p><hr class="con_hr"/>
+<div class="content_inner">
+<div class="banner">
+<img  src="../images/banner.png"style=" position:relative;top:0px;height:50px;width:5px;display:inline-block"/>
+<p class="banner_p">主要涉及Camera属性的使用</p>
+</div>
+<p><img src="../images/con_img1.png" />打开手电筒</p>
+<p>
+camera = Camera.open();<br/>
+camera.startPreview();<br/>
+Camera.Parameters parameters = camera.getParameters();<br/>
+parameters.setFlashMode(Camera.Parameters.FLASH_MODE_TORCH);<br/>
+camera.setParameters(parameters);<br/>
+</p>
+<p><img src="../images/con_img1.png" />关闭手电筒</p>
+<p>Camera.Parameters parameters = camera.getParameters();<br/>
+parameters.setFlashMode(Camera.Parameters.FLASH_MODE_OFF);<br/>
+camera.setParameters(parameters);<br/>
+camera.release();<br/>
+camera = null;<br/>
+</p>
+<p>&nbsp&nbsp&nbsp&nbsp<img src="../images/con_img2.png" />查过众多资料，发现上述方式比较理想</p>
+<p>&nbsp&nbsp&nbsp&nbsp<img src="../images/con_img2.png" />记得要先在配置文件中申请权限</p>
+<p><img src="../images/con_img1.png" />抱歉了，自己写的代码找不到了，网上摘了一篇</p>
+  <table cellspacing="0" cellpadding="0" class="table2">
+  <tr>
+  <td class="table_left">
+  <div class="left_div">1<br />2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9<br/>10<br/>11<br/>12<br/>13<br/>15<br/>16<br/>17<br/>18<br/>19<br/>20<br/>21<br/>22<br/>23<br/>24<br/>25<br/>26<br/>27<br/>28<br/>29<br/>30<br/>31<br/>32<br/>33<br/>34<br/>35<br/>36<br/>37<br/>38<br/>39<br/>40<br/>41<br/>42<br/>43<br/>44<br/>45<br/>46<br/>47<br/>48<br/>49<br/>50<br/>51<br/>52<br/>53<br/>54<br/>55<br/>56<br/>57<br/>58<br/>59<br/>60<br/>61<br/>62<br/>63<br/>64<br/>65<br/>66<br/>67<br/>68<br/>69<br/>70<br/>71<br/>72<br/>73<br/>74<br/>75<br/>76<br/>77<br/>78<br/>79<br/>80<br/>81<br/>82<br/>83<br/>84<br/>85<br/>86<br/>87<br/>88<br/>89<br/>90<br/>91<br/>92<br/>93<br/>94<br/>95<br/>96<br/>97<br/>98<br/>99<br/>100<br/>101<br/>102<br/>103<br/>104<br/>105<br/>106<br/>107<br/>108<br/>109<br/>110<br/>111<br/>112<br/>113<br/>114<br/>115<br/>116<br/>117<br/>118<br/>119<br/>120<br/>121<br/>122<br/>123<br/>124<br/>125<br/>126<br/>127<br/>128<br/>129<br/>130<br/>131<br/>132<br/>133<br/>134<br/>135<br/>136<br/>137<br/>138<br/>139<br/>140<br/>141<br/>142<br/>143<br/>144<br/>145<br/>146<br/>147<br/>148<br/>149<br/>150<br/>151<br/>152<br/>153<br/>154<br/>155<br/>156<br/>157<br/>158<br/>159<br/>160<br/>161<br/>162<br/>163<br/>164<br/>165<br/>166<br/>167<br/></div>
+  </td>
+  <td class="table_center">
+  </td>
+  <td class="table_right">
+<div class="right_div">
+<p>
+public class MainActivity extends FragmentActivity {<br/>
+  @Override<br/>
+  protected void onCreate(Bundle savedInstanceState) {<br/>
+    super.onCreate(savedInstanceState);<br/>
+    setContentView(R.layout.activity_main);<br/>
+    if (isFlashSupported()) {<br/>
+      if (savedInstanceState == null) {<br/>
+        getSupportFragmentManager().beginTransaction().add(R.id.container, new FlashlightFragment()).commit();
+      }<br/>
+    } else {<br/>
+      showNoFlashAlert();
+    }
+  }<br/>
+  private void showNoFlashAlert() {<br/>
+    new AlertDialog.Builder(this)<br/>
+        .setMessage(R.string.device_not_support_msg)<br/>
+        .setIcon(android.R.drawable.ic_dialog_alert).setTitle(R.string.device_not_support_title)<br/>
+        .setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {<br/>
+          @Override<br/>
+          public void onClick(DialogInterface dialog, int which) {<br/>
+            dialog.dismiss();<br/>
+            finish();
+          }<br/>
+        }).create().show();
+  }<br/>
+  private boolean isFlashSupported() {<br/>
+    PackageManager pm = getPackageManager();<br/>
+    return pm.hasSystemFeature(PackageManager.FEATURE_CAMERA_FLASH);
+  }<br/>
+  public static class FlashlightFragment extends Fragment implements SurfaceHolder.Callback {<br/>
+  <br/>
+    public FlashlightFragment() { }<br/>
+    ImageButton btnSwitch;<br/>
+    ImageView bg;<br/>
+    private boolean isLighOn = false;<br/>
+    private Camera camera;<br/>
+    Camera.Parameters params;<br/>
+    @Override<br/>
+    public void onStart() {<br/>
+      super.onStart();<br/>
+      SurfaceView preview = (SurfaceView) getView().findViewById(R.id.PREVIEW);<br/>
+      SurfaceHolder mHolder = preview.getHolder();<br/>
+      mHolder.addCallback(this);<br/>
+    }<br/>
+    @Override<br/>
+    public void onPause() {<br/>
+      super.onPause();<br/>
+      turnOffFlash();<br/>
+    }<br/>
+    @Override<br/>
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {<br/>
+      View view = inflater.inflate(R.layout.fragment_main_activity, container, false);<br/>
+      // flash switch button<br/>
+      btnSwitch = (ImageButton) view.findViewById(R.id.flashlight_button);<br/>
+      bg = (ImageView) view.findViewById(R.id.flashlight_bg);<br/>
+      // displaying button image<br/>
+      toggleBgImage();<br/>
+      // Switch button click event to toggle flash on/off<br/>
+      btnSwitch.setOnClickListener(new View.OnClickListener() {<br/>
+        @Override<br/>
+        public void onClick(View v) {<br/>
+          if (isLighOn) {<br/>
+            turnOffFlash();
+          } else {
+            turnOnFlash();
+          }
+        }
+      });<br/>
+      return view;<br/>
+    }<br/>
+
+    // Turning On flash<br/>
+    private void turnOnFlash() {<br/>
+      if (!isLighOn) {<br/>
+        if (camera == null || params == null) {<br/>
+          return;<br/>
+        }<br/>
+        params = camera.getParameters();<br/>
+        params.setFlashMode(Camera.Parameters.FLASH_MODE_TORCH);<br/>
+        camera.setParameters(params);<br/>
+        camera.startPreview();<br/>
+        isLighOn = true;<br/>
+        toggleBgImage();<br/>
+      }<br/>
+ 
+    }<br/>
+  <br/>
+    // Turning Off flash<br/>
+    private void turnOffFlash() {<br/>
+      if (isLighOn) {<br/>
+        if (camera == null || params == null) {<br/>
+          return;<br/>
+        }<br/>
+        params = camera.getParameters();<br/>
+        params.setFlashMode(Camera.Parameters.FLASH_MODE_OFF);<br/>
+        camera.setParameters(params);<br/>
+        camera.stopPreview();<br/>
+        isLighOn = false;<br/>
+        toggleBgImage();<br/>
+      }<br/>
+    }<br/>
+    private void toggleBgImage() {<br/>
+      if (isLighOn) {<br/>
+        bg.setImageResource(R.mipmap.f_on);<br/>
+      } else {<br/>
+        bg.setImageResource(R.mipmap.f_off);<br/>
+      }<br/>
+    }<br/>
+    @Override<br/>
+    public void surfaceChanged(SurfaceHolder holder, int format, int width, int height) {<br/>
+    }<br/>
+    @Override<br/>
+    public void surfaceDestroyed(SurfaceHolder holder) {<br/>
+      if (camera != null) {<br/>
+        camera.stopPreview();<br/>
+        camera.setPreviewCallback(null);<br/>
+        camera.release();<br/>
+        camera = null;
+      }
+    }<br/>
+    @Override<br/>
+    public void surfaceCreated(SurfaceHolder holder) {<br/>
+      if (camera == null) {<br/>
+        camera = Camera.open();<br/>
+        params = camera.getParameters();<br/>
+        try {<br/>
+          camera.setPreviewDisplay(holder);<br/>
+        } catch (IOException e) {<br/>
+          camera.release();<br/>
+          camera = null;
+        }
+      }<br/>
+      turnOnFlash();
+    }
+  }<br/>
+}
+</p>
+<div>
+</td>
+</tr>
+</table>
+<p style="position:relative;top:30px;"><img src="../images/con_img1.png"/>这里就不贴出布局和权限代码了，个人感觉要完成一个程序，不外乎有两点，知识点+思维，现在的技术已经十分完善，我们<br/>记不住的知识点基本上都可以通过网络，书本获得，因此我们还应该加强思维的练习,了解一个程序运行也很重要<br/>
+<img src="../images/con_img2.png"/><a class="flashlight" href="../source/Deng.zip" target="_blank">闪光灯项目下载</a>
+</p>
+</div>
+</div>
+
+<div class="right_above">
+<div class="left">
+<p class="left_p">最新文章</p>
+<hr class="left_hr"/>
+<div class="items">
+<p ><img src="../images/num1.png" width=40px height=40px/><a class='items_a1' href='statement.html'>&nbsp 关于这个网站</a></p>
+<p ><img src="../images/num2.png" width=40px height=40px/><a class='items_a2' href='webview.html'>&nbsp 安卓&nbspwebview小结</a></p>
+<p ><img src="../images/num3.png" width=40px height=40px/><a class='items_a3' href='prototype.html'>&nbsp javascript&nbsp原型与原型链</a></p>   
+<p ><img src="../images/num4.png" width=40px height=40px/><a class='items_a4' href='flashlight.html'>&nbsp 安卓&nbsp手电筒小案例</a></p>
+<p ><img src="../images/num5.png" width=40px height=40px/><a class='items_a4' href='animation.html'>&nbsp css&nbspanimation的使用</a></p>
+<p ><img src="../images/num6.png" width=40px height=40px/><a class='items_a4' href='database.html'>&nbsp Java&nbsp数据库</a></p>
+<p ><img src="../images/num7.png" width=40px height=40px/><a class='items_a4' href='paomo.html'>&nbsp 七彩泡泡</a></p>
+<p ><img src="../images/num8.png" width=40px height=40px/><a class='items_a4' href='cube/cube.html'>&nbsp 3d立体效果</a></p>
+<p ><img src="../images/num9.png" width=40px height=40px/><a class='items_a4' href='firework.html'>&nbsp canvas烟花特效</a></p>
+<p ><img src="../images/num10.png" width=40px height=40px/></p>
+</div>
+</div>
+</div>
+<div class="right_below">
+<div class="out">
+  <div id="con">
+  <p id="year"></p><p id="month"></p><p id="season"></p>
+  <ul class="week">
+  <li>一</li>
+  <li>二</li>
+  <li>三</li>
+  <li>四</li>
+  <li>五</li>
+  <li>六</li>
+  <li>日</li>
+  </ul>
+  <ul class="day">
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  </ul>
+  </div>
+  </div>
+
+</div>
+
+
+  </div>
+ </body>
+ <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+<script src="../js/header.js"></script>
+<script src="../js/thrid.js"></script>
+<script>
+$(".con_header").hover(function(){$(".con_header").css({color:"#16C0F8"})},function(){$(".con_header").css({color:"black"})});
+</script>
+</html>

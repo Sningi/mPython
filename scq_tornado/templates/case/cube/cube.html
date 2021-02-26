@@ -1,0 +1,85 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>ÓÆÓÆÎÒÐÄ</title>
+<style>
+.neibu{
+perspective:1200px;}
+.cube{
+position:relative;
+width:200px;
+height:200px;
+margin:300px auto;
+transform-style:preserve-3d;
+transform-origin:50% 50% -101px;
+animation:spin 5s linear infinite;
+}
+@-webkit-keyframes spin  
+       {  
+           0% 
+           {  
+               transform: rotateX(-20deg) rotateY(0deg) rotateZ(-45deg)                 
+           }  
+           50%  
+           {  
+               transform: rotateX(20deg) rotateY(360deg) rotateZ(-30deg);  
+               
+           }
+         100%{  transform:rotateX(-20deg) rotateY(720deg) rotateZ(-45deg)}
+  
+       } 
+
+.cube div{
+position:absolute;
+width:200px;
+height:200px;
+border:1px solid blue;
+}
+.cube div:nth-child(1){
+left:0;
+top=-201px;
+transform-origin:bottom;
+transform:rotateX(90deg);
+}
+.cube div:nth-child(2){
+left:0;
+top=201px;
+transform-origin:top;
+transform:rotateX(-90deg);
+}
+.cube div:nth-child(3){
+left:-201px;
+top=0;
+transform-origin:right;
+transform:rotateY(-90deg);
+}
+.cube div:nth-child(4){
+left:201px;
+top=0;
+transform-origin:left;
+transform:rotateY(90deg);
+}
+.cube div:nth-child(5){
+left:0;
+top=0;
+}
+.cube div:nth-child(6){
+left:0;
+top=0;
+transform:translateZ(-201px);
+}
+</style>
+</head>
+<body>
+<div class="neibu">
+<div class="cube">
+<div><img src="1.jpg" width="200px" height="200px"/></div>
+<div><img src="2.jpg" width="200px" height="200px"/></div>
+<div><img src="3.jpg" width="200px" height="200px"/></div>
+<div><img src="4.jpg" width="200px" height="200px"/></div>
+<div><img src="5.jpg" width="200px" height="200px"/></div>
+<div><img src="6.jpg" width="200px" height="200px"/></div>
+</div>
+</div>
+</body>
+</html>

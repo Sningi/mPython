@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Adapter</title>
+  <link href="../css/header.css" rel="stylesheet" type="text/css"/>
+  <link href="../css/thrid.css" rel="stylesheet" type="text/css"/>
+  <style>
+
+.gray{
+width:100%;
+height:5800px;
+background:rgba(0,0,0,0.07);
+}
+.content{
+border-radius:10px;
+width:920px;
+position:relative;
+left:105px;
+top:100px;
+margin:0 auto;
+height:5600px;
+background:white;
+display:inline-block;
+filter: drop-shadow(1px 1px 1px gray);
+}
+ .ddms
+  {
+  text-decoration:none;
+  font-family:'方正舒体';
+  font-size:19px;
+  color:green;
+  }
+ </style>
+ </head>
+ <body onload="inquery()">
+ <div class="gray">
+ <header class="header" id="header">
+<div class="hide">
+<input type="text" Size=100 placeholder="输入搜索内容..."/><hr/>
+<p class="hide_p" style="font-family:'楷体'">回车也没用不会这个</p>
+<img class="xxx" src="../images/x.png"/>
+</div>
+<div class="show">
+<span style="position:absolute;left:-150px;top:-10px;font-size:26px;font-weight:bold;font-family:'方正舒体'">Blog</span>
+<span><a href="../index.html">主页</a></span>
+<span><a href="note.html">笔记</a></span>
+<span><a href="case.html">特效案例</a></span>
+<span><a href="software.html">软件分享</a></span>
+<span><a href="reform.html">后期更改</a></span>
+<span><a href="study.html">个人学习</a></span>
+
+<div class="show2">
+<span class="show_1"><img src="../images/show.png"/></span>
+<span><a href="http://baike.baidu.com/link?url=PT3YBu363oA8DSzPYPBqaZHaShaNBRsB3HKiMINNTdPqFj8lvSoebaAzkEZfOijnK4lWYc3FgA-58P2B8r1cH_" target="_blank"><img src="../images/cat.png"/></a></span>
+<span><a href="http://wpa.qq.com/msgrd?v=3&uin=956328059&site=qq&menu=yes" target="_blank"><img src="../images/qq.png"/></a></span>
+<span><img id="weixin" src="../images/weixin.png"/></span>
+<span><img src="../images/weibo.png" onclick="weibo()" value=null/></span>
+<span><img src="../images/xin.png" onclick="foreach()"/></span>
+</div>
+</div>
+</header>
+<div class="content">
+<p class="con_top">当前位置： 首页 > 笔记 > android > 正文</p>
+<p class='con_header' ><span>Android &nbsp&nbsp&nbsp 适配器Adapter</span>的使用</p><hr class="con_hr"/>
+<div class="content_inner">
+<div class="banner">
+<img  src="../images/banner.png"style=" position:relative;top:0px;height:50px;width:5px;display:inline-block"/>
+<p class="banner_p">1.适配器的作用</p>
+</div>
+<p>&nbsp&nbsp&nbsp&nbsp Android适配器是<span style="color:red;font-size:18px;font-weight:bold;">数据</span>和<span style="font-weight:bold;color:red;font-size:18px;">视图</span>之间的桥梁，以便于数据在<span style="color:red;font-size:18px;font-family:'方正舒体';font-weight:bold;">View(常见的ListView)</span>(上显示。适配器就像显示器，把复杂的<br/>东西按人可以接受的方式来展现。我们常用的适配器一共有三个：ArrayAdapter，SimpleAdapter，SimpleCursorAdapter 这<br/>三个，他们都是继承于BaseAdapter 。</p>
+<img src="../images/adapter.png"style='height:383px;width:800px' />
+<div class="banner">
+<img  src="../images/banner.png"style=" position:relative;top:0px;height:50px;width:5px;display:inline-block"/>
+<p class="banner_p">2.ArrayAdapter</p>
+</div>
+<p><img src="../images/con_img2.png" />①参数（this，布局文件，数据资源）</p>
+
+<p>&nbsp&nbsp&nbsp&nbsp 常用的布局文件：android.R.layout.simple_expandable_list_item_1</p>
+<p><img src="../images/con_img2.png" />②一般的常见的用法：</p>
+<p>&nbsp&nbsp&nbsp&nbsp 不能用来加载图片，</p>
+<p>&nbsp&nbsp&nbsp&nbsp 因为若我们自定义xml文件，这个xml文件仅能有一个textview。连Layout也不能有。否则会报错：ArrayAdapter requires <br/>the resource ID to be a TextView</p>
+<p><img src="../images/con_img2.png" />③第三个参数可以是ArrayList（只含有values），也可以是String。</p>
+<div class="banner">
+<img  src="../images/banner.png"style=" position:relative;top:0px;height:50px;width:5px;display:inline-block"/>
+<p class="banner_p">3.SimpleAdapter</p>
+</div>
+<p><img src="../images/con_img2.png" />①参数</p>
+<p>&nbsp&nbsp&nbsp&nbsp (this，list(含有key,value)，自定义显示效果的xml文件，new String[]{“key”, “key”, “key”},new int[]{”该xml中<br/>的id”, ”该xml中的id”, ”该xml中的id”})</p>
+
+<div class="banner">
+<img  src="../images/banner.png"style=" position:relative;top:0px;height:50px;width:5px;display:inline-block"/>
+<p class="banner_p">4.SimpleCursorAdapter</p>
+</div>
+
+<p><img src="../images/con_img2.png" />①参数 </p>
+<p>&nbsp&nbsp&nbsp&nbsp SimpleCursorAdapter adapter = new SimpleCursorAdapter(this, 自定义显示效果的xml文件,获取到的cursor资源,
+ new <br/>String[]{"cursor属性组的属性名(表的列名)"," cursor属性组的属性名(表的列名)"},
+new int[] { ”该xml中的id”, ”该xml中的<br/>id”},0);
+</p>
+
+<div class="banner">
+<img  src="../images/banner.png"style=" position:relative;top:0px;height:50px;width:5px;display:inline-block"/>
+<p class="banner_p">5.SimpleCursorAdapter</p>
+</div>
+
+<img src="../images/adapter2.png"style='height:4000px;width:880px' />
+
+
+<div class="banner">
+<img  src="../images/banner.png"style=" position:relative;top:0px;height:50px;width:5px;display:inline-block"/>
+<p class="banner_p">6.推荐网址</p>
+</div>
+
+<p >&nbsp&nbsp&nbsp&nbsp<img src="../images/con_img2.png"/><a  class='ddms' href="http://blog.csdn.net/iispring/article/details/50793455/" target="_blank">http://blog.csdn.net/iispring/article/details/50793455/</a></p>
+<p >&nbsp&nbsp&nbsp&nbsp<img src="../images/con_img2.png"/><a  class='ddms' href="http://blog.csdn.net/fznpcy/article/details/8658155/" target="_blank">http://blog.csdn.net/fznpcy/article/details/8658155/</a></p>
+</div>
+
+
+</div>
+<div class="right_above">
+
+<div class="left">
+<p class="left_p">最新文章</p>
+<hr class="left_hr"/>
+<div class="items">
+<p ><img src="../images/num1.png" width=40px height=40px/><a class='items_a1' href='statement.html'>&nbsp 关于这个网站</a></p>
+<p ><img src="../images/num2.png" width=40px height=40px/><a class='items_a2' href='webview.html'>&nbsp 安卓&nbspwebview小结</a></p>
+<p ><img src="../images/num3.png" width=40px height=40px/><a class='items_a3' href='prototype.html'>&nbsp javascript&nbsp原型与原型链</a></p>   
+<p ><img src="../images/num4.png" width=40px height=40px/><a class='items_a4' href='flashlight.html'>&nbsp 安卓&nbsp手电筒小案例</a></p>
+<p ><img src="../images/num5.png" width=40px height=40px/><a class='items_a4' href='animation.html'>&nbsp css&nbspanimation的使用</a></p>
+<p ><img src="../images/num6.png" width=40px height=40px/><a class='items_a4' href='database.html'>&nbsp Java&nbsp数据库</a></p>
+<p ><img src="../images/num7.png" width=40px height=40px/><a class='items_a4' href='paomo.html'>&nbsp 七彩泡泡</a></p>
+<p ><img src="../images/num8.png" width=40px height=40px/><a class='items_a4' href='../case/cube/cube.html'>&nbsp 3d立体效果</a></p>
+<p ><img src="../images/num9.png" width=40px height=40px/><a class='items_a4' href='firework.html'>&nbsp canvas烟花特效</a></p>
+<p ><img src="../images/num10.png" width=40px height=40px/></p>
+</div>
+</div>
+</div>
+<div class="right_below">
+<div class="out">
+  <div id="con">
+  <p id="year"></p><p id="month"></p><p id="season"></p>
+  <ul class="week">
+  <li>一</li>
+  <li>二</li>
+  <li>三</li>
+  <li>四</li>
+  <li>五</li>
+  <li>六</li>
+  <li>日</li>
+  </ul>
+  <ul class="day">
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  </ul>
+  </div>
+  </div>
+
+</div>
+
+
+  </div>
+ </body>
+ <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+<script src="../js/header.js"></script>
+<script src="../js/thrid.js"></script>
+<script>
+$(".con_header").hover(function(){$(".con_header").css({color:"#16C0F8"})},function(){$(".con_header").css({color:"black"})});
+</script>
+</html>
