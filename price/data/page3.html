@@ -1,0 +1,1502 @@
+﻿
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11" />
+<title>国家统计局　>>高级检索</title>
+
+<script type="text/javascript" src="../js/ZDYXCalendar_Obj.js"></script>
+<script type="text/javascript" src="../js/ZDYXCalendar.js"></script>
+<script type="text/javascript" src="../js/calendar_lang/cn_utf8.js"></script>
+<style type="text/css"> @import url("../js/calendar_style/calendar-blue.css"); </style>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/CTRSAction.js"></script>
+<script type="text/javascript" src="js/CTRSHashtable.js"></script>
+<script type="text/javascript" src="js/CTRSRequestParam.js"></script>
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+
+<style>
+.zi133{color:#000;font-weight:normal;text-decoration:none;font-family: "宋体";font-size: 12px;padding-left:5px; }
+.zi133 a{color:#75211b;font-weight:normal;text-decoration:none;font-family: "宋体";	font-size: 12px;padding-left:5px; }/*链接*/
+.zi133 a:visited{color:#75211b;	text-decoration:none;padding-left:5px; }/* 已访问的链接 */
+.zi133 a:hover{	color:#F00;	text-decoration:underline;padding-left:5px; }/* 当有鼠标悬停在链接上 */
+.zi133 a:active{color:#000;	text-decoration:none;padding-left:5px; }/* 被选择的链接*/
+.current-page {color:red;font-weight:normal;text-decoration:none;font-family: "宋体";font-size: 12px;padding-left:5px;}
+</style>
+
+<script type="text/javascript">
+function goto(_chnlid)
+{
+	//alert(_chnlid);
+	document.searchform1.channelid.value = _chnlid;
+	document.searchform1.submit();
+}
+String.prototype.trim = function () {
+	return this.replace(/^\s*/, "").replace(/\s*$/, "");
+}
+</script>
+<SCRIPT LANGUAGE="JavaScript">
+	<!--
+		function setPrepage()
+		{
+			document.all.searchform1.submit();
+		}
+		function setOrderby()
+		{
+			document.all.searchform1.submit();
+		}
+	//-->
+	</SCRIPT>
+	<script language="javascript">
+		function advsearch()
+		{
+			var word = jQuery.trim($("input[name='andsen2']").val());
+			if (word.length==0) 
+			{
+				alert("请输入检索词!");
+				return false;
+			}
+			if(document.getElementById("secondsearch").checked==true)
+			{
+				document.searchform1.andsen.value = document.searchform1.andsen.value + " " +document.searchform1.andsen2.value;
+			}
+			else
+			{
+				document.searchform1.andsen.value = document.searchform1.andsen2.value;
+				document.searchform1.total.value = "";
+				document.searchform1.orsen.value = "";
+				document.searchform1.exclude.value = "";
+			}
+		}
+	</script>
+
+</head>
+
+<body style="background-color: rgb(255, 255, 255);">
+<div class="home">
+	<div class="main" >
+
+﻿
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<link href="./images/style.css" rel="stylesheet" type="text/css" />
+
+<SCRIPT src="./images/ScrollPic.js" type="text/javascript"></SCRIPT>
+
+<script type="text/javascript" src="./images/change.js"></script>
+
+<script src="./images/jquery.js" type="text/javascript"></script>
+<script type="text/javascript" src="js/yahoo-dom-event.js"></script>
+<script type="text/javascript" src="js/suggest-yui2.js"></script>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.suggest.min.js"></script>
+<script type="text/javascript">
+    window.onload = function()
+    {
+
+        
+        var dataUrl = 'http://www.stats.gov.cn/was5/web/searchsuggest?AppServerEncoding=ISO-8859-1&StringEncoding=utf-8&result=false';
+        var inputid = "search";
+	var data={
+		autoFocus: true, 
+                useShim:false, 
+                resultFormat: '约%result%条结果' 
+	}
+	new TRSWAS.Suggest(inputid, dataUrl, data);
+    };
+
+</script>
+
+<title>国家统计局</title>
+</head>
+<body>
+<script>
+function addfavorite()
+{
+   if (document.all)
+   {
+      window.external.addFavorite('http://www.stats.gov.cn','收藏夹');
+   }
+   else if (window.sidebar)
+   {
+      window.sidebar.addPanel('国家统计局', 'http://www.stats.gov.cn', "");
+   }
+} 
+</script>
+<script>
+function submitForm(){
+//var andsen = document.getElementById("search").value;
+var andsen = document.all.searchform.andsen.value;
+if(andsen ==''){
+  //document.getElementById("textfield").value=''
+  alert("请输入检索词");
+  return false;
+}
+
+document.all.searchform.submit();
+
+}
+</script>
+<script>
+function handler_menu(){
+	var currentChannel = "";//""
+	var parentChannel = "";//增加
+	var objs = document.getElementsByName("PL_MENU_NAME");
+	var obj = null;
+	var curtext = null;
+	for(var i=0;i<objs.length;i++){
+		obj = objs[i];
+		curtext = obj.innerHTML;
+		if(currentChannel.indexOf(curtext) != -1|| parentChannel.indexOf(curtext) != -1){//currentChannel.indexOf(curtext) != -1
+			obj.className = "on";
+			break;
+		}
+	}
+}
+</script>
+<script type="text/javascript"> 
+	function nav(name,cursel,n){
+		for(i=1;i<=n;i++){
+			var menu=document.getElementById(name+i);
+			var con=document.getElementById("con_"+name+"_"+i);
+			con.style.display=i==cursel?"block":"none";
+		}
+	}
+	function navout(name,n){
+		var con=document.getElementById("con_one_"+n);
+		if(name=="over"){
+			con.style.display="block";
+		}	
+		if(name=="out"){
+				con.style.display="none";
+			}
+	}
+</script>
+<style>
+<!--
+.top01_a li,.top01_b li{
+	margin:0px 4px;
+}
+.top01_b{
+	margin-left:15px;
+	margin-right:15px;
+}-->
+.search{width:950px; margin:80px auto 0 auto; padding-right:40px; text-align:right; border:0px;}
+.search_bg{ background:url(/images/xx_search_bg.jpg) no-repeat left top; float:right}
+.bai12,.bai12 a{color:#fff; font-size:12px; text-decoration:none}
+.input1{ width:205px; line-height:30px; height:30px; font-size:14px; color:#999; border:none; background:none}
+</style>
+<body  style="background:#FFF;">
+<div class="top" style="margin-top:-18px;">
+	<div class="top01">
+		<ul class="top01_a">
+			<li>
+				<a title="首页" href="http://www.stats.gov.cn" target="_parent" >首页</a><!--|<a href="#" onclick="addfavorite()">加为收藏</a>-->
+			</li>
+			<li class="top_line">&nbsp;</li>
+			<li>
+				<fjtignoreurl><!--|<a href="http://www.stats.gov.cn" target="_blank">简体中文
+</a></fjtignoreurl><a href="http://www.stats.gov.cn:82/gate/big5/www.stats.gov.cn/" target="_blank">繁體中文</a>|--><fjtignoreurl>  <a href="/english/" target="_blank">ENGLISH</a></fjtignoreurl>
+			</li>
+			<li class="top_line">&nbsp;</li>
+			<li>
+				<a href="/wzgl/rss/" target="_blank">RSS订阅</a>
+			</li>
+			<li class="top_line">&nbsp;</li>
+			<li>
+				<a href="http://weibo.com/nbsstatistics" target="_blank">统计微博</a>|<a href="/tjfw/tjyd/" target="_blank">统计微讯</a>|<a href="/tjfw/tjyd/" target="_blank" >移动客户端</a>
+			</li>
+
+		</ul>
+		<!--<ul class="top01_b" style="padding-left:110px;">
+		 <form name="searchform" action="/was5/web/search"  target="_blank">
+		 <input type='hidden' name='channelid' value='288041' />
+			<li>
+				<input name="andsen" type="text" class="search" id="search" title="请输入关键字" onclick="javascript:if(this.value=='请输入关键字') this.value=''" value="请输入关键字" size="10" maxlength="200" style="background:#FFF;color:#6c6c6c;"/>
+			</li>
+			<li class="top_search">
+				<a href="#" onclick="submitForm();">检索</a>|<a href="/was5/web/adv.jsp" target="_blank">高级</a>
+			</li>
+		</form>
+		</ul>-->
+             <div style="float:right;padding-right:20px;">
+
+		<script language='javascript' type="text/javascript">
+			   <!--
+			   tmpDate = new Date();
+			   date = tmpDate.getDate();
+			   month = tmpDate.getMonth() + 1 ;
+			   year = tmpDate.getYear();
+			   year = tmpDate.getYear();
+			   year = year>1900 ? year : year+1900;
+			   document.write(year + "年" + month + "月" + date + "日&nbsp;");
+			    myArray = new Array(6);
+			    myArray[0] = "星期日"
+			    myArray[1] = "星期一"
+			    myArray[2] = "星期二"
+			    myArray[3] = "星期三"
+			    myArray[4] = "星期四"
+			    myArray[5] = "星期五"
+			    myArray[6] = "星期六"
+			    weekday = tmpDate.getDay();
+			    document.write(myArray[weekday])
+			   //-->
+		</script>
+               </div>
+
+	</div>
+	<div class="top02">
+    <div class="search">
+    <table class="search_bg" width="350" cellspacing="0" cellpadding="0" border="0">
+      <tbody><tr>
+          <form name="searchform" action="/was5/web/search" target="_blank">   	  <input name="channelid" value="288041" type="hidden" />
+        <td width="235" height="33" align="right"><input name="andsen" class="input1" id="search" value="" onfocus="if(value=='') {value='';}" onblur="if(value=='') {value='';}" type="text" /></td>
+        <td class="bai12" style="font-weight:bold;font-size:14px;" align="center"><a href="javascript:void(0)" onclick="submitForm();">检索</a> |  <a href="/was5/web/adv.jsp">高级</a></td>
+        </form>
+      </tr>
+	       <tr>
+     <td colspan="2" class="bai12" style="font-size:12px;" align="left"> 热词:   <a href="/was5/web/search?channelid=288041&andsen=GDP" >GDP</a>&emsp;<a href="/was5/web/search?channelid=288041&andsen=CPI" >CPI</a>&emsp;<a href="/was5/web/search?channelid=288041&andsen=PPI" >PPI</a>&emsp;<a href="/was5/web/search?channelid=288041&andsen=PMI" >PMI</a>&emsp;<a href="/was5/web/search?channelid=288041&andsen=%E6%80%BB%E4%BA%BA%E5%8F%A3" >总人口</a>&emsp;<a href="/was5/web/search?channelid=288041&andsen=%E7%A4%BE%E4%BC%9A%E6%B6%88%E8%B4%B9%E5%93%81%E9%9B%B6%E5%94%AE%E6%80%BB%E9%A2%9D" >社会消费品零售总额</a></td>
+    </tr>
+    </tbody></table>
+        </div>
+
+    </div>
+	<div class="top03">
+		<ul class="top03_a" id="nav">
+			<li>
+				<a href="/zjtj/" target="_top"><img src="./images/top03_1.png" /></a>
+				<ul class="top03_a01" id="one1" onmouseover="nav('one',1,6)">
+				  
+					<li><a name='PL_MENU_NAME' href="/zjtj/gjtjj/"  target="_top">国家统计局</a></li>
+				 
+					<li><a name='PL_MENU_NAME' href="/zjtj/jzzc/"  target="_top">局长致辞</a></li>
+				 
+					<li><a name='PL_MENU_NAME' href="/zjtj/jgzn/"  target="_top">机构职能</a></li>
+				 		
+				</ul>
+			</li>
+			<li><img src="./images/top03_a.png" /></li>
+			<li>
+				<a href="/tjsj/" target="_top"><img src="./images/top03_2.png" /></a>
+				<ul class="top03_a01" id="one2" onmouseover="nav('one',2,6)">
+				
+					<li><a name='PL_MENU_NAME' href="/tjsj/zxfb/" target="_top">最新发布</a></li>
+				
+				
+					<li><a name='PL_MENU_NAME' href="http://data.stats.gov.cn/" target="_blank">数据查询</a></li>
+				
+				
+					<li><a name='PL_MENU_NAME' href="/tjsj/sjjd/" target="_top">数据解读</a></li>
+				
+				</ul>
+			</li>
+			<li><img src="./images/top03_a.png" /></li>
+			<li>
+				<a href="/tjgz/" target="_top"><img src="./images/top03_3.png" /></a>
+				<ul class="top03_a01" id="one3" onmouseover="nav('one',3,6)">
+				
+					<li><a name='PL_MENU_NAME' href="/tjgz/tjdt/" target="_top">统计动态</a></li>
+				
+					<li><a name='PL_MENU_NAME' href="/tjgz/tzgb/" target="_top">通知公告</a></li>
+				
+					<li><a name='PL_MENU_NAME' href="/tjgz/tpxw/" target="_top">图片新闻</a></li>
+				
+				</ul>
+			</li>
+			<li><img src="./images/top03_a.png" /></li>
+			<li>
+				<a href="/tjzs/" target="_top"><img src="./images/top03_4.png" /></a>
+				<ul class="top03_a01" id="one4" onmouseover="nav('one',4,6)">
+				 
+					<li><a name='PL_MENU_NAME' href="/tjzs/tjbk/" target="_top">统计百科</a></li>
+				
+					<li><a name='PL_MENU_NAME' href="/tjzs/tjcd/" target="_top">统计词典</a></li>
+				
+					<li><a name='PL_MENU_NAME' href="/tjzs/cjwtjd/" target="_top">常见问题解答</a></li>
+				
+				</ul>
+			</li>
+			<li><img src="./images/top03_a.png" /></li>
+			<li>
+				<a href="/tjfw/" target="_top"><img src="./images/top03_5.png" /></a>
+				<ul class="top03_a01" id="one5" onmouseover="nav('one',5,6)">					
+					<li><a name='PL_MENU_NAME' href="http://microdata.stats.gov.cn/" target="_top">微观数据申请</a></li>
+					<li><a name='PL_MENU_NAME' href="/tjfw/bgt2018/" target="_top">曝光台</a></li>
+					<li><a name='PL_MENU_NAME' href="/tjfw/tjxzcfgs/xzcfxx/" target="_top">行政处罚信息</a></li>
+				</ul>
+			</li>
+			<li><img src="./images/top03_a.png" /></li>
+			<li>
+				<a href="/statsinfo/index2.htm"><img src="./images/top03_6.png" /></a>
+				<ul class="top03_a01" id="one6" onmouseover="nav('one',6,6)">
+					<li><a href="/xxgk/list1.html" target="_blank" >政&emsp;策</a></li>
+                                        <li><a href="/xxgk/list2.html" target="_blank" >公开规定</a></li>
+                                        <li><a href="/xxgk/list3.html" target="_blank" >公开目录</a></li>
+				        
+					
+				</ul>
+			</li>
+		</ul>
+
+
+		<div class="top04">
+			<ul class="top03_a01 one1" id="con_one_1" onmouseover="navout('over',1)" onmouseout="navout('out',1)">
+			 
+				<li><a name='PL_MENU_NAME' href="/zjtj/gjtjj/" target="_top">国家统计局</a></li>
+			
+				<li><a name='PL_MENU_NAME' href="/zjtj/jzzc/" target="_top">局长致辞</a></li>
+			
+				<li><a name='PL_MENU_NAME' href="/zjtj/jgzn/" target="_top">机构职能</a></li>
+			
+				<li><a name='PL_MENU_NAME' href="/zjtj/tjfg/" target="_top">统计法规</a></li>
+				
+			</ul>
+			<ul class="top03_a01 one2" id="con_one_2" onmouseover="navout('over',2)"  onmouseout="navout('out',2)">
+			     
+					<li><a name='PL_MENU_NAME' href="/tjsj/zxfb/" target="_top">最新发布</a></li>
+					
+					
+					<li><a name='PL_MENU_NAME' href="http://data.stats.gov.cn/" target="_blank">数据查询</a></li>
+					
+					
+					<li><a name='PL_MENU_NAME' href="/tjsj/sjjd/" target="_top">数据解读</a></li>
+
+					<li><a name='PL_MENU_NAME' href="/tjsj/xwfbh/" target="_top">新闻发布会</a></li>
+
+					<li><a name='PL_MENU_NAME' href="/tjsj/tjzd/" target="_top">统计制度</a></li>
+					
+					<li><a name='PL_MENU_NAME' href="/tjsj/tjbz/" target="_top">统计标准</a></li>
+					
+					<li><a name='PL_MENU_NAME' href="/tjsj/zbjs/" target="_top">指标解释</a></li>
+					
+					<li><a name='PL_MENU_NAME' href="/tjsj/tjgb/" target="_top">统计公报</a></li>
+					
+					<li><a name='PL_MENU_NAME' href="/tjsj/tjcbw/" target="_top">统计出版物</a></li>
+					
+			</ul>
+			<ul class="top03_a01 one3" id="con_one_3" onmouseover="navout('over',3)"  onmouseout="navout('out',3)">
+				
+					<li><a name='PL_MENU_NAME' href="/tjgz/tjdt/" target="_top">统计动态</a></li>
+				
+					<li><a name='PL_MENU_NAME' href="/tjgz/tzgb/" target="_top">通知公告</a></li>
+				
+					<li><a name='PL_MENU_NAME' href="/tjgz/tpxw/" target="_top">图片新闻</a></li>
+				
+					<li><a name='PL_MENU_NAME' href="/tjgz/spxw/" target="_top">视频新闻</a></li>
+				
+					<li><a name='PL_MENU_NAME' href="http://www.stats.gov.cn/ztjc/" target="_top">专题集粹</a></li>
+				
+					<li><a name='PL_MENU_NAME' href="/tjgz/xzsp/" target="_top">行政审批</a></li>
+				
+					<li><a name='PL_MENU_NAME' href="/tjgz/wzlj/" target="_top">网站链接</a></li>
+				
+			</ul>
+			<ul class="top03_a01 one4" id="con_one_4" onmouseover="navout('over',4)"  onmouseout="navout('out',4)">
+				
+					<li><a name='PL_MENU_NAME' href="/tjzs/tjbk/" target="_top">统计百科</a></li>
+				
+					<li><a name='PL_MENU_NAME' href="/tjzs/tjcd/" target="_top">统计词典</a></li>
+				
+					<li><a name='PL_MENU_NAME' href="/tjzs/cjwtjd/" target="_top">常见问题解答</a></li>
+				
+					<li><a name='PL_MENU_NAME' href="/tjzs/spdb/" target="_top">视频点播</a></li>
+				
+					<li><a name='PL_MENU_NAME' href="/tjzs/tjsj/" target="_top">统计刊物</a></li>
+				
+			</ul>
+			<ul class="top03_a01 one5" id="con_one_5" onmouseover="navout('over',5)"  onmouseout="navout('out',5)">
+				<li><a name='PL_MENU_NAME' href="http://microdata.stats.gov.cn/" target="_top">微观数据申请</a></li>
+					<li><a name='PL_MENU_NAME' href="/tjfw/bgt2018/" target="_top">曝光台</a></li>
+					<li><a name='PL_MENU_NAME' href="/tjfw/tjxzcfgs/xzcfxx/" target="_top">行政处罚信息</a></li>
+					<li><a name='PL_MENU_NAME' href="/tjfw/sxqygs/" target="_top">失信企业公示</a></li>
+					<li><a name='PL_MENU_NAME' href="/tjfw/wsbs/" target="_top">网上办事</a></li>
+					<li><a name='PL_MENU_NAME' href="/tjfw/tjzx/tjzxbd/" target="_top">统计咨询</a></li>
+                                        <li><a name='PL_MENU_NAME' href="/tjfw/jzxx/" target="_top">局长信箱</a></li>
+					<li><a name='PL_MENU_NAME' href="/tjfw/yjzjfb/" target="_top">意见征集</a></li>
+					<li><a name='PL_MENU_NAME' href="/tjfw/zxft/" target="_top">在线访谈</a></li>
+                                        <li><a name='PL_MENU_NAME' href="/tjfw/tsjb/" target="_top">统计违法举报</a></li>
+			</ul>
+			<ul class="top03_a01 one6" id="con_one_6" onmouseover="navout('over',6)"  onmouseout="navout('out',6)">
+				<li><a href="/xxgk/list1.html" target="_blank" >政&emsp;策</a></li>
+                                <li><a href="/xxgk/list2.html" target="_blank" >公开规定</a></li>
+                                <li><a href="/xxgk/list3.html" target="_blank" >公开目录</a></li>
+				<li><a href="/xxgk/list4.html" target="_blank" >主动公开内容</a></li>
+				<li><a href="/xxgk/list5.html" target="_blank" >公开年报</a></li>
+                                <li><a href="/xxgk/list6.html" target="_blank" >公开申请</a></li>				         
+			</ul>
+		</div>
+	</div>
+</div>
+</body>
+</body>
+</html>
+		<!--iframe frameborder="0" class="iframe_top" marginheight="0" marginwidth="0" name="top" src="/head.html" scrolling="no" target="_parent"></iframe-->
+		<div class="dang">
+			<img src="images/b01.gif"><font class="dang_a">当前位置&nbsp;>&nbsp;<a href="http://www.stats.gov.cn" target="_self">首页</a>&nbsp;>&nbsp;<font style="font-size:14px;color:#a50404;">高级检索</font></font>
+		</div>
+		<div class="center">
+			<div class="center_left">
+				<div class="center_left_top">&nbsp;</div>
+				<div class="center_midd">
+					<font class="tongjizixun_search"><img src="images/tjzx_search.png">高级检索</font>
+					<ul class="tongjizixun_search_ul">
+						<li style="width:200px;text-align:center;"><a href='javascript:goto(288041)' class='blue'>全部栏目[<span id="span_288041">0</span>]</a></li>
+						<li style="width:200px;text-align:center;"><a href='javascript:goto(227379)' class='blue'>走近统计[<span id="span_227379">0</span>]</a></li>
+						<li style="width:200px;text-align:center;"><a href='javascript:goto(245200)' class='blue'>统计工作[<span id="span_245200">0</span>]</a></li>
+						<li style="width:200px;text-align:center;"><a href='javascript:goto(251536)' class='blue'>统计知识[<span id="span_251536">0</span>]</a></li>
+						<li style="width:200px;text-align:center;"><a href='javascript:goto(204021)' class='blue'>统计服务[<span id="span_204021">0</span>]</a></li>
+						<li style="width:200px;text-align:center;"><a href='javascript:goto(272268)' class='blue'>统计数据[<span id="span_272268">0</span>]</a></li>
+						<li style="width:200px;text-align:center;"><a href='javascript:goto(203029)' class='blue'>涉外调查管理[<span id="span_203029">0</span>]</a></li>
+						
+					</ul>
+				</div>
+				
+				<div class="center_left_bottom">&nbsp;</div>
+			</div>
+			<div class="center_list">
+				<div style="border:1px #2e76bc solid;height:40px;">
+				<form action="search" id="searchform1" name="searchform1" method="get" onsubmit="return advsearch();">
+				<input type="hidden" name="searchscope" value="">
+				<input type="hidden" name="channelid" value="288041">
+				<input type="hidden" name="andsen" value="" />
+				<input type="hidden" name="total" value="" />
+				<input type="hidden" name="orsen" value="" />
+				<input type="hidden" name="exclude" value="" />
+				<input name="presearchword" type="hidden" value=""/>
+				<input type="hidden" name="templet" value="">
+				 <p style="width:728px;margin-left:50px;margin-top:10px;">&nbsp;&nbsp;每页显示&nbsp;&nbsp;
+					 <select name="prepage" onchange="setPrepage();">
+							<option value="10" selected>10条</option>
+							<option value="20" >20条</option>
+					</select>
+					&nbsp;&nbsp;排序方式&nbsp;&nbsp;
+					<select name="orderby" onchange="setOrderby();">
+							<option value="RELEVANCE" >相关度</option>
+							<option value="-DOCRELTIME" selected>时间</option>
+					</select>
+					<input type="text" id="textfield" name="andsen2" class="forminput" value="" style="border:#CCCCCC 1px solid;background-color:#FFF;" />&nbsp;
+					<input type="checkbox" name="secondsearch" id="secondsearch" value="ON" style="border:#CCCCCC 1px solid;color:#000" />在结果中搜索&nbsp;
+					<input type="submit" value="搜 索" />
+				</p>
+				</form>
+				</div>
+				<!--h1 class="center_list_tit"><img src="images/b01.gif">检索结果 </h1-->
+				<p style="margin-left:500px;margin-top:10px;">
+				
+				找到相关结果<font color="red">65</font>条，用时<font  color="red">0.047</font>秒
+				
+				</p>
+				<ul class="center_list_contlist" style="min-height:600px;">
+
+				
+                   
+				  <li>
+						<span class="cont_tit"><font class="cont_tit03" style="font-size:14px;">41.&nbsp;
+						
+						<script language="javascript"> 
+							var urlstr = 'http://www.stats.gov.cn/tjsj/zxfb/201902/t20190222_1650229.html';
+	if(urlstr=="" || urlstr.length<=4){
+		document.write('<a href="'+urlstr+'" class="searchresulttitle" target="_blank">');
+	}else if(urlstr.substring(0,4)!=='http'){
+		document.write('<a href="http://www.stats.gov.cn'+urlstr+'" class="searchresulttitle" target="_blank">');
+	}else{
+		document.write('<a href="'+urlstr+'" class="searchresulttitle" target="_blank">');
+	}
+						</script>
+2019年1月份<font color=#FF0000>70个大中城市商品住宅销售价格变动情况</font></a>
+</font><font class="cont_tit02">2019.02.22 09:30:00</font></span>
+
+						<span class="cont_tit"  style="padding-right:5px;line-height:150%;margin-top:5px;">
+						表1： 2019年1月70个大中城市新建商品住宅销售价格指数
+ 
+城市环比同比定基城市环比同比定基
+上月=100上年同月=1002015年=100上月=100上年同月=1002015年=100
+北　　京100.6 102.8 138.9 唐　　山100.5 112.9 ...</span>
+						<span class="cont_tit" style="margin-top:5px;"> 
+						<script language="javascript"> 
+							var urlstr = 'http://www.stats.gov.cn/tjsj/zxfb/201902/t20190222_1650229.html';
+						    var suburlstr = 'http://www.stats.gov.cn/tjsj/zxfb/201902/t20190222_1650229.html';
+	if(urlstr=="" || urlstr.length<=4){
+		document.write('<a href="'+urlstr+'" class="searchresulttitle" target="_blank">'+urlstr+'</a>');
+	}else if(urlstr.substring(0,4)!=='http'){
+		if(urlstr.length > 120)
+		document.write('<a href="http://www.stats.gov.cn'+urlstr+'" class="searchresulttitle" target="_blank">http://www.stats.gov.cn'+suburlstr+'...</a>');
+         else
+		document.write('<a href="http://www.stats.gov.cn'+urlstr+'" class="searchresulttitle" target="_blank">http://www.stats.gov.cn'+suburlstr+'</a>');
+	}else{
+		if(urlstr.length > 120)
+        document.write('<a href="'+urlstr+'" class="searchresulttitle" target="_blank">'+suburlstr+'...</a>');
+		else
+		document.write('<a href="'+urlstr+'" class="searchresulttitle" target="_blank">'+suburlstr+'</a>');
+	}
+	</script>
+</span>
+					</li>
+					<li class="cont_line">&nbsp;</li>
+				   
+                
+                   
+				  <li>
+						<span class="cont_tit"><font class="cont_tit03" style="font-size:14px;">42.&nbsp;
+						
+						<script language="javascript"> 
+							var urlstr = 'http://www.stats.gov.cn/tjsj/sjjd/201901/t20190116_1645127.html';
+	if(urlstr=="" || urlstr.length<=4){
+		document.write('<a href="'+urlstr+'" class="searchresulttitle" target="_blank">');
+	}else if(urlstr.substring(0,4)!=='http'){
+		document.write('<a href="http://www.stats.gov.cn'+urlstr+'" class="searchresulttitle" target="_blank">');
+	}else{
+		document.write('<a href="'+urlstr+'" class="searchresulttitle" target="_blank">');
+	}
+						</script>
+国家统计局城市司高级统计师刘建伟解读12月份商品住宅销售价格变...</a>
+</font><font class="cont_tit02">2019.01.16 09:30:00</font></span>
+
+						<span class="cont_tit"  style="padding-right:5px;line-height:150%;margin-top:5px;">
+						高级统计师刘建伟解读12月份商品住宅销售价格变动情况统计数据
+ 
+　　国家统计局今日发布了2018年12月份<font color=#FF0000>70个大中城市商品住宅销售价格变动情况</font>统计数据。对此，国家统计局城市司高级统计师刘建伟进行了解读。
+ 
+　　一、一线城市新建商品住宅销售价...</span>
+						<span class="cont_tit" style="margin-top:5px;"> 
+						<script language="javascript"> 
+							var urlstr = 'http://www.stats.gov.cn/tjsj/sjjd/201901/t20190116_1645127.html';
+						    var suburlstr = 'http://www.stats.gov.cn/tjsj/sjjd/201901/t20190116_1645127.html';
+	if(urlstr=="" || urlstr.length<=4){
+		document.write('<a href="'+urlstr+'" class="searchresulttitle" target="_blank">'+urlstr+'</a>');
+	}else if(urlstr.substring(0,4)!=='http'){
+		if(urlstr.length > 120)
+		document.write('<a href="http://www.stats.gov.cn'+urlstr+'" class="searchresulttitle" target="_blank">http://www.stats.gov.cn'+suburlstr+'...</a>');
+         else
+		document.write('<a href="http://www.stats.gov.cn'+urlstr+'" class="searchresulttitle" target="_blank">http://www.stats.gov.cn'+suburlstr+'</a>');
+	}else{
+		if(urlstr.length > 120)
+        document.write('<a href="'+urlstr+'" class="searchresulttitle" target="_blank">'+suburlstr+'...</a>');
+		else
+		document.write('<a href="'+urlstr+'" class="searchresulttitle" target="_blank">'+suburlstr+'</a>');
+	}
+	</script>
+</span>
+					</li>
+					<li class="cont_line">&nbsp;</li>
+				   
+                
+                   
+				  <li>
+						<span class="cont_tit"><font class="cont_tit03" style="font-size:14px;">43.&nbsp;
+						
+						<script language="javascript"> 
+							var urlstr = 'http://www.stats.gov.cn/tjsj/zxfb/201901/t20190116_1645126.html';
+	if(urlstr=="" || urlstr.length<=4){
+		document.write('<a href="'+urlstr+'" class="searchresulttitle" target="_blank">');
+	}else if(urlstr.substring(0,4)!=='http'){
+		document.write('<a href="http://www.stats.gov.cn'+urlstr+'" class="searchresulttitle" target="_blank">');
+	}else{
+		document.write('<a href="'+urlstr+'" class="searchresulttitle" target="_blank">');
+	}
+						</script>
+2018年12月份<font color=#FF0000>70个大中城市商品住宅销售价格变动情况</font></a>
+</font><font class="cont_tit02">2019.01.16 09:30:00</font></span>
+
+						<span class="cont_tit"  style="padding-right:5px;line-height:150%;margin-top:5px;">
+						表1： 2018年12月70个大中城市新建商品住宅销售价格指数
+ 
+城市环比同比定基城市环比同比定基
+上月=100上年同月=1002015年=100上月=100上年同月=1002015年=100
+北　　京101.0 102.3 138.1 唐　　山100.0 113.1...</span>
+						<span class="cont_tit" style="margin-top:5px;"> 
+						<script language="javascript"> 
+							var urlstr = 'http://www.stats.gov.cn/tjsj/zxfb/201901/t20190116_1645126.html';
+						    var suburlstr = 'http://www.stats.gov.cn/tjsj/zxfb/201901/t20190116_1645126.html';
+	if(urlstr=="" || urlstr.length<=4){
+		document.write('<a href="'+urlstr+'" class="searchresulttitle" target="_blank">'+urlstr+'</a>');
+	}else if(urlstr.substring(0,4)!=='http'){
+		if(urlstr.length > 120)
+		document.write('<a href="http://www.stats.gov.cn'+urlstr+'" class="searchresulttitle" target="_blank">http://www.stats.gov.cn'+suburlstr+'...</a>');
+         else
+		document.write('<a href="http://www.stats.gov.cn'+urlstr+'" class="searchresulttitle" target="_blank">http://www.stats.gov.cn'+suburlstr+'</a>');
+	}else{
+		if(urlstr.length > 120)
+        document.write('<a href="'+urlstr+'" class="searchresulttitle" target="_blank">'+suburlstr+'...</a>');
+		else
+		document.write('<a href="'+urlstr+'" class="searchresulttitle" target="_blank">'+suburlstr+'</a>');
+	}
+	</script>
+</span>
+					</li>
+					<li class="cont_line">&nbsp;</li>
+				   
+                
+                   
+				  <li>
+						<span class="cont_tit"><font class="cont_tit03" style="font-size:14px;">44.&nbsp;
+						
+						<script language="javascript"> 
+							var urlstr = 'http://www.stats.gov.cn/tjsj/sjjd/201812/t20181215_1639746.html';
+	if(urlstr=="" || urlstr.length<=4){
+		document.write('<a href="'+urlstr+'" class="searchresulttitle" target="_blank">');
+	}else if(urlstr.substring(0,4)!=='http'){
+		document.write('<a href="http://www.stats.gov.cn'+urlstr+'" class="searchresulttitle" target="_blank">');
+	}else{
+		document.write('<a href="'+urlstr+'" class="searchresulttitle" target="_blank">');
+	}
+						</script>
+国家统计局城市司高级统计师刘建伟解读11月份商品住宅销售价格变...</a>
+</font><font class="cont_tit02">2018.12.15 09:30:00</font></span>
+
+						<span class="cont_tit"  style="padding-right:5px;line-height:150%;margin-top:5px;">
+						高级统计师刘建伟解读11月份商品住宅销售价格变动情况统计数据
+ 
+　　国家统计局今日发布了2018年11月份<font color=#FF0000>70个大中城市商品住宅销售价格变动情况</font>统计数据。对此，国家统计局城市司高级统计师刘建伟进行了解读。
+ 
+　　一、一线城市新建商品住宅销售价...</span>
+						<span class="cont_tit" style="margin-top:5px;"> 
+						<script language="javascript"> 
+							var urlstr = 'http://www.stats.gov.cn/tjsj/sjjd/201812/t20181215_1639746.html';
+						    var suburlstr = 'http://www.stats.gov.cn/tjsj/sjjd/201812/t20181215_1639746.html';
+	if(urlstr=="" || urlstr.length<=4){
+		document.write('<a href="'+urlstr+'" class="searchresulttitle" target="_blank">'+urlstr+'</a>');
+	}else if(urlstr.substring(0,4)!=='http'){
+		if(urlstr.length > 120)
+		document.write('<a href="http://www.stats.gov.cn'+urlstr+'" class="searchresulttitle" target="_blank">http://www.stats.gov.cn'+suburlstr+'...</a>');
+         else
+		document.write('<a href="http://www.stats.gov.cn'+urlstr+'" class="searchresulttitle" target="_blank">http://www.stats.gov.cn'+suburlstr+'</a>');
+	}else{
+		if(urlstr.length > 120)
+        document.write('<a href="'+urlstr+'" class="searchresulttitle" target="_blank">'+suburlstr+'...</a>');
+		else
+		document.write('<a href="'+urlstr+'" class="searchresulttitle" target="_blank">'+suburlstr+'</a>');
+	}
+	</script>
+</span>
+					</li>
+					<li class="cont_line">&nbsp;</li>
+				   
+                
+                   
+				  <li>
+						<span class="cont_tit"><font class="cont_tit03" style="font-size:14px;">45.&nbsp;
+						
+						<script language="javascript"> 
+							var urlstr = 'http://www.stats.gov.cn/tjsj/zxfb/201812/t20181214_1639745.html';
+	if(urlstr=="" || urlstr.length<=4){
+		document.write('<a href="'+urlstr+'" class="searchresulttitle" target="_blank">');
+	}else if(urlstr.substring(0,4)!=='http'){
+		document.write('<a href="http://www.stats.gov.cn'+urlstr+'" class="searchresulttitle" target="_blank">');
+	}else{
+		document.write('<a href="'+urlstr+'" class="searchresulttitle" target="_blank">');
+	}
+						</script>
+2018年11月份<font color=#FF0000>70个大中城市商品住宅销售价格变动情况</font></a>
+</font><font class="cont_tit02">2018.12.15 09:30:00</font></span>
+
+						<span class="cont_tit"  style="padding-right:5px;line-height:150%;margin-top:5px;">
+						表1： 2018年11月70个大中城市新建商品住宅销售价格指数
+城市环比同比定基城市环比同比定基
+上月=100上年同月=1002015年=100上月=100上年同月=1002015年=100
+北　　京100.6 101.4 136.7 唐　　山101.3 113.8 1...</span>
+						<span class="cont_tit" style="margin-top:5px;"> 
+						<script language="javascript"> 
+							var urlstr = 'http://www.stats.gov.cn/tjsj/zxfb/201812/t20181214_1639745.html';
+						    var suburlstr = 'http://www.stats.gov.cn/tjsj/zxfb/201812/t20181214_1639745.html';
+	if(urlstr=="" || urlstr.length<=4){
+		document.write('<a href="'+urlstr+'" class="searchresulttitle" target="_blank">'+urlstr+'</a>');
+	}else if(urlstr.substring(0,4)!=='http'){
+		if(urlstr.length > 120)
+		document.write('<a href="http://www.stats.gov.cn'+urlstr+'" class="searchresulttitle" target="_blank">http://www.stats.gov.cn'+suburlstr+'...</a>');
+         else
+		document.write('<a href="http://www.stats.gov.cn'+urlstr+'" class="searchresulttitle" target="_blank">http://www.stats.gov.cn'+suburlstr+'</a>');
+	}else{
+		if(urlstr.length > 120)
+        document.write('<a href="'+urlstr+'" class="searchresulttitle" target="_blank">'+suburlstr+'...</a>');
+		else
+		document.write('<a href="'+urlstr+'" class="searchresulttitle" target="_blank">'+suburlstr+'</a>');
+	}
+	</script>
+</span>
+					</li>
+					<li class="cont_line">&nbsp;</li>
+				   
+                
+                   
+				  <li>
+						<span class="cont_tit"><font class="cont_tit03" style="font-size:14px;">46.&nbsp;
+						
+						<script language="javascript"> 
+							var urlstr = 'http://www.stats.gov.cn/tjsj/sjjd/201811/t20181115_1633654.html';
+	if(urlstr=="" || urlstr.length<=4){
+		document.write('<a href="'+urlstr+'" class="searchresulttitle" target="_blank">');
+	}else if(urlstr.substring(0,4)!=='http'){
+		document.write('<a href="http://www.stats.gov.cn'+urlstr+'" class="searchresulttitle" target="_blank">');
+	}else{
+		document.write('<a href="'+urlstr+'" class="searchresulttitle" target="_blank">');
+	}
+						</script>
+国家统计局城市司高级统计师刘建伟解读10月份商品住宅销售价格变...</a>
+</font><font class="cont_tit02">2018.11.15 09:30:00</font></span>
+
+						<span class="cont_tit"  style="padding-right:5px;line-height:150%;margin-top:5px;">
+						高级统计师刘建伟解读10月份商品住宅销售价格变动情况统计数据
+ 
+　　国家统计局今日发布了2018年10月份<font color=#FF0000>70个大中城市商品住宅销售价格变动情况</font>统计数据。对此，国家统计局城市司高级统计师刘建伟进行了解读。
+ 
+　　一、一线城市新建商品住宅销售价...</span>
+						<span class="cont_tit" style="margin-top:5px;"> 
+						<script language="javascript"> 
+							var urlstr = 'http://www.stats.gov.cn/tjsj/sjjd/201811/t20181115_1633654.html';
+						    var suburlstr = 'http://www.stats.gov.cn/tjsj/sjjd/201811/t20181115_1633654.html';
+	if(urlstr=="" || urlstr.length<=4){
+		document.write('<a href="'+urlstr+'" class="searchresulttitle" target="_blank">'+urlstr+'</a>');
+	}else if(urlstr.substring(0,4)!=='http'){
+		if(urlstr.length > 120)
+		document.write('<a href="http://www.stats.gov.cn'+urlstr+'" class="searchresulttitle" target="_blank">http://www.stats.gov.cn'+suburlstr+'...</a>');
+         else
+		document.write('<a href="http://www.stats.gov.cn'+urlstr+'" class="searchresulttitle" target="_blank">http://www.stats.gov.cn'+suburlstr+'</a>');
+	}else{
+		if(urlstr.length > 120)
+        document.write('<a href="'+urlstr+'" class="searchresulttitle" target="_blank">'+suburlstr+'...</a>');
+		else
+		document.write('<a href="'+urlstr+'" class="searchresulttitle" target="_blank">'+suburlstr+'</a>');
+	}
+	</script>
+</span>
+					</li>
+					<li class="cont_line">&nbsp;</li>
+				   
+                
+                   
+				  <li>
+						<span class="cont_tit"><font class="cont_tit03" style="font-size:14px;">47.&nbsp;
+						
+						<script language="javascript"> 
+							var urlstr = 'http://www.stats.gov.cn/tjsj/zxfb/201811/t20181115_1633651.html';
+	if(urlstr=="" || urlstr.length<=4){
+		document.write('<a href="'+urlstr+'" class="searchresulttitle" target="_blank">');
+	}else if(urlstr.substring(0,4)!=='http'){
+		document.write('<a href="http://www.stats.gov.cn'+urlstr+'" class="searchresulttitle" target="_blank">');
+	}else{
+		document.write('<a href="'+urlstr+'" class="searchresulttitle" target="_blank">');
+	}
+						</script>
+2018年10月份<font color=#FF0000>70个大中城市商品住宅销售价格变动情况</font></a>
+</font><font class="cont_tit02">2018.11.15 09:30:00</font></span>
+
+						<span class="cont_tit"  style="padding-right:5px;line-height:150%;margin-top:5px;">
+						表1： 2018年10月70个大中城市新建商品住宅销售价格指数
+ 
+城市环比同比定基城市环比同比定基
+上月=100上年同月=1002015年=100上月=100上年同月=1002015年=100
+北　　京100.2 100.8 135.9 唐　　山101.2 112.9...</span>
+						<span class="cont_tit" style="margin-top:5px;"> 
+						<script language="javascript"> 
+							var urlstr = 'http://www.stats.gov.cn/tjsj/zxfb/201811/t20181115_1633651.html';
+						    var suburlstr = 'http://www.stats.gov.cn/tjsj/zxfb/201811/t20181115_1633651.html';
+	if(urlstr=="" || urlstr.length<=4){
+		document.write('<a href="'+urlstr+'" class="searchresulttitle" target="_blank">'+urlstr+'</a>');
+	}else if(urlstr.substring(0,4)!=='http'){
+		if(urlstr.length > 120)
+		document.write('<a href="http://www.stats.gov.cn'+urlstr+'" class="searchresulttitle" target="_blank">http://www.stats.gov.cn'+suburlstr+'...</a>');
+         else
+		document.write('<a href="http://www.stats.gov.cn'+urlstr+'" class="searchresulttitle" target="_blank">http://www.stats.gov.cn'+suburlstr+'</a>');
+	}else{
+		if(urlstr.length > 120)
+        document.write('<a href="'+urlstr+'" class="searchresulttitle" target="_blank">'+suburlstr+'...</a>');
+		else
+		document.write('<a href="'+urlstr+'" class="searchresulttitle" target="_blank">'+suburlstr+'</a>');
+	}
+	</script>
+</span>
+					</li>
+					<li class="cont_line">&nbsp;</li>
+				   
+                
+                   
+				  <li>
+						<span class="cont_tit"><font class="cont_tit03" style="font-size:14px;">48.&nbsp;
+						
+						<script language="javascript"> 
+							var urlstr = 'http://www.stats.gov.cn/tjsj/sjjd/201810/t20181020_1628850.html';
+	if(urlstr=="" || urlstr.length<=4){
+		document.write('<a href="'+urlstr+'" class="searchresulttitle" target="_blank">');
+	}else if(urlstr.substring(0,4)!=='http'){
+		document.write('<a href="http://www.stats.gov.cn'+urlstr+'" class="searchresulttitle" target="_blank">');
+	}else{
+		document.write('<a href="'+urlstr+'" class="searchresulttitle" target="_blank">');
+	}
+						</script>
+国家统计局城市司高级统计师刘建伟解读9月份商品住宅销售价格变动...</a>
+</font><font class="cont_tit02">2018.10.20 09:30:00</font></span>
+
+						<span class="cont_tit"  style="padding-right:5px;line-height:150%;margin-top:5px;">
+						司高级统计师刘建伟解读9月份商品住宅销售价格变动情况统计数据
+ 
+　　国家统计局今日发布了2018年9月份<font color=#FF0000>70个大中城市商品住宅销售价格变动情况</font>统计数据。对此，国家统计局城市司高级统计师刘建伟进行了解读。
+ 
+　　一、一线城市新建商品住宅和二手...</span>
+						<span class="cont_tit" style="margin-top:5px;"> 
+						<script language="javascript"> 
+							var urlstr = 'http://www.stats.gov.cn/tjsj/sjjd/201810/t20181020_1628850.html';
+						    var suburlstr = 'http://www.stats.gov.cn/tjsj/sjjd/201810/t20181020_1628850.html';
+	if(urlstr=="" || urlstr.length<=4){
+		document.write('<a href="'+urlstr+'" class="searchresulttitle" target="_blank">'+urlstr+'</a>');
+	}else if(urlstr.substring(0,4)!=='http'){
+		if(urlstr.length > 120)
+		document.write('<a href="http://www.stats.gov.cn'+urlstr+'" class="searchresulttitle" target="_blank">http://www.stats.gov.cn'+suburlstr+'...</a>');
+         else
+		document.write('<a href="http://www.stats.gov.cn'+urlstr+'" class="searchresulttitle" target="_blank">http://www.stats.gov.cn'+suburlstr+'</a>');
+	}else{
+		if(urlstr.length > 120)
+        document.write('<a href="'+urlstr+'" class="searchresulttitle" target="_blank">'+suburlstr+'...</a>');
+		else
+		document.write('<a href="'+urlstr+'" class="searchresulttitle" target="_blank">'+suburlstr+'</a>');
+	}
+	</script>
+</span>
+					</li>
+					<li class="cont_line">&nbsp;</li>
+				   
+                
+                   
+				  <li>
+						<span class="cont_tit"><font class="cont_tit03" style="font-size:14px;">49.&nbsp;
+						
+						<script language="javascript"> 
+							var urlstr = 'http://www.stats.gov.cn/tjsj/zxfb/201810/t20181019_1628849.html';
+	if(urlstr=="" || urlstr.length<=4){
+		document.write('<a href="'+urlstr+'" class="searchresulttitle" target="_blank">');
+	}else if(urlstr.substring(0,4)!=='http'){
+		document.write('<a href="http://www.stats.gov.cn'+urlstr+'" class="searchresulttitle" target="_blank">');
+	}else{
+		document.write('<a href="'+urlstr+'" class="searchresulttitle" target="_blank">');
+	}
+						</script>
+2018年9月份<font color=#FF0000>70个大中城市商品住宅销售价格变动情况</font></a>
+</font><font class="cont_tit02">2018.10.20 09:30:00</font></span>
+
+						<span class="cont_tit"  style="padding-right:5px;line-height:150%;margin-top:5px;">
+						表1： 2018年9月70个大中城市新建商品住宅销售价格指数
+ 
+城市环比同比定基城市环比同比定基
+上月=100上年同月=1002015年=100上月=100上年同月=1002015年=100
+北　　京100.0 100.4 135.7 唐　　山101.4 111.4 ...</span>
+						<span class="cont_tit" style="margin-top:5px;"> 
+						<script language="javascript"> 
+							var urlstr = 'http://www.stats.gov.cn/tjsj/zxfb/201810/t20181019_1628849.html';
+						    var suburlstr = 'http://www.stats.gov.cn/tjsj/zxfb/201810/t20181019_1628849.html';
+	if(urlstr=="" || urlstr.length<=4){
+		document.write('<a href="'+urlstr+'" class="searchresulttitle" target="_blank">'+urlstr+'</a>');
+	}else if(urlstr.substring(0,4)!=='http'){
+		if(urlstr.length > 120)
+		document.write('<a href="http://www.stats.gov.cn'+urlstr+'" class="searchresulttitle" target="_blank">http://www.stats.gov.cn'+suburlstr+'...</a>');
+         else
+		document.write('<a href="http://www.stats.gov.cn'+urlstr+'" class="searchresulttitle" target="_blank">http://www.stats.gov.cn'+suburlstr+'</a>');
+	}else{
+		if(urlstr.length > 120)
+        document.write('<a href="'+urlstr+'" class="searchresulttitle" target="_blank">'+suburlstr+'...</a>');
+		else
+		document.write('<a href="'+urlstr+'" class="searchresulttitle" target="_blank">'+suburlstr+'</a>');
+	}
+	</script>
+</span>
+					</li>
+					<li class="cont_line">&nbsp;</li>
+				   
+                
+                   
+				  <li>
+						<span class="cont_tit"><font class="cont_tit03" style="font-size:14px;">50.&nbsp;
+						
+						<script language="javascript"> 
+							var urlstr = 'http://www.stats.gov.cn/tjsj/zxfb/201809/t20180915_1623118.html';
+	if(urlstr=="" || urlstr.length<=4){
+		document.write('<a href="'+urlstr+'" class="searchresulttitle" target="_blank">');
+	}else if(urlstr.substring(0,4)!=='http'){
+		document.write('<a href="http://www.stats.gov.cn'+urlstr+'" class="searchresulttitle" target="_blank">');
+	}else{
+		document.write('<a href="'+urlstr+'" class="searchresulttitle" target="_blank">');
+	}
+						</script>
+2018年8月份<font color=#FF0000>70个大中城市商品住宅销售价格变动情况</font></a>
+</font><font class="cont_tit02">2018.09.15 09:30:00</font></span>
+
+						<span class="cont_tit"  style="padding-right:5px;line-height:150%;margin-top:5px;">
+						表1： 2018年8月70个大中城市新建商品住宅销售价格指数
+ 
+城市环比同比定基城市环比同比定基
+上月=100上年同月=1002015年=100上月=100上年同月=1002015年=100
+北　　京100.0 100.2 135.6 唐　　山102.9 109.6 ...</span>
+						<span class="cont_tit" style="margin-top:5px;"> 
+						<script language="javascript"> 
+							var urlstr = 'http://www.stats.gov.cn/tjsj/zxfb/201809/t20180915_1623118.html';
+						    var suburlstr = 'http://www.stats.gov.cn/tjsj/zxfb/201809/t20180915_1623118.html';
+	if(urlstr=="" || urlstr.length<=4){
+		document.write('<a href="'+urlstr+'" class="searchresulttitle" target="_blank">'+urlstr+'</a>');
+	}else if(urlstr.substring(0,4)!=='http'){
+		if(urlstr.length > 120)
+		document.write('<a href="http://www.stats.gov.cn'+urlstr+'" class="searchresulttitle" target="_blank">http://www.stats.gov.cn'+suburlstr+'...</a>');
+         else
+		document.write('<a href="http://www.stats.gov.cn'+urlstr+'" class="searchresulttitle" target="_blank">http://www.stats.gov.cn'+suburlstr+'</a>');
+	}else{
+		if(urlstr.length > 120)
+        document.write('<a href="'+urlstr+'" class="searchresulttitle" target="_blank">'+suburlstr+'...</a>');
+		else
+		document.write('<a href="'+urlstr+'" class="searchresulttitle" target="_blank">'+suburlstr+'</a>');
+	}
+	</script>
+</span>
+					</li>
+					<li class="cont_line">&nbsp;</li>
+				   
+                
+                   
+				  <li>
+						<span class="cont_tit"><font class="cont_tit03" style="font-size:14px;">51.&nbsp;
+						
+						<script language="javascript"> 
+							var urlstr = 'http://www.stats.gov.cn/tjsj/sjjd/201809/t20180915_1623117.html';
+	if(urlstr=="" || urlstr.length<=4){
+		document.write('<a href="'+urlstr+'" class="searchresulttitle" target="_blank">');
+	}else if(urlstr.substring(0,4)!=='http'){
+		document.write('<a href="http://www.stats.gov.cn'+urlstr+'" class="searchresulttitle" target="_blank">');
+	}else{
+		document.write('<a href="'+urlstr+'" class="searchresulttitle" target="_blank">');
+	}
+						</script>
+国家统计局城市司高级统计师刘建伟解读8月份商品住宅销售价格变动...</a>
+</font><font class="cont_tit02">2018.09.15 09:30:00</font></span>
+
+						<span class="cont_tit"  style="padding-right:5px;line-height:150%;margin-top:5px;">
+						司高级统计师刘建伟解读8月份商品住宅销售价格变动情况统计数据
+ 
+　　国家统计局今日发布了2018年8月份<font color=#FF0000>70个大中城市商品住宅销售价格变动情况</font>统计数据。对此，国家统计局城市司高级统计师刘建伟进行了解读。
+ 
+　　一、一二线城市商品住宅销售价格...</span>
+						<span class="cont_tit" style="margin-top:5px;"> 
+						<script language="javascript"> 
+							var urlstr = 'http://www.stats.gov.cn/tjsj/sjjd/201809/t20180915_1623117.html';
+						    var suburlstr = 'http://www.stats.gov.cn/tjsj/sjjd/201809/t20180915_1623117.html';
+	if(urlstr=="" || urlstr.length<=4){
+		document.write('<a href="'+urlstr+'" class="searchresulttitle" target="_blank">'+urlstr+'</a>');
+	}else if(urlstr.substring(0,4)!=='http'){
+		if(urlstr.length > 120)
+		document.write('<a href="http://www.stats.gov.cn'+urlstr+'" class="searchresulttitle" target="_blank">http://www.stats.gov.cn'+suburlstr+'...</a>');
+         else
+		document.write('<a href="http://www.stats.gov.cn'+urlstr+'" class="searchresulttitle" target="_blank">http://www.stats.gov.cn'+suburlstr+'</a>');
+	}else{
+		if(urlstr.length > 120)
+        document.write('<a href="'+urlstr+'" class="searchresulttitle" target="_blank">'+suburlstr+'...</a>');
+		else
+		document.write('<a href="'+urlstr+'" class="searchresulttitle" target="_blank">'+suburlstr+'</a>');
+	}
+	</script>
+</span>
+					</li>
+					<li class="cont_line">&nbsp;</li>
+				   
+                
+                   
+				  <li>
+						<span class="cont_tit"><font class="cont_tit03" style="font-size:14px;">52.&nbsp;
+						
+						<script language="javascript"> 
+							var urlstr = 'http://www.stats.gov.cn/tjsj/sjjd/201808/t20180815_1615980.html';
+	if(urlstr=="" || urlstr.length<=4){
+		document.write('<a href="'+urlstr+'" class="searchresulttitle" target="_blank">');
+	}else if(urlstr.substring(0,4)!=='http'){
+		document.write('<a href="http://www.stats.gov.cn'+urlstr+'" class="searchresulttitle" target="_blank">');
+	}else{
+		document.write('<a href="'+urlstr+'" class="searchresulttitle" target="_blank">');
+	}
+						</script>
+国家统计局城市司高级统计师刘建伟解读7月份商品住宅销售价格变动...</a>
+</font><font class="cont_tit02">2018.08.15 09:30:00</font></span>
+
+						<span class="cont_tit"  style="padding-right:5px;line-height:150%;margin-top:5px;">
+						司高级统计师刘建伟解读7月份商品住宅销售价格变动情况统计数据
+ 
+　　国家统计局今日发布了2018年7月份<font color=#FF0000>70个大中城市商品住宅销售价格变动情况</font>统计数据。对此，国家统计局城市司高级统计师刘建伟进行了解读。
+ 
+　　一、一二线城市新建商品住宅销售...</span>
+						<span class="cont_tit" style="margin-top:5px;"> 
+						<script language="javascript"> 
+							var urlstr = 'http://www.stats.gov.cn/tjsj/sjjd/201808/t20180815_1615980.html';
+						    var suburlstr = 'http://www.stats.gov.cn/tjsj/sjjd/201808/t20180815_1615980.html';
+	if(urlstr=="" || urlstr.length<=4){
+		document.write('<a href="'+urlstr+'" class="searchresulttitle" target="_blank">'+urlstr+'</a>');
+	}else if(urlstr.substring(0,4)!=='http'){
+		if(urlstr.length > 120)
+		document.write('<a href="http://www.stats.gov.cn'+urlstr+'" class="searchresulttitle" target="_blank">http://www.stats.gov.cn'+suburlstr+'...</a>');
+         else
+		document.write('<a href="http://www.stats.gov.cn'+urlstr+'" class="searchresulttitle" target="_blank">http://www.stats.gov.cn'+suburlstr+'</a>');
+	}else{
+		if(urlstr.length > 120)
+        document.write('<a href="'+urlstr+'" class="searchresulttitle" target="_blank">'+suburlstr+'...</a>');
+		else
+		document.write('<a href="'+urlstr+'" class="searchresulttitle" target="_blank">'+suburlstr+'</a>');
+	}
+	</script>
+</span>
+					</li>
+					<li class="cont_line">&nbsp;</li>
+				   
+                
+                   
+				  <li>
+						<span class="cont_tit"><font class="cont_tit03" style="font-size:14px;">53.&nbsp;
+						
+						<script language="javascript"> 
+							var urlstr = 'http://www.stats.gov.cn/tjsj/zxfb/201808/t20180815_1615979.html';
+	if(urlstr=="" || urlstr.length<=4){
+		document.write('<a href="'+urlstr+'" class="searchresulttitle" target="_blank">');
+	}else if(urlstr.substring(0,4)!=='http'){
+		document.write('<a href="http://www.stats.gov.cn'+urlstr+'" class="searchresulttitle" target="_blank">');
+	}else{
+		document.write('<a href="'+urlstr+'" class="searchresulttitle" target="_blank">');
+	}
+						</script>
+2018年7月份<font color=#FF0000>70个大中城市商品住宅销售价格变动情况</font></a>
+</font><font class="cont_tit02">2018.08.15 09:30:00</font></span>
+
+						<span class="cont_tit"  style="padding-right:5px;line-height:150%;margin-top:5px;">
+						表1： 2018年7月70个大中城市新建商品住宅销售价格指数
+ 
+城市环比同比定基城市环比同比定基
+上月=100上年同月=1002015年=100上月=100上年同月=1002015年=100
+北　　京100.2 100.2 135.6 唐　　山101.7 106.7 ...</span>
+						<span class="cont_tit" style="margin-top:5px;"> 
+						<script language="javascript"> 
+							var urlstr = 'http://www.stats.gov.cn/tjsj/zxfb/201808/t20180815_1615979.html';
+						    var suburlstr = 'http://www.stats.gov.cn/tjsj/zxfb/201808/t20180815_1615979.html';
+	if(urlstr=="" || urlstr.length<=4){
+		document.write('<a href="'+urlstr+'" class="searchresulttitle" target="_blank">'+urlstr+'</a>');
+	}else if(urlstr.substring(0,4)!=='http'){
+		if(urlstr.length > 120)
+		document.write('<a href="http://www.stats.gov.cn'+urlstr+'" class="searchresulttitle" target="_blank">http://www.stats.gov.cn'+suburlstr+'...</a>');
+         else
+		document.write('<a href="http://www.stats.gov.cn'+urlstr+'" class="searchresulttitle" target="_blank">http://www.stats.gov.cn'+suburlstr+'</a>');
+	}else{
+		if(urlstr.length > 120)
+        document.write('<a href="'+urlstr+'" class="searchresulttitle" target="_blank">'+suburlstr+'...</a>');
+		else
+		document.write('<a href="'+urlstr+'" class="searchresulttitle" target="_blank">'+suburlstr+'</a>');
+	}
+	</script>
+</span>
+					</li>
+					<li class="cont_line">&nbsp;</li>
+				   
+                
+                   
+				  <li>
+						<span class="cont_tit"><font class="cont_tit03" style="font-size:14px;">54.&nbsp;
+						
+						<script language="javascript"> 
+							var urlstr = 'http://www.stats.gov.cn/tjsj/zxfb/201807/t20180717_1610168.html';
+	if(urlstr=="" || urlstr.length<=4){
+		document.write('<a href="'+urlstr+'" class="searchresulttitle" target="_blank">');
+	}else if(urlstr.substring(0,4)!=='http'){
+		document.write('<a href="http://www.stats.gov.cn'+urlstr+'" class="searchresulttitle" target="_blank">');
+	}else{
+		document.write('<a href="'+urlstr+'" class="searchresulttitle" target="_blank">');
+	}
+						</script>
+2018年6月份<font color=#FF0000>70个大中城市商品住宅销售价格变动情况</font></a>
+</font><font class="cont_tit02">2018.07.17 09:30:00</font></span>
+
+						<span class="cont_tit"  style="padding-right:5px;line-height:150%;margin-top:5px;">
+						表1： 2018年6月70个大中城市新建商品住宅销售价格指数
+ 
+城市环比同比定基城市环比同比定基
+上月=100上年同月=1002015年=100上月=100上年同月=1002015年=100
+北　　京100.0 99.9 135.3 唐　　山101.2 105.1 1...</span>
+						<span class="cont_tit" style="margin-top:5px;"> 
+						<script language="javascript"> 
+							var urlstr = 'http://www.stats.gov.cn/tjsj/zxfb/201807/t20180717_1610168.html';
+						    var suburlstr = 'http://www.stats.gov.cn/tjsj/zxfb/201807/t20180717_1610168.html';
+	if(urlstr=="" || urlstr.length<=4){
+		document.write('<a href="'+urlstr+'" class="searchresulttitle" target="_blank">'+urlstr+'</a>');
+	}else if(urlstr.substring(0,4)!=='http'){
+		if(urlstr.length > 120)
+		document.write('<a href="http://www.stats.gov.cn'+urlstr+'" class="searchresulttitle" target="_blank">http://www.stats.gov.cn'+suburlstr+'...</a>');
+         else
+		document.write('<a href="http://www.stats.gov.cn'+urlstr+'" class="searchresulttitle" target="_blank">http://www.stats.gov.cn'+suburlstr+'</a>');
+	}else{
+		if(urlstr.length > 120)
+        document.write('<a href="'+urlstr+'" class="searchresulttitle" target="_blank">'+suburlstr+'...</a>');
+		else
+		document.write('<a href="'+urlstr+'" class="searchresulttitle" target="_blank">'+suburlstr+'</a>');
+	}
+	</script>
+</span>
+					</li>
+					<li class="cont_line">&nbsp;</li>
+				   
+                
+                   
+				  <li>
+						<span class="cont_tit"><font class="cont_tit03" style="font-size:14px;">55.&nbsp;
+						
+						<script language="javascript"> 
+							var urlstr = 'http://www.stats.gov.cn/tjsj/sjjd/201807/t20180717_1610163.html';
+	if(urlstr=="" || urlstr.length<=4){
+		document.write('<a href="'+urlstr+'" class="searchresulttitle" target="_blank">');
+	}else if(urlstr.substring(0,4)!=='http'){
+		document.write('<a href="http://www.stats.gov.cn'+urlstr+'" class="searchresulttitle" target="_blank">');
+	}else{
+		document.write('<a href="'+urlstr+'" class="searchresulttitle" target="_blank">');
+	}
+						</script>
+国家统计局城市司高级统计师刘建伟解读6月份商品住宅销售价格变动...</a>
+</font><font class="cont_tit02">2018.07.17 09:30:00</font></span>
+
+						<span class="cont_tit"  style="padding-right:5px;line-height:150%;margin-top:5px;">
+						司高级统计师刘建伟解读6月份商品住宅销售价格变动情况统计数据
+ 
+　　国家统计局今日发布了2018年6月份<font color=#FF0000>70个大中城市商品住宅销售价格变动情况</font>统计数据。对此，国家统计局城市司高级统计师刘建伟进行了解读。
+ 
+　　一、一线城市商品住宅销售价格总...</span>
+						<span class="cont_tit" style="margin-top:5px;"> 
+						<script language="javascript"> 
+							var urlstr = 'http://www.stats.gov.cn/tjsj/sjjd/201807/t20180717_1610163.html';
+						    var suburlstr = 'http://www.stats.gov.cn/tjsj/sjjd/201807/t20180717_1610163.html';
+	if(urlstr=="" || urlstr.length<=4){
+		document.write('<a href="'+urlstr+'" class="searchresulttitle" target="_blank">'+urlstr+'</a>');
+	}else if(urlstr.substring(0,4)!=='http'){
+		if(urlstr.length > 120)
+		document.write('<a href="http://www.stats.gov.cn'+urlstr+'" class="searchresulttitle" target="_blank">http://www.stats.gov.cn'+suburlstr+'...</a>');
+         else
+		document.write('<a href="http://www.stats.gov.cn'+urlstr+'" class="searchresulttitle" target="_blank">http://www.stats.gov.cn'+suburlstr+'</a>');
+	}else{
+		if(urlstr.length > 120)
+        document.write('<a href="'+urlstr+'" class="searchresulttitle" target="_blank">'+suburlstr+'...</a>');
+		else
+		document.write('<a href="'+urlstr+'" class="searchresulttitle" target="_blank">'+suburlstr+'</a>');
+	}
+	</script>
+</span>
+					</li>
+					<li class="cont_line">&nbsp;</li>
+				   
+                
+                   
+				  <li>
+						<span class="cont_tit"><font class="cont_tit03" style="font-size:14px;">56.&nbsp;
+						
+						<script language="javascript"> 
+							var urlstr = 'http://www.stats.gov.cn/tjsj/sjjd/201806/t20180615_1604793.html';
+	if(urlstr=="" || urlstr.length<=4){
+		document.write('<a href="'+urlstr+'" class="searchresulttitle" target="_blank">');
+	}else if(urlstr.substring(0,4)!=='http'){
+		document.write('<a href="http://www.stats.gov.cn'+urlstr+'" class="searchresulttitle" target="_blank">');
+	}else{
+		document.write('<a href="'+urlstr+'" class="searchresulttitle" target="_blank">');
+	}
+						</script>
+国家统计局城市司高级统计师刘建伟解读5月份商品住宅销售价格变动...</a>
+</font><font class="cont_tit02">2018.06.15 09:30:00</font></span>
+
+						<span class="cont_tit"  style="padding-right:5px;line-height:150%;margin-top:5px;">
+						司高级统计师刘建伟解读5月份商品住宅销售价格变动情况统计数据
+ 
+　　国家统计局今日发布了2018年5月份<font color=#FF0000>70个大中城市商品住宅销售价格变动情况</font>统计数据。对此，国家统计局城市司高级统计师刘建伟进行了解读。
+ 
+　　一、一线城市商品住宅销售价格同...</span>
+						<span class="cont_tit" style="margin-top:5px;"> 
+						<script language="javascript"> 
+							var urlstr = 'http://www.stats.gov.cn/tjsj/sjjd/201806/t20180615_1604793.html';
+						    var suburlstr = 'http://www.stats.gov.cn/tjsj/sjjd/201806/t20180615_1604793.html';
+	if(urlstr=="" || urlstr.length<=4){
+		document.write('<a href="'+urlstr+'" class="searchresulttitle" target="_blank">'+urlstr+'</a>');
+	}else if(urlstr.substring(0,4)!=='http'){
+		if(urlstr.length > 120)
+		document.write('<a href="http://www.stats.gov.cn'+urlstr+'" class="searchresulttitle" target="_blank">http://www.stats.gov.cn'+suburlstr+'...</a>');
+         else
+		document.write('<a href="http://www.stats.gov.cn'+urlstr+'" class="searchresulttitle" target="_blank">http://www.stats.gov.cn'+suburlstr+'</a>');
+	}else{
+		if(urlstr.length > 120)
+        document.write('<a href="'+urlstr+'" class="searchresulttitle" target="_blank">'+suburlstr+'...</a>');
+		else
+		document.write('<a href="'+urlstr+'" class="searchresulttitle" target="_blank">'+suburlstr+'</a>');
+	}
+	</script>
+</span>
+					</li>
+					<li class="cont_line">&nbsp;</li>
+				   
+                
+                   
+				  <li>
+						<span class="cont_tit"><font class="cont_tit03" style="font-size:14px;">57.&nbsp;
+						
+						<script language="javascript"> 
+							var urlstr = 'http://www.stats.gov.cn/tjsj/zxfb/201806/t20180615_1604787.html';
+	if(urlstr=="" || urlstr.length<=4){
+		document.write('<a href="'+urlstr+'" class="searchresulttitle" target="_blank">');
+	}else if(urlstr.substring(0,4)!=='http'){
+		document.write('<a href="http://www.stats.gov.cn'+urlstr+'" class="searchresulttitle" target="_blank">');
+	}else{
+		document.write('<a href="'+urlstr+'" class="searchresulttitle" target="_blank">');
+	}
+						</script>
+2018年5月份<font color=#FF0000>70个大中城市商品住宅销售价格变动情况</font></a>
+</font><font class="cont_tit02">2018.06.15 09:30:00</font></span>
+
+						<span class="cont_tit"  style="padding-right:5px;line-height:150%;margin-top:5px;">
+						表1： 2018年5月70个大中城市新建商品住宅销售价格指数
+ 
+城市环比同比定基城市环比同比定基
+上月=100上年同月=1002015年=100上月=100上年同月=1002015年=100
+北　　京100.2 99.5 135.3 唐　　山100.3 104.8 1...</span>
+						<span class="cont_tit" style="margin-top:5px;"> 
+						<script language="javascript"> 
+							var urlstr = 'http://www.stats.gov.cn/tjsj/zxfb/201806/t20180615_1604787.html';
+						    var suburlstr = 'http://www.stats.gov.cn/tjsj/zxfb/201806/t20180615_1604787.html';
+	if(urlstr=="" || urlstr.length<=4){
+		document.write('<a href="'+urlstr+'" class="searchresulttitle" target="_blank">'+urlstr+'</a>');
+	}else if(urlstr.substring(0,4)!=='http'){
+		if(urlstr.length > 120)
+		document.write('<a href="http://www.stats.gov.cn'+urlstr+'" class="searchresulttitle" target="_blank">http://www.stats.gov.cn'+suburlstr+'...</a>');
+         else
+		document.write('<a href="http://www.stats.gov.cn'+urlstr+'" class="searchresulttitle" target="_blank">http://www.stats.gov.cn'+suburlstr+'</a>');
+	}else{
+		if(urlstr.length > 120)
+        document.write('<a href="'+urlstr+'" class="searchresulttitle" target="_blank">'+suburlstr+'...</a>');
+		else
+		document.write('<a href="'+urlstr+'" class="searchresulttitle" target="_blank">'+suburlstr+'</a>');
+	}
+	</script>
+</span>
+					</li>
+					<li class="cont_line">&nbsp;</li>
+				   
+                
+                   
+				  <li>
+						<span class="cont_tit"><font class="cont_tit03" style="font-size:14px;">58.&nbsp;
+						
+						<script language="javascript"> 
+							var urlstr = 'http://www.stats.gov.cn/tjsj/sjjd/201805/t20180516_1599571.html';
+	if(urlstr=="" || urlstr.length<=4){
+		document.write('<a href="'+urlstr+'" class="searchresulttitle" target="_blank">');
+	}else if(urlstr.substring(0,4)!=='http'){
+		document.write('<a href="http://www.stats.gov.cn'+urlstr+'" class="searchresulttitle" target="_blank">');
+	}else{
+		document.write('<a href="'+urlstr+'" class="searchresulttitle" target="_blank">');
+	}
+						</script>
+国家统计局城市司高级统计师刘建伟解读4月份商品住宅销售价格变动...</a>
+</font><font class="cont_tit02">2018.05.16 09:30:00</font></span>
+
+						<span class="cont_tit"  style="padding-right:5px;line-height:150%;margin-top:5px;">
+						司高级统计师刘建伟解读4月份商品住宅销售价格变动情况统计数据
+ 
+　　国家统计局今日发布了2018年4月份<font color=#FF0000>70个大中城市商品住宅销售价格变动情况</font>统计数据。对此，国家统计局城市司高级统计师刘建伟进行了解读。
+ 
+　　一、一线城市商品住宅销售价格同...</span>
+						<span class="cont_tit" style="margin-top:5px;"> 
+						<script language="javascript"> 
+							var urlstr = 'http://www.stats.gov.cn/tjsj/sjjd/201805/t20180516_1599571.html';
+						    var suburlstr = 'http://www.stats.gov.cn/tjsj/sjjd/201805/t20180516_1599571.html';
+	if(urlstr=="" || urlstr.length<=4){
+		document.write('<a href="'+urlstr+'" class="searchresulttitle" target="_blank">'+urlstr+'</a>');
+	}else if(urlstr.substring(0,4)!=='http'){
+		if(urlstr.length > 120)
+		document.write('<a href="http://www.stats.gov.cn'+urlstr+'" class="searchresulttitle" target="_blank">http://www.stats.gov.cn'+suburlstr+'...</a>');
+         else
+		document.write('<a href="http://www.stats.gov.cn'+urlstr+'" class="searchresulttitle" target="_blank">http://www.stats.gov.cn'+suburlstr+'</a>');
+	}else{
+		if(urlstr.length > 120)
+        document.write('<a href="'+urlstr+'" class="searchresulttitle" target="_blank">'+suburlstr+'...</a>');
+		else
+		document.write('<a href="'+urlstr+'" class="searchresulttitle" target="_blank">'+suburlstr+'</a>');
+	}
+	</script>
+</span>
+					</li>
+					<li class="cont_line">&nbsp;</li>
+				   
+                
+                   
+				  <li>
+						<span class="cont_tit"><font class="cont_tit03" style="font-size:14px;">59.&nbsp;
+						
+						<script language="javascript"> 
+							var urlstr = 'http://www.stats.gov.cn/tjsj/zxfb/201805/t20180516_1599566.html';
+	if(urlstr=="" || urlstr.length<=4){
+		document.write('<a href="'+urlstr+'" class="searchresulttitle" target="_blank">');
+	}else if(urlstr.substring(0,4)!=='http'){
+		document.write('<a href="http://www.stats.gov.cn'+urlstr+'" class="searchresulttitle" target="_blank">');
+	}else{
+		document.write('<a href="'+urlstr+'" class="searchresulttitle" target="_blank">');
+	}
+						</script>
+2018年4月份<font color=#FF0000>70个大中城市商品住宅销售价格变动情况</font></a>
+</font><font class="cont_tit02">2018.05.16 09:30:00</font></span>
+
+						<span class="cont_tit"  style="padding-right:5px;line-height:150%;margin-top:5px;">
+						表1： 2018年4月70个大中城市新建商品住宅销售价格指数
+ 
+城市环比同比定基城市环比同比定基
+上月=100上年同月=1002015年=100上月=100上年同月=1002015年=100
+北　　京100.2 99.3 135.1 唐　　山100.7 104.9 1...</span>
+						<span class="cont_tit" style="margin-top:5px;"> 
+						<script language="javascript"> 
+							var urlstr = 'http://www.stats.gov.cn/tjsj/zxfb/201805/t20180516_1599566.html';
+						    var suburlstr = 'http://www.stats.gov.cn/tjsj/zxfb/201805/t20180516_1599566.html';
+	if(urlstr=="" || urlstr.length<=4){
+		document.write('<a href="'+urlstr+'" class="searchresulttitle" target="_blank">'+urlstr+'</a>');
+	}else if(urlstr.substring(0,4)!=='http'){
+		if(urlstr.length > 120)
+		document.write('<a href="http://www.stats.gov.cn'+urlstr+'" class="searchresulttitle" target="_blank">http://www.stats.gov.cn'+suburlstr+'...</a>');
+         else
+		document.write('<a href="http://www.stats.gov.cn'+urlstr+'" class="searchresulttitle" target="_blank">http://www.stats.gov.cn'+suburlstr+'</a>');
+	}else{
+		if(urlstr.length > 120)
+        document.write('<a href="'+urlstr+'" class="searchresulttitle" target="_blank">'+suburlstr+'...</a>');
+		else
+		document.write('<a href="'+urlstr+'" class="searchresulttitle" target="_blank">'+suburlstr+'</a>');
+	}
+	</script>
+</span>
+					</li>
+					<li class="cont_line">&nbsp;</li>
+				   
+                
+                   
+				  <li>
+						<span class="cont_tit"><font class="cont_tit03" style="font-size:14px;">60.&nbsp;
+						
+						<script language="javascript"> 
+							var urlstr = '/tjsj/zxfb/201804/t20180418_1594610.html';
+	if(urlstr=="" || urlstr.length<=4){
+		document.write('<a href="'+urlstr+'" class="searchresulttitle" target="_blank">');
+	}else if(urlstr.substring(0,4)!=='http'){
+		document.write('<a href="http://www.stats.gov.cn'+urlstr+'" class="searchresulttitle" target="_blank">');
+	}else{
+		document.write('<a href="'+urlstr+'" class="searchresulttitle" target="_blank">');
+	}
+						</script>
+2018年3月份<font color=#FF0000>70个大中城市商品住宅销售价格变动情况</font></a>
+</font><font class="cont_tit02">2018.04.19 09:00:00</font></span>
+
+						<span class="cont_tit"  style="padding-right:5px;line-height:150%;margin-top:5px;">
+						</span>
+						<span class="cont_tit" style="margin-top:5px;"> 
+						<script language="javascript"> 
+							var urlstr = '/tjsj/zxfb/201804/t20180418_1594610.html';
+						    var suburlstr = '/tjsj/zxfb/201804/t20180418_1594610.html';
+	if(urlstr=="" || urlstr.length<=4){
+		document.write('<a href="'+urlstr+'" class="searchresulttitle" target="_blank">'+urlstr+'</a>');
+	}else if(urlstr.substring(0,4)!=='http'){
+		if(urlstr.length > 120)
+		document.write('<a href="http://www.stats.gov.cn'+urlstr+'" class="searchresulttitle" target="_blank">http://www.stats.gov.cn'+suburlstr+'...</a>');
+         else
+		document.write('<a href="http://www.stats.gov.cn'+urlstr+'" class="searchresulttitle" target="_blank">http://www.stats.gov.cn'+suburlstr+'</a>');
+	}else{
+		if(urlstr.length > 120)
+        document.write('<a href="'+urlstr+'" class="searchresulttitle" target="_blank">'+suburlstr+'...</a>');
+		else
+		document.write('<a href="'+urlstr+'" class="searchresulttitle" target="_blank">'+suburlstr+'</a>');
+	}
+	</script>
+</span>
+					</li>
+					<li class="cont_line">&nbsp;</li>
+				   
+                
+					
+					
+					<li>
+						<dl class="fenye zi133" >
+							3/4
+							<a class="first-page" href="search?page=1&channelid=288041&orderby=-DOCRELTIME&was_custom_expr=like%2870%E4%B8%AA%E5%A4%A7%E4%B8%AD%E5%9F%8E%E5%B8%82%E5%95%86%E5%93%81%E4%BD%8F%E5%AE%85%E9%94%80%E5%94%AE%E4%BB%B7%E6%A0%BC%E5%8F%98%E5%8A%A8%E6%83%85%E5%86%B5%29%2Fsen&perpage=20&outlinepage=10" target="_self">【首页】</a>&nbsp;
+							<a class="prev-page" href="search?page=2&channelid=288041&orderby=-DOCRELTIME&was_custom_expr=like%2870%E4%B8%AA%E5%A4%A7%E4%B8%AD%E5%9F%8E%E5%B8%82%E5%95%86%E5%93%81%E4%BD%8F%E5%AE%85%E9%94%80%E5%94%AE%E4%BB%B7%E6%A0%BC%E5%8F%98%E5%8A%A8%E6%83%85%E5%86%B5%29%2Fsen&perpage=20&outlinepage=10" target="_self">【上一页】</a>&nbsp;&nbsp;&nbsp;
+							<a target="_self" href="search?page=1&channelid=288041&orderby=-DOCRELTIME&was_custom_expr=like%2870%E4%B8%AA%E5%A4%A7%E4%B8%AD%E5%9F%8E%E5%B8%82%E5%95%86%E5%93%81%E4%BD%8F%E5%AE%85%E9%94%80%E5%94%AE%E4%BB%B7%E6%A0%BC%E5%8F%98%E5%8A%A8%E6%83%85%E5%86%B5%29%2Fsen&perpage=20&outlinepage=10">1</a>&nbsp;<a target="_self" href="search?page=2&channelid=288041&orderby=-DOCRELTIME&was_custom_expr=like%2870%E4%B8%AA%E5%A4%A7%E4%B8%AD%E5%9F%8E%E5%B8%82%E5%95%86%E5%93%81%E4%BD%8F%E5%AE%85%E9%94%80%E5%94%AE%E4%BB%B7%E6%A0%BC%E5%8F%98%E5%8A%A8%E6%83%85%E5%86%B5%29%2Fsen&perpage=20&outlinepage=10">2</a>&nbsp;<span style="font-weight: bold;border: none;background: none">3</span>&nbsp;<a target="_self" href="search?page=4&channelid=288041&orderby=-DOCRELTIME&was_custom_expr=like%2870%E4%B8%AA%E5%A4%A7%E4%B8%AD%E5%9F%8E%E5%B8%82%E5%95%86%E5%93%81%E4%BD%8F%E5%AE%85%E9%94%80%E5%94%AE%E4%BB%B7%E6%A0%BC%E5%8F%98%E5%8A%A8%E6%83%85%E5%86%B5%29%2Fsen&perpage=20&outlinepage=10">4</a>&nbsp;&nbsp;&nbsp;
+							<a class="next-page" href="search?page=4&channelid=288041&orderby=-DOCRELTIME&was_custom_expr=like%2870%E4%B8%AA%E5%A4%A7%E4%B8%AD%E5%9F%8E%E5%B8%82%E5%95%86%E5%93%81%E4%BD%8F%E5%AE%85%E9%94%80%E5%94%AE%E4%BB%B7%E6%A0%BC%E5%8F%98%E5%8A%A8%E6%83%85%E5%86%B5%29%2Fsen&perpage=20&outlinepage=10" target="_self">【下一页】</a>&nbsp;
+							<a class="last-page" href="search?page=4&channelid=288041&orderby=-DOCRELTIME&was_custom_expr=like%2870%E4%B8%AA%E5%A4%A7%E4%B8%AD%E5%9F%8E%E5%B8%82%E5%95%86%E5%93%81%E4%BD%8F%E5%AE%85%E9%94%80%E5%94%AE%E4%BB%B7%E6%A0%BC%E5%8F%98%E5%8A%A8%E6%83%85%E5%86%B5%29%2Fsen&perpage=20&outlinepage=10" target="_self">【尾页】</a>&nbsp;
+						</dl>
+					</li>
+				</ul>
+				
+			</div>
+			
+		<iframe frameborder="0" class="iframe_bottom" marginheight="0" marginwidth="0" name="top" src="/bottom.html" scrolling="no" target="_parent"></iframe>
+	</div>
+<noscript><img src="http://ta.trs.cn/c/1.gif?mpId=6&jsoff=1" style="border:0" alt="" /></noscript>
+<script>
+var _taq = _taq || [];
+_taq.home = 'http://ta.trs.cn/c';
+_taq.push(['_mpId', '6']);
+_taq.push(['_cli', '1']);
+(function(d, o, t) {
+    var ma = d.createElement(o); ma.async = true; ma.src = t;
+    var s = d.getElementsByTagName(o)[0]; s.parentNode.insertBefore(ma, s);
+})(document, 'script', 'http://ta.trs.cn/c/js/ta.js');
+</script>
+
+</div>
+</body>
+</html>
+<script type="text/javascript">
+jQuery(document).ready(function() {
+	var chnls = "288041,227379,245200,251536,204021,272268,203029";
+	var chnlsArray = chnls.split(",");
+	for(var i=0;i<chnlsArray.length;i++)
+	{
+		if(chnlsArray[i]=="")
+			continue;
+		var chnlVar = chnlsArray[i];
+		var oTRSAction = new CTRSAction("getcount.jsp");
+		
+		oTRSAction.setParameter("andsen","");
+		oTRSAction.setParameter("total","");
+		oTRSAction.setParameter("orsen","");
+		oTRSAction.setParameter("exclude","");
+		oTRSAction.setParameter("searchscope","");
+		oTRSAction.setParameter("timescope","");
+		oTRSAction.setParameter("timescopecolumn","DOCRELTIME");
+		oTRSAction.setParameter("orderby","");
+		oTRSAction.setParameter("channelid",chnlVar);
+		oTRSAction.setParameter("SDOCRELTIME","");
+		oTRSAction.setParameter("EDOCRELTIME","");
+		var sResult = oTRSAction.doXMLHttpAction();
+		//alert(sResult);
+		document.getElementById("span_"+chnlVar).innerHTML = sResult;
+	}
+});
+</script>
+
