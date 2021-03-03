@@ -14,7 +14,7 @@ class Pages(Enum):
     page2 = 'http://www.stats.gov.cn/was5/web/search?page=2&channelid=288041&orderby=-DOCRELTIME&was_custom_expr=like%2870%E4%B8%AA%E5%A4%A7%E4%B8%AD%E5%9F%8E%E5%B8%82%E5%95%86%E5%93%81%E4%BD%8F%E5%AE%85%E9%94%80%E5%94%AE%E4%BB%B7%E6%A0%BC%E5%8F%98%E5%8A%A8%E6%83%85%E5%86%B5%29%2Fsen&perpage=20&outlinepage=10'
     page3 = 'http://www.stats.gov.cn/was5/web/search?page=3&channelid=288041&orderby=-DOCRELTIME&was_custom_expr=like%2870%E4%B8%AA%E5%A4%A7%E4%B8%AD%E5%9F%8E%E5%B8%82%E5%95%86%E5%93%81%E4%BD%8F%E5%AE%85%E9%94%80%E5%94%AE%E4%BB%B7%E6%A0%BC%E5%8F%98%E5%8A%A8%E6%83%85%E5%86%B5%29%2Fsen&perpage=20&outlinepage=10'
     page4 = 'http://www.stats.gov.cn/was5/web/search?page=4&channelid=288041&orderby=-DOCRELTIME&was_custom_expr=like%2870%E4%B8%AA%E5%A4%A7%E4%B8%AD%E5%9F%8E%E5%B8%82%E5%95%86%E5%93%81%E4%BD%8F%E5%AE%85%E9%94%80%E5%94%AE%E4%BB%B7%E6%A0%BC%E5%8F%98%E5%8A%A8%E6%83%85%E5%86%B5%29%2Fsen&perpage=20&outlinepage=10'
-    
+
     page5 = 'http://www.stats.gov.cn/was5/web/search?page=4&channelid=288041&orderby=-DOCRELTIME&was_custom_expr=like%2870%E4%B8%AA%E5%A4%A7%E4%B8%AD%E5%9F%8E%E5%B8%82%E4%BD%8F%E5%AE%85%E9%94%80%E5%94%AE%E4%BB%B7%E6%A0%BC%E5%8F%98%E5%8A%A8%E6%83%85%E5%86%B5%29%2Fsen&perpage=20&outlinepage=10'
     page6 = 'http://www.stats.gov.cn/was5/web/search?page=5&channelid=288041&orderby=-DOCRELTIME&was_custom_expr=like%2870%E4%B8%AA%E5%A4%A7%E4%B8%AD%E5%9F%8E%E5%B8%82%E4%BD%8F%E5%AE%85%E9%94%80%E5%94%AE%E4%BB%B7%E6%A0%BC%E5%8F%98%E5%8A%A8%E6%83%85%E5%86%B5%29%2Fsen&perpage=20&outlinepage=10'
     page7 = 'http://www.stats.gov.cn/was5/web/search?page=6&channelid=288041&orderby=-DOCRELTIME&was_custom_expr=like%2870%E4%B8%AA%E5%A4%A7%E4%B8%AD%E5%9F%8E%E5%B8%82%E4%BD%8F%E5%AE%85%E9%94%80%E5%94%AE%E4%BB%B7%E6%A0%BC%E5%8F%98%E5%8A%A8%E6%83%85%E5%86%B5%29%2Fsen&perpage=20&outlinepage=10'
@@ -44,13 +44,13 @@ def get_list(refresh=False):
 
 def gen_month_list(refresh=False):
     for name, page in Pages.__members__.items():
-        if not os.path.exists(_path+ "list_"+name) or refresh:
+        if not os.path.exists(_path + "list_"+name) or refresh:
             with open(_path+name+'.html', 'r', encoding='utf-8') as lf:
                 html = str(lf.readlines())
                 soup = BeautifulSoup(html, 'lxml')
                 ul = soup.find('ul', 'center_list_contlist')
                 all_li = ul.find_all("li")
-                with open(_path+ "list_"+name, 'w', encoding='utf-8') as hf:
+                with open(_path + "list_"+name, 'w', encoding='utf-8') as hf:
                     for li in all_li:
                         link = re.compile(
                             r"urlstr = '(http://www.stats.gov.cn/tjsj/zxfb/.*?.html)'", re.S)
