@@ -1,7 +1,16 @@
 
 from datetime import datetime
 import matplotlib.pyplot as plt
+import matplotlib
+ 
+font = {'family': 'MicroSoft Yahei',
+       'weight': 'normal',
+       'size': 8}
+ 
+matplotlib.rc("font", **font)
 
+from muitls import gen_months
+from xlsx_process import rd_month_t5
 
 def eg1():
     import numpy as np
@@ -18,7 +27,10 @@ def eg1():
 
 
 def chart_max_99m2(data_axis, raw_data):
-    pass
+    l_visit = raw_data
+    plt.plot(data_axis, l_visit, 'o-')
+    plt.text(data_axis[-1], l_visit[-1], l_visit[-1],
+             ha='right', va='bottom', fontsize=10)
 
 
 def chart_max_144m2(data_axis, raw_data):
@@ -44,22 +56,22 @@ def chart_old(data_axis, raw_data):
     plt.plot(data_axis, raw_data, 'o-')
 
 
-def get_data(months, city='bj'):
-    import random
-    data = [100+month[1]*random.randint(1, 10) for month in months]
+def get_data(months, city='北京'):
+    data = []
+    for month in months:
+        data.append(rd_month_t5(month[0], month[1],city))
     return data
 
 
-def chart_all(date_start, date_end, city='bj', min=False, med=False, max=False, new=False, old=False):
-
+def chart_all(date_start, date_end, city='北京', min=False, med=False, max=False, new=False, old=False):
     plt.figure(figsize=(4, 4))
-    plt.title('price')
+    plt.title(city)
     plt.xlabel('date')
     plt.ylabel('Increase')
 
     months = gen_months(date_start, date_end)
-    xs = [datetime.strptime(d, '%Y/%m').date()
-          for d in ['{0}/{1}'.format(month[0], month[1]) for month in months]]
+    xs = [datetime.strptime(d, '%Y/%m/%d').date()
+          for d in ['{0}/{1}/15'.format(month[0], month[1]) for month in months]]
 
     data = get_data(months, city)
     if min:
@@ -78,5 +90,5 @@ def chart_all(date_start, date_end, city='bj', min=False, med=False, max=False, 
 
 
 if __name__ == "__main__":
-    chart_all('202001', '202012', city='bg', new=False, old=True)
+    chart_all('201501', '201505', city='北京', min=True)
     # eg1()

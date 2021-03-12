@@ -1,12 +1,20 @@
 import openpyxl
 import os
 
-from muitls import gen_months
+from muitls import gen_months,Citys
 
 excel_path = './excel/'
 
 
-def rd_month(year, month):
+def rd_month_t5(year, month, city, col="D"):
+    assert city in Citys
+
+    """
+    表5：2015年1月70个大中城市二手住宅分类价格指数									
+    城市	90m2及以下			90-144m2			144m2以上		
+    环比	同比	定基	环比	同比	定基	环比	同比	定基
+    上月=100	去年同月=100	2010年=100	上月=100	去年同月=100	2010年=100	上月=100	去年同月=100	2010年=100
+    """
     filename = excel_path + \
         "t_{0}{1}.xlsx".format(year, '%2s' % (str(month).zfill(2)))
     if os.path.exists(filename):
@@ -18,19 +26,20 @@ def rd_month(year, month):
             str(year) in table_name and \
             str(month) in table_name
 
-        citys = []
         for row in sheet5.iter_rows():
             if isinstance(row[0], openpyxl.cell.cell.Cell) and row[0].row > 3:
-                city = (row[0].internal_value).strip(
+                tcity = (row[0].internal_value).strip(
                     " ").replace("　", '').replace(" ", "")
-                citys.append(city)
-        # print(citys)
-        # for i in range(5, 76):
-
+                # assert city in Citys
+                if tcity == city:
+                    # print(city, year, month ,sheet5[col+str(row[0].row)].internal_value)
+                    # data.append(float(sheet5[col+str(row[0].row)].internal_value))
+                    return float(sheet5[col+str(row[0].row)].internal_value)
 
 def main():
-    for month in gen_months('201501', '201501'):
-        rd_month(month[0], month[1])
+    for month in gen_months('201501', '201505'):
+        # rd_month_t5(month[0], month[1],city)
+        pass
 
 
 if __name__ == "__main__":
