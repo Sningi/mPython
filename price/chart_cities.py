@@ -13,7 +13,7 @@ def eg1():
                   7.24E+01, 2.72E+01, 1.10E+01, 4.70E+00])
     x_smooth = np.linspace(x.min(), x.max(), 300)
     y_smooth = make_interp_spline(x, y)(x_smooth)
-    plt.plot(x_smooth, y_smooth)
+    plt.plot(x_smooth, y_smooth, 'g-')
     plt.show()
 
 
@@ -37,40 +37,15 @@ def chart_new(data_axis, raw_data):
 
 
 def chart_old(data_axis, raw_data):
-    import numpy as np
-    x_smooth = np.linspace(9, 12, 12)
-    from scipy.interpolate import make_interp_spline
-    y_smooth = make_interp_spline([i for i in range(1,13)], raw_data)(x_smooth)
-    plt.plot(data_axis, y_smooth, 'o-')
-
-
-def gen_months(date_start, date_end):
-    year_s = int(date_start[:4])
-    year_e = int(date_end[:4])
-    month_s = int(date_start[4:])
-    month_e = int(date_end[4:])
-
-    months = []
-    for year in range(year_s, year_e+1):
-        if year_s == year_e:
-            for month in range(month_s, month_e+1):
-                months.append((year, month))
-        else:
-            if year == year_s:
-                for month in range(month_s, 13):
-                    months.append((year, month))
-            elif year == year_e:
-                for month in range(1, month_e+1):
-                    months.append((year, month))
-            else:
-                for month in range(1, 13):
-                    months.append((year, month))
-
-    return months
+    # import numpy as np
+    # x_smooth = np.linspace(9, 12, 12)
+    # from scipy.interpolate import make_interp_spline
+    # y_smooth = make_interp_spline([i for i in range(1,13)], raw_data)(x_smooth)
+    plt.plot(data_axis, raw_data, 'o-')
 
 
 def get_data(months, city='bj'):
-    import random  
+    import random
     data = [100+month[1]*random.randint(1, 10) for month in months]
     return data
 
@@ -85,7 +60,7 @@ def chart_all(date_start, date_end, city='bj', min=False, med=False, max=False, 
     months = gen_months(date_start, date_end)
     xs = [datetime.strptime(d, '%Y/%m').date()
           for d in ['{0}/{1}'.format(month[0], month[1]) for month in months]]
-    
+
     data = get_data(months, city)
     if min:
         chart_max_99m2(xs, data)
@@ -104,3 +79,4 @@ def chart_all(date_start, date_end, city='bj', min=False, med=False, max=False, 
 
 if __name__ == "__main__":
     chart_all('202001', '202012', city='bg', new=False, old=True)
+    # eg1()
