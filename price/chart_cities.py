@@ -29,9 +29,10 @@ def eg1():
 def chart_max_99m2(data_axis, raw_data):
     l_visit = raw_data
     plt.plot(data_axis, l_visit, 'o-')
-    plt.text(data_axis[-1], l_visit[-1], l_visit[-1],
-             ha='right', va='bottom', fontsize=10)
-
+    # plt.text(data_axis[-1], l_visit[-1], l_visit[-1],
+    #          ha='right', va='bottom', fontsize=10)
+    for a, b in zip(data_axis, raw_data):
+        plt.text(a, b, b, ha='right', va='bottom', fontsize=10)
 
 def chart_max_144m2(data_axis, raw_data):
     pass
@@ -44,8 +45,9 @@ def chart_min_144m2(data_axis, raw_data):
 def chart_new(data_axis, raw_data):
     l_visit = [100, 101, 105]
     plt.plot(data_axis, l_visit, 'o-')
-    plt.text(data_axis[-1], l_visit[-1], l_visit[-1],
-             ha='right', va='bottom', fontsize=10)
+    # for index, data in enumerate(data_axis):
+    #     plt.text(data, l_visit[index], l_visit[index],
+    #             ha='right', va='bottom', fontsize=10)
 
 
 def chart_old(data_axis, raw_data):
@@ -64,16 +66,19 @@ def get_data(months, city='北京'):
 
 
 def chart_all(date_start, date_end, city='北京', min=False, med=False, max=False, new=False, old=False):
-    plt.figure(figsize=(4, 4))
-    plt.title(city)
+    months = gen_months(date_start, date_end)
+    ml = len(months)
+    plt.figure(figsize=(3*(1.0+ml/6), 5))
+    plt.title("2015"+city)
     plt.xlabel('date')
     plt.ylabel('Increase')
 
-    months = gen_months(date_start, date_end)
-    xs = [datetime.strptime(d, '%Y/%m/%d').date()
-          for d in ['{0}/{1}/15'.format(month[0], month[1]) for month in months]]
 
+    xs = [datetime.strptime(d, '%Y/%m').date()
+          for d in ['{0}/{1}'.format(month[0], month[1]) for month in months]]
+    # xs.insert(0,datetime.strptime("2010/01", '%Y/%m').date())
     data = get_data(months, city)
+    # data.insert(0,100)
     if min:
         chart_max_99m2(xs, data)
     if med:
@@ -86,9 +91,14 @@ def chart_all(date_start, date_end, city='北京', min=False, med=False, max=Fal
         chart_old(xs, data)
 
     plt.gcf().autofmt_xdate()  # 自动旋转日期标记
+    ax1=plt.gca()
+    ax1.spines['top'].set_visible(False)
+    ax1.spines['right'].set_visible(False)
+    # ax1.spines['bottom'].set_visible(False)
+    # ax1.spines['left'].set_visible(False)
     plt.show()
 
 
 if __name__ == "__main__":
-    chart_all('201501', '201505', city='北京', min=True)
+    chart_all('201501', '201512', city='上海', min=True)
     # eg1()
