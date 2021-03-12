@@ -1,16 +1,16 @@
 
+from xlsx_process import rd_month_t4_t5
+from muitls import gen_months
 from datetime import datetime
 import matplotlib.pyplot as plt
 import matplotlib
- 
+
 font = {'family': 'MicroSoft Yahei',
-       'weight': 'normal',
-       'size': 8}
- 
+        'weight': 'normal',
+        'size': 8}
+
 matplotlib.rc("font", **font)
 
-from muitls import gen_months
-from xlsx_process import rd_month_t5
 
 def eg1():
     import numpy as np
@@ -26,42 +26,16 @@ def eg1():
     plt.show()
 
 
-def chart_max_99m2(data_axis, raw_data):
-    l_visit = raw_data
-    plt.plot(data_axis, l_visit, 'o-')
-    # plt.text(data_axis[-1], l_visit[-1], l_visit[-1],
-    #          ha='right', va='bottom', fontsize=10)
-    for a, b in zip(data_axis, raw_data):
-        plt.text(a, b, b, ha='right', va='bottom', fontsize=10)
+def chart(x, y, label="", color='blue', marker='o', linestyle='-'):
+    line = plt.plot(x, y, marker=marker, linestyle=linestyle,
+                    label=label, color=color, linewidth=1)
+    for a, b in zip(x, y):
+        plt.text(a, b, b, ha='right', va='bottom', fontsize=8)
 
-def chart_max_144m2(data_axis, raw_data):
-    pass
-
-
-def chart_min_144m2(data_axis, raw_data):
-    pass
-
-
-def chart_new(data_axis, raw_data):
-    l_visit = [100, 101, 105]
-    plt.plot(data_axis, l_visit, 'o-')
-    # for index, data in enumerate(data_axis):
-    #     plt.text(data, l_visit[index], l_visit[index],
-    #             ha='right', va='bottom', fontsize=10)
-
-
-def chart_old(data_axis, raw_data):
-    # import numpy as np
-    # x_smooth = np.linspace(9, 12, 12)
-    # from scipy.interpolate import make_interp_spline
-    # y_smooth = make_interp_spline([i for i in range(1,13)], raw_data)(x_smooth)
-    plt.plot(data_axis, raw_data, 'o-')
-
-
-def get_data(months, city='北京'):
+def get_data_t4_t5(months, city='北京', sheet=4, col="D"):
     data = []
     for month in months:
-        data.append(rd_month_t5(month[0], month[1],city))
+        data.append(rd_month_t4_t5(month[0], month[1], city, sheet, col))
     return data
 
 
@@ -69,36 +43,44 @@ def chart_all(date_start, date_end, city='北京', min=False, med=False, max=Fal
     months = gen_months(date_start, date_end)
     ml = len(months)
     plt.figure(figsize=(3*(1.0+ml/6), 5))
-    plt.title("2015"+city)
+    plt.title("2015"+city+"（2010定基比）")
     plt.xlabel('date')
     plt.ylabel('Increase')
-
 
     xs = [datetime.strptime(d, '%Y/%m').date()
           for d in ['{0}/{1}'.format(month[0], month[1]) for month in months]]
     # xs.insert(0,datetime.strptime("2010/01", '%Y/%m').date())
-    data = get_data(months, city)
     # data.insert(0,100)
     if min:
-        chart_max_99m2(xs, data)
+        data = get_data_t4_t5(months, city, 5, "D")
+        chart(xs, data, label="二手<90m2",marker='*', color="pink")
+        data = get_data_t4_t5(months, city, 4, "D")
+        chart(xs, data, label="新建<90m2",marker='*',color="blue")
     if med:
-        chart_max_144m2(xs, data)
+        data = get_data_t4_t5(months, city, 5, "G")
+        chart(xs, data, label="二手<144m2",marker='v', color="powderblue")
+        data = get_data_t4_t5(months, city, 4, "G")
+        chart(xs, data, label="新建<144m2",marker='v',color="purple")
     if max:
-        chart_max_144m2(xs, data)
+        data = get_data_t4_t5(months, city, 5, "J")
+        chart(xs, data, label="二手>144m2", marker='.',color="lawngreen")
+        data = get_data_t4_t5(months, city, 4, "J")
+        chart(xs, data, label="新建>144m2", marker='.',color="greenyellow")
     if new:
-        chart_new(xs, data)
+        chart(xs, data)
     if old:
-        chart_old(xs, data)
+        chart(xs, data)
 
     plt.gcf().autofmt_xdate()  # 自动旋转日期标记
-    ax1=plt.gca()
+    ax1 = plt.gca()
     ax1.spines['top'].set_visible(False)
     ax1.spines['right'].set_visible(False)
+    plt.legend()
     # ax1.spines['bottom'].set_visible(False)
     # ax1.spines['left'].set_visible(False)
     plt.show()
 
 
 if __name__ == "__main__":
-    chart_all('201501', '201512', city='上海', min=True)
+    chart_all('201501', '201512', city='无锡', min=True, med=False,max=False)
     # eg1()
