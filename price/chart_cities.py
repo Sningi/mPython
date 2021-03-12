@@ -82,5 +82,5 @@ def chart_all(date_start, date_end, city='北京', min=False, med=False, max=Fal
 
 
 if __name__ == "__main__":
-    chart_all('201501', '201512', city='无锡', min=True, med=False,max=False)
+    chart_all('201501', '201512', city='南昌', min=True, med=False,max=False)
     # eg1()
