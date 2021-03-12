@@ -86,7 +86,7 @@ def chart_all(date_start, date_end, city='北京', min=False, med=False, max=Fal
 if __name__ == "__main__":
     plt.figure(figsize=(3*(1.0+12/6), 5),dpi=200)
     plt.title('杭州'+"（2015定基比）")
-    chart_all('201801', '201812', city='杭州', min=True, med=False,max=False)
+    chart_all('201701', '202012', city='杭州', min=True, med=False,max=False)
     # chart_all('201801', '201812', city='北京', min=True, med=False,max=False)
     # chart_all('201501', '201512', city='杭州', min=True, med=False,max=False)
     plt.show()
