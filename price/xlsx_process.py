@@ -19,23 +19,31 @@ def rd_month_t4_t5(year, month, city, sheet=5 , col="D"):
         "t_{0}{1}.xlsx".format(year, '%2s' % (str(month).zfill(2)))
     if os.path.exists(filename):
         mexcel = openpyxl.load_workbook(filename)
-        assert len(mexcel._sheets) == 5
-        sheet4_or_5 = mexcel._sheets[sheet-1]
-        table_name = sheet4_or_5["A1"].internal_value
-        assert "表"+str(sheet) in table_name and \
-            str(year) in table_name and \
-            str(month) in table_name
+        if year < 2018:
+            assert len(mexcel._sheets) == 5
+            sheet4_or_5 = mexcel._sheets[sheet-1]
+            table_name = sheet4_or_5["A1"].internal_value
+            assert "表"+str(sheet) in table_name and \
+                str(year) in table_name and \
+                str(month) in table_name
+        else:
+            assert len(mexcel._sheets) == 4
+            sheet4_or_5 = mexcel._sheets[sheet-2]
+            table_name = sheet4_or_5["A1"].internal_value
+            assert "表"+str(sheet-1) in table_name and \
+                str(year) in table_name and \
+                str(month) in table_name
 
         for row in sheet4_or_5.iter_rows():
-            if isinstance(row[0], openpyxl.cell.cell.Cell) and row[0].row > 3:
-                tcity = (row[0].internal_value).strip(
+            if isinstance(row[0], openpyxl.cell.cell.Cell) and row[0].row > 3 and row[0].internal_value:
+                tcity = row[0].internal_value.strip(
                     " ").replace("　", '').replace(" ", "")
                 # assert city in Citys
                 if tcity == city:
                     return float(sheet4_or_5[col+str(row[0].row)].internal_value)
 
 def main():
-    for month in gen_months('201501', '201505'):
+    for month in gen_months('202001', '202012'):
         # rd_month_t5(month[0], month[1],city)
         pass
 

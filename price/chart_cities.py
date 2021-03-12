@@ -29,8 +29,11 @@ def eg1():
 def chart(x, y, label="", color='blue', marker='o', linestyle='-'):
     line = plt.plot(x, y, marker=marker, linestyle=linestyle,
                     label=label, color=color, linewidth=1)
+    c = 0
     for a, b in zip(x, y):
-        plt.text(a, b, b, ha='right', va='bottom', fontsize=8)
+        if c%2 == 0:
+            plt.text(a, b, b, ha='right', va='bottom', fontsize=8)
+        c+=1
 
 def get_data_t4_t5(months, city='北京', sheet=4, col="D"):
     data = []
@@ -42,8 +45,8 @@ def get_data_t4_t5(months, city='北京', sheet=4, col="D"):
 def chart_all(date_start, date_end, city='北京', min=False, med=False, max=False, new=False, old=False):
     months = gen_months(date_start, date_end)
     ml = len(months)
-    plt.figure(figsize=(3*(1.0+ml/6), 5))
-    plt.title("2015"+city+"（2010定基比）")
+    # plt.figure(figsize=(3*(1.0+ml/6), 5))
+    # plt.title("2020"+city+"（2015定基比）")
     plt.xlabel('date')
     plt.ylabel('Increase')
 
@@ -78,9 +81,13 @@ def chart_all(date_start, date_end, city='北京', min=False, med=False, max=Fal
     plt.legend()
     # ax1.spines['bottom'].set_visible(False)
     # ax1.spines['left'].set_visible(False)
-    plt.show()
 
 
 if __name__ == "__main__":
-    chart_all('201501', '201512', city='南昌', min=True, med=False,max=False)
+    plt.figure(figsize=(3*(1.0+24/6), 5))
+    plt.title("2020"+'杭州'+"（2015定基比）")
+    chart_all('202001', '202012', city='杭州', min=True, med=False,max=False)
+    chart_all('201501', '201512', city='杭州', min=True, med=False,max=False)
+    plt.show()
+
     # eg1()
