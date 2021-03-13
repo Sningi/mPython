@@ -32,8 +32,8 @@ def chart(x, y, label="", color='blue', marker='o', linestyle='-'):
     c = 0
     for a, b in zip(x, y):
         if c%2 == 0:
-            plt.text(a, b, b, ha='right', va='bottom', fontsize=8)
-        # c+=1
+            plt.text(a, b, "%.1f"%b, ha='right', va='bottom', fontsize=5)
+        c+=1
 
 def get_data_t4_t5(months, city='北京', sheet=4, col="D"):
     data = []
@@ -57,8 +57,8 @@ def chart_all(date_start, date_end, city='北京', min=False, med=False, max=Fal
     if min:
         data = get_data_t4_t5(months, city, 5, "D")
         chart(xs, data, label="二手<90m2",marker='*', color="pink")
-        # data = get_data_t4_t5(months, city, 4, "D")
-        # chart(xs, data, label="新建<90m2",marker='*',color="blue")
+        data = get_data_t4_t5(months, city, 4, "D")
+        chart(xs, data, label="新建<90m2",marker='*',color="blue")
     if med:
         data = get_data_t4_t5(months, city, 5, "G")
         chart(xs, data, label="二手<144m2",marker='v', color="powderblue")
@@ -84,11 +84,13 @@ def chart_all(date_start, date_end, city='北京', min=False, med=False, max=Fal
 
 
 if __name__ == "__main__":
+    city = "九江"
     plt.figure(figsize=(3*(1.0+12/6), 5),dpi=200)
-    plt.title('杭州'+"（2015定基比）")
-    chart_all('201701', '202012', city='杭州', min=True, med=False,max=False)
+    plt.title(city+"房价（2015定基比）")
+    chart_all('201601', '202012', city=city, min=True, med=False,max=False)
     # chart_all('201801', '201812', city='北京', min=True, med=False,max=False)
     # chart_all('201501', '201512', city='杭州', min=True, med=False,max=False)
+    plt.text(datetime.strptime("2020/1", '%Y/%m').date(),100, '注:数据源自国家统计局')
     plt.show()
 
     # eg1()
