@@ -31,11 +31,16 @@ def chart(x, y, label="", color='blue', marker='', linestyle='-'):
                     label=label, color=color, linewidth=1)
     c = 0
     for a, b in zip(x, y):
-        if c%4 == 0:
+        if c%5 == 0:
+        #     # plt.annotate(s="%.1f"%b,
+        #     #     xy=(a,b) ,# xytext=(l1,l2),
+        #     #     )
             plt.text(a, b, "%.1f"%b, ha='right', va='bottom', fontsize=5)
-        if len(x)>24:
-            import random
-            c+=random.randint(0,3)
+        #     pass
+        # if len(x)>24:
+        #     import random
+        #     c+=random.randint(0,8)
+        c+=1
 
 def get_data_t4_t5(months, city='北京', sheet=4, col=3):
     data = []
@@ -86,16 +91,16 @@ def chart_all(date_start, date_end, city='北京', min=False, med=False, max=Fal
 
 
 if __name__ == "__main__":
-    city = "长沙"
-    plt.figure(figsize=(3*(1.0+12/6), 5),dpi=200)
-    plt.title(city+"房价（2010定基比）")
+    city = "南京"
+    plt.figure(figsize=(3*(1.0+1), 4),dpi=200)
+    plt.title(city+"房价（2015定基100）")
     import time
     s = time.time()
     # chart_all('201601', '202012', city=city, min=True, med=False,max=False)
-    # chart_all('201801', '201812', city=city, min=True, med=False,max=False)
-    chart_all('201201', '202012', city=city, min=True, med=False,max=False)
+    chart_all('201102', '201512', city=city, min=True, med=False,max=False)
     print("all time :", time.time()-s)
-    plt.text(datetime.strptime("2020/1", '%Y/%m').date(),100, '注:数据源自国家统计局')
+    plt.grid(linestyle='-.')
+    plt.text(datetime.strptime('2020/01', '%Y/%m').date(),90, '注:数据源自国家统计局')
     plt.show()
 
     # eg1()

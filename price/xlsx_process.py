@@ -20,7 +20,9 @@ def rd_month_t4_t5(year, month, city, sheet=5, col=3):
         "t_{0}{1}.xlsx".format(year, '%2s' % (str(month).zfill(2)))
     if os.path.exists(filename):
         mexcel = xlrd.open_workbook(filename)
-        if year == 2017 or (year==2016 and month>8):
+        if year == 2011 and month==1:
+            sheet4_or_5 = mexcel.sheets()[0]
+        elif year == 2017 or (year==2016 and month>8):
             assert len(mexcel.sheets()) == 6
             sheet4_or_5 = mexcel.sheets()[sheet]
             table_name = sheet4_or_5.cell_value(0,0)
@@ -31,8 +33,9 @@ def rd_month_t4_t5(year, month, city, sheet=5, col=3):
             assert len(mexcel.sheets()) == 5
             sheet4_or_5 = mexcel.sheets()[sheet-1]
             table_name = sheet4_or_5.cell_value(0,0)
-            assert "表"+str(sheet) in table_name and \
-                str(year)+"年" in table_name and \
+            if year !=2011 or month >=10:
+                assert "表"+str(sheet) in table_name
+            assert str(year)+"年" in table_name and \
                 str(month)+"月" in table_name
         else:
             assert len(mexcel.sheets()) >= 4
@@ -67,7 +70,9 @@ def judge_data(year, month,stype, sheet=5):
     if os.path.exists(filename):
         # mexcel = openpyxl.load_workbook(filename)
         mexcel = xlrd.open_workbook(filename)
-        if year == 2017 or (year==2016 and month>8):
+        if year == 2011 and month==1:
+            return 100.0
+        elif year == 2017 or (year==2016 and month>8):
             assert len(mexcel.sheets()) == 6
             sheet4_or_5 = mexcel.sheets()[sheet]
             table_name = sheet4_or_5.cell_value(0,0)
@@ -79,8 +84,9 @@ def judge_data(year, month,stype, sheet=5):
             assert len(mexcel.sheets()) == 5
             sheet4_or_5 = mexcel.sheets()[sheet-1]
             table_name = sheet4_or_5.cell_value(0,0)
-            assert "表"+str(sheet) in table_name and \
-                str(year)+"年" in table_name and \
+            if year !=2011 or month >=10:
+                assert "表"+str(sheet) in table_name
+            assert str(year)+"年" in table_name and \
                 str(month)+"月" in table_name and \
                 stype in table_name and "分类" in table_name
         else:
@@ -97,7 +103,7 @@ def judge_data(year, month,stype, sheet=5):
 def main():
     import time
     s = time.time()
-    for month in gen_months('201201', '201503'):
+    for month in gen_months('201101', '201203'):
         judge_data(month[0], month[1],'新建',sheet=4)
         judge_data(month[0], month[1],'二手',sheet=5)
         print(month[0],month[1],"success")
