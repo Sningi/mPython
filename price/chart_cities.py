@@ -37,7 +37,7 @@ def chart(x, y, label="", color='blue', marker='', linestyle='-'):
             import random
             c+=random.randint(0,3)
 
-def get_data_t4_t5(months, city='北京', sheet=4, col="D"):
+def get_data_t4_t5(months, city='北京', sheet=4, col=3):
     data = []
     for month in months:
         data.append(rd_month_t4_t5(month[0], month[1], city, sheet, col))
@@ -57,19 +57,19 @@ def chart_all(date_start, date_end, city='北京', min=False, med=False, max=Fal
     # xs.insert(0,datetime.strptime("2010/01", '%Y/%m').date())
     # data.insert(0,100)
     if min:
-        data = get_data_t4_t5(months, city, 5, "D")
+        data = get_data_t4_t5(months, city, 5, 3)
         chart(xs, data, label="二手<90m2",marker='', color="pink")
-        data = get_data_t4_t5(months, city, 4, "D")
+        data = get_data_t4_t5(months, city, 4, 3)
         chart(xs, data, label="新建<90m2",marker='',color="blue")
     if med:
-        data = get_data_t4_t5(months, city, 5, "G")
+        data = get_data_t4_t5(months, city, 5, 6)
         chart(xs, data, label="二手<144m2",marker='', color="powderblue")
-        data = get_data_t4_t5(months, city, 4, "G")
+        data = get_data_t4_t5(months, city, 4, 6)
         chart(xs, data, label="新建<144m2",marker='',color="purple")
     if max:
-        data = get_data_t4_t5(months, city, 5, "J")
+        data = get_data_t4_t5(months, city, 5, 9)
         chart(xs, data, label="二手>144m2", marker='.',color="lawngreen")
-        data = get_data_t4_t5(months, city, 4, "J")
+        data = get_data_t4_t5(months, city, 4, 9)
         chart(xs, data, label="新建>144m2", marker='.',color="greenyellow")
     if new:
         chart(xs, data)

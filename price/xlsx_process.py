@@ -7,7 +7,7 @@ from muitls import gen_months, Citys
 excel_path = './excel/'
 
 
-def rd_month_t4_t5(year, month, city, sheet=5, col="D"):
+def rd_month_t4_t5(year, month, city, sheet=5, col=3):
     assert city in Citys
 
     """
@@ -48,7 +48,7 @@ def rd_month_t4_t5(year, month, city, sheet=5, col="D"):
             tcity = sheet4_or_5.row_values(i)[0].strip(" ").replace("　", '').replace(" ", "")
             # assert city in Citys
             if tcity == city:
-                d = float(sheet4_or_5.cell_value(i,3))
+                d = float(sheet4_or_5.cell_value(i,col))
                 if year <= 2015:
                     return d * (100/122.9)
                 else:
