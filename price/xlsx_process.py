@@ -7,7 +7,7 @@ from muitls import gen_months, Citys
 excel_path = './excel/'
 
 
-def rd_month_t4_t5(year, month, city, sheet=5, col=3):
+def rd_month_t4_t5(year, month, city, sheet=5, col=3, avg=100):
     assert city in Citys
 
     """
@@ -53,9 +53,9 @@ def rd_month_t4_t5(year, month, city, sheet=5, col=3):
             if tcity == city:
                 d = float(sheet4_or_5.cell_value(i,col))
                 if year <= 2015:
-                    return d * (100/122.9)
+                    return d
                 else:
-                    return d 
+                    return d*avg/100
 
 def judge_data(year, month,stype, sheet=5):
 
