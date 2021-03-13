@@ -88,12 +88,12 @@ def chart_all(date_start, date_end, city='北京', min=False, med=False, max=Fal
 if __name__ == "__main__":
     city = "长沙"
     plt.figure(figsize=(3*(1.0+12/6), 5),dpi=200)
-    plt.title(city+"房价（2015定基比）")
+    plt.title(city+"房价（2010定基比）")
     import time
     s = time.time()
-    chart_all('201601', '202012', city=city, min=True, med=True,max=False)
-    # chart_all('201801', '201812', city='北京', min=True, med=False,max=False)
-    # chart_all('201501', '201512', city=city, min=True, med=False,max=False)
+    # chart_all('201601', '202012', city=city, min=True, med=False,max=False)
+    # chart_all('201801', '201812', city=city, min=True, med=False,max=False)
+    chart_all('201201', '202012', city=city, min=True, med=False,max=False)
     print("all time :", time.time()-s)
     plt.text(datetime.strptime("2020/1", '%Y/%m').date(),100, '注:数据源自国家统计局')
     plt.show()

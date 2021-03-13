@@ -1,5 +1,5 @@
 import xlrd
-import openpyxl
+# import openpyxl
 import os
 
 from muitls import gen_months, Citys
@@ -97,9 +97,10 @@ def judge_data(year, month,stype, sheet=5):
 def main():
     import time
     s = time.time()
-    for month in gen_months('201601', '202012'):
+    for month in gen_months('201201', '201503'):
+        judge_data(month[0], month[1],'新建',sheet=4)
         judge_data(month[0], month[1],'二手',sheet=5)
-        # print(month[0],month[1],"success")
+        print(month[0],month[1],"success")
     # module   time(s)
     # openpyxl 3.0
     # xlrd     0.7
