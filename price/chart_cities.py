@@ -26,29 +26,37 @@ def eg1():
     plt.show()
 
 
-def chart(x, y, label="", color='blue', marker='', linestyle='-'):
+def chart(x, y, label="", color='blue', marker='', linestyle='-', adjust_text=0):
     line = plt.plot(x, y, marker=marker, linestyle=linestyle,
                     label=label, color=color, linewidth=1)
     c = 0
     for a, b in zip(x, y):
-        if c%6 == 0:
-        #     # plt.annotate(s="%.1f"%b,
-        #     #     xy=(a,b) ,# xytext=(l1,l2),
-        #     #     )
-            plt.text(a, b, "%.1f"%b, ha='right', va='bottom', fontsize=5)
+        if c % 6 == 0:
+            #     # plt.annotate(s="%.1f"%b,
+            #     #     xy=(a,b) ,# xytext=(l1,l2),
+            #     #     )
+            plt.text(a, b+adjust_text, "%.1f" % b, ha='right', va='bottom', fontsize=5)
         #     pass
         # if len(x)>24:
         #     import random
         #     c+=random.randint(0,8)
-        c+=1
+        c += 1
+
 
 def get_data_t4_t5(months, city='北京', sheet=4, col=3):
     data = []
-    b1 = rd_month_t4_t5(2015,6, city, sheet, col)
-    b2 = rd_month_t4_t5(2015,7, city, sheet, col)
+    b1 = rd_month_t4_t5(2015, 6, city, sheet, col)
+    b2 = rd_month_t4_t5(2015, 7, city, sheet, col)
     avg = (b1+b2)/2
+    without_2010 = True
+    for m in months:
+        if m[0] < 2016:
+            without_2010 = False
+    if without_2010:
+        avg = 100
     for month in months:
-        data.append(rd_month_t4_t5(month[0], month[1], city, sheet, col, avg=avg))
+        data.append(rd_month_t4_t5(
+            month[0], month[1], city, sheet, col, avg=avg))
     return data
 
 
@@ -57,7 +65,7 @@ def chart_all(date_start, date_end, city='北京', min=False, med=False, max=Fal
     ml = len(months)
     # plt.figure(figsize=(3*(1.0+ml/6), 5))
     # plt.title("2020"+city+"（2015定基比）")
-    plt.xlabel('date')
+    plt.xlabel('date（注:数据源自国家统计局）')
     plt.ylabel('Increase')
 
     xs = [datetime.strptime(d, '%Y/%m').date()
@@ -66,19 +74,19 @@ def chart_all(date_start, date_end, city='北京', min=False, med=False, max=Fal
     # data.insert(0,100)
     if min:
         data = get_data_t4_t5(months, city, 5, 3)
-        chart(xs, data, label="二手<90m2",marker='', color="pink")
+        chart(xs, data, label="二手<90m2", marker='', color="pink")
         data = get_data_t4_t5(months, city, 4, 3)
-        chart(xs, data, label="新建<90m2",marker='',color="blue")
+        chart(xs, data, label="新建<90m2", marker='', color="blue", adjust_text= 0)
     if med:
         data = get_data_t4_t5(months, city, 5, 6)
-        chart(xs, data, label="二手<144m2",marker='', color="powderblue")
+        chart(xs, data, label="二手<144m2", marker='', color="powderblue")
         data = get_data_t4_t5(months, city, 4, 6)
-        chart(xs, data, label="新建<144m2",marker='',color="purple")
+        chart(xs, data, label="新建<144m2", marker='', color="purple")
     if max:
         data = get_data_t4_t5(months, city, 5, 9)
-        chart(xs, data, label="二手>144m2", marker='.',color="lawngreen")
+        chart(xs, data, label="二手>144m2", marker='.', color="lawngreen")
         data = get_data_t4_t5(months, city, 4, 9)
-        chart(xs, data, label="新建>144m2", marker='.',color="greenyellow")
+        chart(xs, data, label="新建>144m2", marker='.', color="greenyellow")
     if new:
         chart(xs, data)
     if old:
@@ -94,16 +102,16 @@ def chart_all(date_start, date_end, city='北京', min=False, med=False, max=Fal
 
 
 if __name__ == "__main__":
-    city = "深圳"
-    plt.figure(figsize=(3*(1.0+1), 4),dpi=200)
-    plt.title(city+"房价（2010定基100）")
+    city = "杭州"
+    plt.figure(figsize=(3*(1.0+1), 4), dpi=200)
+    plt.title(city+"房价（2015定基100）")
     import time
     s = time.time()
     # chart_all('201601', '202012', city=city, min=True, med=False,max=False)
-    chart_all('201102', '202012', city=city, min=True, med=False,max=False)
+    chart_all('201801', '202012', city=city, min=True, med=False, max=False)
     print("all time :", time.time()-s)
     plt.grid(linestyle='-.')
-    plt.text(datetime.strptime('2020/01', '%Y/%m').date(),90, '注:数据源自国家统计局')
+    # plt.text(datetime.strptime('2020/01', '%Y/%m').date(),110, '注:数据源自国家统计局')
     plt.show()
 
     # eg1()
