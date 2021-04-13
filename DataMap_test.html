@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <title>Awesome-pyecharts</title>
             <script type="text/javascript" src="https://assets.pyecharts.org/assets/echarts.min.js"></script>
-        <script type="text/javascript" src="https://assets.pyecharts.org/assets/maps/he2_nan2_zhou1_kou3.js"></script>
+        <script type="text/javascript" src="https://assets.pyecharts.org/assets/maps/china.js"></script>
 
 </head>
 <body>
-    <div id="3a1025d07b344d86944d7594b8a01e31" class="chart-container" style="width:900px; height:500px;"></div>
+    <div id="61fb0c305efe45d99d97f14dfc92e4db" class="chart-container" style="width:900px; height:500px;"></div>
     <script>
-        var chart_3a1025d07b344d86944d7594b8a01e31 = echarts.init(
-            document.getElementById('3a1025d07b344d86944d7594b8a01e31'), 'white', {renderer: 'canvas'});
-        var option_3a1025d07b344d86944d7594b8a01e31 = {
+        var chart_61fb0c305efe45d99d97f14dfc92e4db = echarts.init(
+            document.getElementById('61fb0c305efe45d99d97f14dfc92e4db'), 'white', {renderer: 'canvas'});
+        var option_61fb0c305efe45d99d97f14dfc92e4db = {
     "animation": true,
     "animationThreshold": 2000,
     "animationDuration": 1000,
@@ -50,17 +50,21 @@
     "series": [
         {
             "type": "map",
-            "name": "\u5468\u53e3",
+            "name": "life",
             "label": {
                 "show": true,
                 "position": "top",
                 "margin": 8
             },
-            "mapType": "\u5468\u53e3",
+            "mapType": "china",
             "data": [
                 {
-                    "name": "\u9e7f\u9091\u53bf",
-                    "value": 3
+                    "name": "\u9e7f\u9091",
+                    "value": "1996"
+                },
+                {
+                    "name": "\u6dee\u9633",
+                    "value": "2012"
                 }
             ],
             "roam": true,
@@ -76,10 +80,10 @@
     "legend": [
         {
             "data": [
-                "\u5468\u53e3"
+                "life"
             ],
             "selected": {
-                "\u5468\u53e3": true
+                "life": true
             },
             "show": true,
             "padding": 5,
@@ -107,34 +111,13 @@
     },
     "title": [
         {
-            "text": "\u9e7f\u9091\u5730\u56fe",
+            "text": "\u8db3\u8ff9",
             "padding": 5,
             "itemGap": 10
         }
-    ],
-    "visualMap": {
-        "show": true,
-        "type": "continuous",
-        "min": 0,
-        "max": 100,
-        "inRange": {
-            "color": [
-                "#50a3ba",
-                "#eac763",
-                "#d94e5d"
-            ]
-        },
-        "calculable": true,
-        "inverse": false,
-        "splitNumber": 5,
-        "orient": "vertical",
-        "showLabel": true,
-        "itemWidth": 20,
-        "itemHeight": 140,
-        "borderWidth": 0
-    }
+    ]
 };
-        chart_3a1025d07b344d86944d7594b8a01e31.setOption(option_3a1025d07b344d86944d7594b8a01e31);
+        chart_61fb0c305efe45d99d97f14dfc92e4db.setOption(option_61fb0c305efe45d99d97f14dfc92e4db);
     </script>
 </body>
 </html>

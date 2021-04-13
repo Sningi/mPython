@@ -104,11 +104,11 @@ def chart_all(date_start, date_end, city='北京', min=False, med=False, max=Fal
 if __name__ == "__main__":
     city = "杭州"
     plt.figure(figsize=(3*(1.0+1), 4), dpi=200)
-    plt.title(city+"房价（2015定基100）")
+    plt.title(city+"房价（2010定基100）")
     import time
     s = time.time()
     # chart_all('201601', '202012', city=city, min=True, med=False,max=False)
-    chart_all('201801', '202012', city=city, min=True, med=False, max=False)
+    chart_all('201102', '202012', city=city, min=True, med=False, max=False)
     print("all time :", time.time()-s)
     plt.grid(linestyle='-.')
     # plt.text(datetime.strptime('2020/01', '%Y/%m').date(),110, '注:数据源自国家统计局')
