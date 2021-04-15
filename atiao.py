@@ -6,7 +6,7 @@ from matplotlib import pyplot as plt
 #配置字体，显示中文
 font = {'family': 'MicroSoft Yahei',
         'weight': 'normal',
-        'size': 8}
+        'size': 6}
 matplotlib.rc("font", **font)
 
 def read_excel(filename):
@@ -70,7 +70,8 @@ def analyze_course(data):
 def Pie_chart(data):
     # 绘制学分分布饼图
     #调节图形大小，宽，高
-    plt.figure(figsize=(7,6))
+    plt.figure(figsize=(7,5),dpi=200)
+    plt.title("18级物流管理二班郑艳修习课程学分分布图")
     #定义饼状图的标签，标签是列表
     labels = [str(i)+"(%.1f)"%(data[i]) for i in data.keys()]
     #每个标签占多大，计算百分比
@@ -84,8 +85,8 @@ def Pie_chart(data):
     explode = (0.05,0,0,0.02,0,0,0,0.05)
 
     patches,l_text,p_text = plt.pie(sizes,explode=explode,labels=labels,
-                                    labeldistance = 1.1,autopct = '%3.1f%%',shadow = False,
-                                    startangle = 90,pctdistance = 0.6)
+                                    labeldistance = 1,autopct = '%3.1f%%',shadow = False,
+                                    startangle = 90,pctdistance = 0.6,radius=0.5)
 
     for t in l_text:
         t.set_size=(30)
@@ -93,7 +94,7 @@ def Pie_chart(data):
         t.set_size=(20)
     # 设置x，y轴刻度一致，这样饼图才能是圆的
     plt.axis('equal')
-    plt.legend()
+    plt.legend(prop={"size":6},loc = (0, 0))
     plt.show()
 
 def analyze_course_avg(data):
@@ -103,21 +104,98 @@ def analyze_course_avg(data):
         if course['开课学期'] not in category:
             # 第一次添加这个学期成绩和学分
             score = course['成绩']
+            if score == '优':
+                score = 95
+            elif score == '中':
+                score = 80
+            elif score =='':
+                score = 90
             weight = course['学分']
             category[course['开课学期']] = [(score, weight)]
         else:
             # 累计这个学期成绩和学分
             score = course['成绩']
             weight = course['学分']
+            if score == '优':
+                score = 95
+            elif score == '中':
+                score = 80
+            elif score =='':
+                score = 90
             category[course['开课学期']].append((score, weight))
     return category
 
+def get_per_avg(avg_data):
+    result = list()
+    # 获取每学期的总学分和加权平均分
+    for term in avg_data:
+        one_term = {}
+        all_cout = 0
+        all_grade = 0
+        for course in avg_data[term]:
+            # 累计该学期学分
+            all_cout += course[1]
+            # 累计加权总分
+            all_grade += course[0]* course[1]
+        result.append({term:(all_cout, all_grade/all_cout)})
+    # 数据格式：
+    # [{'2018-2019-1': (19.5, 84.07179487179488)}, 
+    # {'2018-2019-2': (31.5, 81.95238095238095)}, 
+    # {'2019-2020-1': (21.0, 87.33333333333333)},
+    # {'2019-2020-2': (39.5, 90.27848101265823)}, 
+    # {'2020-2021-1': (21.0, 87.80952380952381)}]
+    return result
+
+def avg_chart(data):
+    plt.figure(figsize=(5,4),dpi=200)
+    plt.title("18级物流管理二班郑艳各学期加权平均分及学期学分分布图")
+    plt.xlabel('学期')
+    plt.ylabel('平均分/学期总学分')
+    x = []
+    y = []
+    z = []
+    for term in data:
+        for key in term:
+            x.append(key)
+            y.append(term[key][0])
+            z.append(term[key][1])
+
+    #加权平均分折线图    
+    line = plt.plot(x, z, marker='',
+                label='加权平均分', color='blue', linewidth=1)
+    for a, b in zip(x, z):
+        plt.text(a, b, "%.1f" % b, ha='right', va='bottom', fontsize=5)
+
+
+    
+    #总学分折现图
+    # line = plt.plot(x, y, marker='.', linestyle='-',
+    #                 label='总学分', color='blue', linewidth=1)
+    # for a, b in zip(x, y):
+    #     plt.text(a, b, "%.1f" % b, ha='right', va='bottom', fontsize=5)
+
+    rects = plt.bar(x,y,color='lightblue',label='每学期学分',width = 0.5)
+    #为柱状图添加高度值
+    for rect in rects:
+        x = rect.get_x()
+        height = rect.get_height()
+        plt.text(x+0.2,1.01*height,str(height))
+
+
+    ax1 = plt.gca()
+    ax1.spines['top'].set_visible(False)
+    ax1.spines['right'].set_visible(False)
+    plt.legend(loc=4)
+    plt.show()
+
+
 def main():
     data = read_excel("./成绩表.xlsx")
-    # result = analyze_course(data)
+    result = analyze_course(data)
     # Pie_chart(result)
     avg_data = analyze_course_avg(data)
-    print(avg_data)
+    per_avg = get_per_avg(avg_data)
+    avg_chart(per_avg)
 
 
 
