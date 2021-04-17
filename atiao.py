@@ -1,6 +1,7 @@
 import xlrd
 import os
 import matplotlib
+import operator
 from matplotlib import pyplot as plt 
 
 #配置字体，显示中文
@@ -188,14 +189,43 @@ def avg_chart(data):
     plt.legend(loc=4)
     plt.show()
 
+def top_5(data):
+    # 升序
+    for d in data:
+        if d["成绩"] == '优':
+            d["成绩"] = 95
+        elif d["成绩"] == '中':
+            d["成绩"] = 80
+        elif d["成绩"] =='':
+            d["成绩"] = 90
+    # 对课程按成绩排序
+    data = sorted(data, key=operator.itemgetter('成绩'))
+    return data[-5:],data[:5]
 
 def main():
     data = read_excel("./成绩表.xlsx")
     result = analyze_course(data)
-    # Pie_chart(result)
+    print("分析1:大学课程类型比重")
+    print(result)
+    Pie_chart(result)
     avg_data = analyze_course_avg(data)
     per_avg = get_per_avg(avg_data)
     avg_chart(per_avg)
+    print("\n分析2:各个学期加权平均分及总学分")
+    print(per_avg)
+
+    tmax,tmin = top_5(data)
+    tmax.reverse()
+    print("\n分析3:成绩最高和最低的5门课程")
+    print('****最高分top5****')
+    for m in tmax:
+        print(m['课程名称'], m['成绩'])
+    print('\n****最低分top5****')
+    for i in tmin:
+        print(i['课程名称'], i['成绩'])
+
+
+
 
 
 
