@@ -1,0 +1,768 @@
+﻿{% extends "base.html" %}
+
+{% block breadcrumb %}
+<!-- Breadcrumb Area -->
+<div id="cr-breadcrumb-area" class="cr-breadcrumb-area bg-image--2 section-padding--md" data-overlay="8">
+    <div class="container">
+        <div class="cr-breadcrumb">
+            <div class="cr-breadcrumb__left">
+                <h2 style="text-transform:none;">Requests</h2>
+                <p>强大的非转基因Python HTTP库</p>
+            </div>
+            <div class="cr-breadcrumb__right">
+                <ul class="cr-breadcrumb__pagination">
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li>Module Details</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!--// Breadcrumb Area -->
+{% endblock %}
+
+
+{% block main %}
+<!-- Page Conent -->
+<main class="page-content">
+    <!-- Page Service Area -->
+    <section id="pg-service-area" class="cr-section bg--white pg-service-area section-padding--xlg">
+        <!-- Service Page Top -->
+        <div class="pg-service__top">
+            <div class="container">
+                <div class="row align-items-xl-center align-items-start">
+                    <div class="col-lg-6">
+                        <div class="pg-service__thumb wow fadeInLeft">
+                            <img src="static/images/framework/requests.png" alt="service page thumb">
+                        </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="pg-service__content">
+                                <h2>功能特性 <span class="color--theme">features</span></h2>
+                                <pre>
+Requests 完全满足今日 web 的需求:
+Keep-Alive & 连接池
+国际化域名和 URL
+带持久 Cookie 的会话
+浏览器式的 SSL 认证
+自动内容解码
+基本/摘要式的身份认证
+优雅的 key/value Cookie
+自动解压
+Unicode 响应体
+HTTP(S) 代理支持
+文件分块上传
+流下载
+连接超时
+分块请求
+支持 .netrc
+</pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--// Service Page Top -->
+            <!-- Service Page Bottom -->
+            <div class="pg-service__bottom">
+                <div class="container">
+                    <div class="pg-service__blocks">
+                        <div class="pg-service__block">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <h3>快速上手</h3>
+                                    <pre>Requests 提供了很好的文档指引。确认：
+Requests 已安装
+Requests 是最新的
+让我们从一些简单的示例开始吧。
+</pre>
+                                </div>
+                                <div class="col-lg-6">
+                                    <h3>高级用法</h3>
+                                    <pre>Requests 的一些高级特性：
+用于复杂的网络请求，代理设置
+身份验证，证书安装等
+开始了解进阶内容
+</pre>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="pg-service__block">
+                            <div class="row pg-service__insideblocks">
+                                <div class="container">
+                                    <!-- Nav tabs -->
+                                    <ul class="nav nav-tabs" role="tablist">
+                                        <li class="nav-item">
+                                            <a class="nav-link active" data-toggle="tab" href="#quick">快速上手</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" data-toggle="tab" href="#advanced">高级特性</a>
+                                        </li>
+                                    </ul>
+                                    <!-- Tab panes -->
+                                    <div class="tab-content">
+                                        <div id="quick" class="container tab-pane active">
+                                            <div style="margin-top: 40px"></div>
+                                            <h4 data-toggle="collapse" data-parent="#accordion" href="#q1"><a style="text-decoration: underline;">Quick# 01</a> 发送请求</h4>
+                                            <div class="panel panel-default">
+                                                <div id="q1" class="panel-collapse collapse">
+                                                    <div class="panel-body">
+<div class="section" id="id2">
+<p>使用 Requests 发送网络请求非常简单。</p>
+<p>一开始要导入 Requests 模块：</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">requests</span>
+</pre></div>
+</div>
+<p>然后，尝试获取某个网页。本例子中，我们来获取 Github 的公共时间线：</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'https://api.github.com/events'</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>现在，我们有一个名为 <code class="docutils literal"><span class="pre">r</span></code> 的 <a class="reference internal" href="../api.html#requests.Response" title="requests.Response"><code class="xref py py-class docutils literal"><span class="pre">Response</span></code></a>
+对象。我们可以从这个对象中获取所有我们想要的信息。</p>
+<p>Requests 简便的 API 意味着所有 HTTP 请求类型都是显而易见的。例如，你可以这样发送一个
+HTTP POST 请求：</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s1">'http://httpbin.org/post'</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'key'</span><span class="p">:</span><span class="s1">'value'</span><span class="p">})</span>
+</pre></div>
+</div>
+<p>漂亮，对吧？那么其他 HTTP 请求类型：PUT，DELETE，HEAD 以及 OPTIONS 又是如何的呢？都是一样的简单：</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="s1">'http://httpbin.org/put'</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'key'</span><span class="p">:</span><span class="s1">'value'</span><span class="p">})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="s1">'http://httpbin.org/delete'</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="s1">'http://httpbin.org/get'</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">options</span><span class="p">(</span><span class="s1">'http://httpbin.org/get'</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>都很不错吧，但这也仅是 Requests 的冰山一角呢。</p>
+</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <h4 data-toggle="collapse" data-parent="#accordion" href="#q2"><a style="text-decoration: underline;">Quick# 02</a> 传递 URL 参数</h4>
+                                            <div class="panel panel-default">
+                                                <div id="q2" class="panel-collapse collapse">
+                                                    <div class="panel-body">
+<div class="section" id="url">
+<p>你也许经常想为 URL 的查询字符串(query string)传递某种数据。如果你是手工构建 URL，那么数据会以键/值对的形式置于 URL 中，跟在一个问号的后面。例如， <code class="docutils literal"><span class="pre">httpbin.org/get?key=val</span></code>。
+Requests 允许你使用 <code class="docutils literal"><span class="pre">params</span></code> 关键字参数，以一个字符串字典来提供这些参数。举例来说，如果你想传递
+<code class="docutils literal"><span class="pre">key1=value1</span></code> 和 <code class="docutils literal"><span class="pre">key2=value2</span></code> 到 <code class="docutils literal"><span class="pre">httpbin.org/get</span></code> ，那么你可以使用如下代码：</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">payload</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'key1'</span><span class="p">:</span> <span class="s1">'value1'</span><span class="p">,</span> <span class="s1">'key2'</span><span class="p">:</span> <span class="s1">'value2'</span><span class="p">}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"http://httpbin.org/get"</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>通过打印输出该 URL，你能看到 URL 已被正确编码：</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">url</span><span class="p">)</span>
+<span class="go">http://httpbin.org/get?key2=value2&amp;key1=value1</span>
+</pre></div>
+</div>
+<p>注意字典里值为 <code class="docutils literal"><span class="pre">None</span></code> 的键都不会被添加到 URL 的查询字符串里。</p>
+<p>你还可以将一个列表作为值传入：</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">payload</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'key1'</span><span class="p">:</span> <span class="s1">'value1'</span><span class="p">,</span> <span class="s1">'key2'</span><span class="p">:</span> <span class="p">[</span><span class="s1">'value2'</span><span class="p">,</span> <span class="s1">'value3'</span><span class="p">]}</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'http://httpbin.org/get'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">url</span><span class="p">)</span>
+<span class="go">http://httpbin.org/get?key1=value1&amp;key2=value2&amp;key2=value3</span>
+</pre></div>
+</div>
+</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <h4 data-toggle="collapse" data-parent="#accordion" href="#q3"><a style="text-decoration: underline;">Quick# 03</a> 复杂的 POST 请求</h4>
+                                            <div class="panel panel-default">
+                                                <div id="q3" class="panel-collapse collapse">
+                                                    <div class="panel-body">
+<div class="section" id="post">
+<p>通常，你想要发送一些编码为表单形式的数据——非常像一个 HTML 表单。要实现这个，只需简单地传递一个字典给 <cite>data</cite> 参数。你的数据字典在发出请求时会自动编码为表单形式：</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">payload</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'key1'</span><span class="p">:</span> <span class="s1">'value1'</span><span class="p">,</span> <span class="s1">'key2'</span><span class="p">:</span> <span class="s1">'value2'</span><span class="p">}</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s2">"http://httpbin.org/post"</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+<span class="go">{</span>
+<span class="go">  ...</span>
+<span class="go">  "form": {</span>
+<span class="go">    "key2": "value2",</span>
+<span class="go">    "key1": "value1"</span>
+<span class="go">  },</span>
+<span class="go">  ...</span>
+<span class="go">}</span>
+</pre></div>
+</div>
+<p>你还可以为 <code class="docutils literal"><span class="pre">data</span></code> 参数传入一个元组列表。在表单中多个元素使用同一 key 的时候，这种方式尤其有效：</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">payload</span> <span class="o">=</span> <span class="p">((</span><span class="s1">'key1'</span><span class="p">,</span> <span class="s1">'value1'</span><span class="p">),</span> <span class="p">(</span><span class="s1">'key1'</span><span class="p">,</span> <span class="s1">'value2'</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s1">'http://httpbin.org/post'</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+<span class="go">{</span>
+<span class="go">  ...</span>
+<span class="go">  "form": {</span>
+<span class="go">    "key1": [</span>
+<span class="go">      "value1",</span>
+<span class="go">      "value2"</span>
+<span class="go">    ]</span>
+<span class="go">  },</span>
+<span class="go">  ...</span>
+<span class="go">}</span>
+</pre></div>
+</div>
+<p>很多时候你想要发送的数据并非编码为表单形式的。如果你传递一个 <code class="docutils literal"><span class="pre">string</span></code> 而不是一个 <code class="docutils literal"><span class="pre">dict</span></code>，那么数据会被直接发布出去。</p>
+<p>例如，Github API v3 接受编码为 JSON 的 POST/PATCH 数据：</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">json</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">url</span> <span class="o">=</span> <span class="s1">'https://api.github.com/some/endpoint'</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">payload</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'some'</span><span class="p">:</span> <span class="s1">'data'</span><span class="p">}</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">payload</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>此处除了可以自行对 <code class="docutils literal"><span class="pre">dict</span></code> 进行编码，你还可以使用 <code class="docutils literal"><span class="pre">json</span></code> 参数直接传递，然后它就会被自动编码。这是 2.4.2 版的新加功能：</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">url</span> <span class="o">=</span> <span class="s1">'https://api.github.com/some/endpoint'</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">payload</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'some'</span><span class="p">:</span> <span class="s1">'data'</span><span class="p">}</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+                                                    </div>
+                                                </div>
+                                            </div>                                                    
+                                            <h4 data-toggle="collapse" data-parent="#accordion" href="#q4"><a style="text-decoration: underline;">Quick# 04</a> JSON 响应内容</h4>
+                                            <div class="panel panel-default">
+                                                <div id="q4" class="panel-collapse collapse">
+                                                    <div class="panel-body">
+<div class="section" id="json">
+<p>Requests 中也有一个内置的 JSON 解码器，助你处理 JSON 数据：</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'https://api.github.com/events'</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+<span class="go">[{u'repository': {u'open_issues': 0, u'url': 'https://github.com/...</span>
+</pre></div>
+</div>
+<p>如果 JSON 解码失败， <code class="docutils literal"><span class="pre">r.json()</span></code> 就会抛出一个异常。例如，响应内容是 401 (Unauthorized)，尝试访问 <code class="docutils literal"><span class="pre">r.json()</span></code> 将会抛出 <code class="docutils literal"><span class="pre">ValueError:</span> <span class="pre">No</span> <span class="pre">JSON</span> <span class="pre">object</span> <span class="pre">could</span> <span class="pre">be</span> <span class="pre">decoded</span></code> 异常。</p>
+<p>需要注意的是，成功调用 <code class="docutils literal"><span class="pre">r.json()</span></code> 并**不**意味着响应的成功。有的服务器会在失败的响应中包含一个 JSON 对象（比如 HTTP 500 的错误细节）。这种 JSON 会被解码返回。要检查请求是否成功，请使用 <code class="docutils literal"><span class="pre">r.raise_for_status()</span></code> 或者检查 <code class="docutils literal"><span class="pre">r.status_code</span></code> 是否和你的期望相同。</p>
+</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <h4 data-toggle="collapse" data-parent="#accordion" href="#q5"><a style="text-decoration: underline;">Quick# 05</a> 定制请求头</h4>
+                                            <div class="panel panel-default">
+                                                <div id="q5" class="panel-collapse collapse">
+                                                    <div class="panel-body">
+<div class="section" id="id6">
+<p>如果你想为请求添加 HTTP 头部，只要简单地传递一个 <code class="docutils literal"><span class="pre">dict</span></code> 给 <code class="docutils literal"><span class="pre">headers</span></code> 参数就可以了。</p>
+<p>例如，在前一个示例中我们没有指定 content-type:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">url</span> <span class="o">=</span> <span class="s1">'https://api.github.com/some/endpoint'</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'user-agent'</span><span class="p">:</span> <span class="s1">'my-app/0.0.1'</span><span class="p">}</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>注意: 定制 header 的优先级低于某些特定的信息源，例如：</p>
+<ul class="simple">
+<li>如果在 <code class="docutils literal"><span class="pre">.netrc</span></code> 中设置了用户认证信息，使用 <cite>headers=</cite> 设置的授权就不会生效。而如果设置了
+<code class="docutils literal"><span class="pre">auth=</span></code> 参数，``.netrc`` 的设置就无效了。</li>
+<li>如果被重定向到别的主机，授权 header 就会被删除。</li>
+<li>代理授权 header 会被 URL 中提供的代理身份覆盖掉。</li>
+<li>在我们能判断内容长度的情况下，header 的 Content-Length 会被改写。</li>
+</ul>
+<p>更进一步讲，Requests 不会基于定制 header 的具体情况改变自己的行为。只不过在最后的请求中，所有的
+header 信息都会被传递进去。</p>
+<p>注意: 所有的 header 值必须是 <code class="docutils literal"><span class="pre">string</span></code>、bytestring 或者 unicode。尽管传递 unicode
+header 也是允许的，但不建议这样做。</p>
+</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <h4 data-toggle="collapse" data-parent="#accordion" href="#q6"><a style="text-decoration: underline;">Quick# 06</a> Cookie
+                                            </h4>
+                                            <div class="panel panel-default">
+                                                <div id="q6" class="panel-collapse collapse">
+                                                    <div class="panel-body">
+<div class="section" id="cookie">
+<p>如果某个响应中包含一些 cookie，你可以快速访问它们：</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">url</span> <span class="o">=</span> <span class="s1">'http://example.com/some/cookie/setting/url'</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">r</span><span class="o">.</span><span class="n">cookies</span><span class="p">[</span><span class="s1">'example_cookie_name'</span><span class="p">]</span>
+<span class="go">'example_cookie_value'</span>
+</pre></div>
+</div>
+<p>要想发送你的cookies到服务器，可以使用 <code class="docutils literal"><span class="pre">cookies</span></code> 参数：</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">url</span> <span class="o">=</span> <span class="s1">'http://httpbin.org/cookies'</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cookies</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">cookies_are</span><span class="o">=</span><span class="s1">'working'</span><span class="p">)</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">cookies</span><span class="o">=</span><span class="n">cookies</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">r</span><span class="o">.</span><span class="n">text</span>
+<span class="go">'{"cookies": {"cookies_are": "working"}}'</span>
+</pre></div>
+</div>
+<p>Cookie 的返回对象为 <a class="reference internal" href="../api.html#requests.cookies.RequestsCookieJar" title="requests.cookies.RequestsCookieJar"><code class="xref py py-class docutils literal"><span class="pre">RequestsCookieJar</span></code></a>，它的行为和字典类似，但接口更为完整，适合跨域名跨路径使用。你还可以把 Cookie Jar 传到 Requests 中：</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">jar</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">cookies</span><span class="o">.</span><span class="n">RequestsCookieJar</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">jar</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s1">'tasty_cookie'</span><span class="p">,</span> <span class="s1">'yum'</span><span class="p">,</span> <span class="n">domain</span><span class="o">=</span><span class="s1">'httpbin.org'</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="s1">'/cookies'</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">jar</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s1">'gross_cookie'</span><span class="p">,</span> <span class="s1">'blech'</span><span class="p">,</span> <span class="n">domain</span><span class="o">=</span><span class="s1">'httpbin.org'</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="s1">'/elsewhere'</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">url</span> <span class="o">=</span> <span class="s1">'http://httpbin.org/cookies'</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">cookies</span><span class="o">=</span><span class="n">jar</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">r</span><span class="o">.</span><span class="n">text</span>
+<span class="go">'{"cookies": {"tasty_cookie": "yum"}}'</span>
+</pre></div>
+</div>
+</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <h4 data-toggle="collapse" data-parent="#accordion" href="#q7"><a style="text-decoration: underline;">Quick# 07</a> 超时
+                                            </h4>
+                                            <div class="panel panel-default">
+                                                <div id="q7" class="panel-collapse collapse">
+                                                    <div class="panel-body">
+<div class="section" id="id10">
+<p>你可以告诉 requests 在经过以 <code class="docutils literal"><span class="pre">timeout</span></code> 参数设定的秒数时间之后停止等待响应。基本上所有的生产代码都应该使用这一参数。如果不使用，你的程序可能会永远失去响应：</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'http://github.com'</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mf">0.001</span><span class="p">)</span>
+<span class="gt">Traceback (most recent call last):</span>
+File <span class="nb">"&lt;stdin&gt;"</span>, line <span class="m">1</span>, in <span class="n">&lt;module&gt;</span>
+<span class="gr">requests.exceptions.Timeout</span>: <span class="n">HTTPConnectionPool(host='github.com', port=80): Request timed out. (timeout=0.001)</span>
+</pre></div>
+</div>
+<div class="admonition- admonition">
+<p class="first admonition-title">注意</p>
+<p class="last"><code class="docutils literal"><span class="pre">timeout</span></code> 仅对连接过程有效，与响应体的下载无关。 <code class="docutils literal"><span class="pre">timeout</span></code> 并不是整个下载响应的时间限制，而是如果服务器在 <code class="docutils literal"><span class="pre">timeout</span></code> 秒内没有应答，将会引发一个异常（更精确地说，是在
+<code class="docutils literal"><span class="pre">timeout</span></code> 秒内没有从基础套接字上接收到任何字节的数据时）If no timeout is specified explicitly, requests do
+not time out.</p>
+</div>
+</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div id="advanced" class="container tab-pane fade">
+                                            <div style="margin-top: 40px"></div>
+                                            <h4 data-toggle="collapse" data-parent="#accordion" href="#a1"><a style="text-decoration: underline;">Advanced# 01</a> 会话对象</h4>
+                                            <div class="panel panel-default">
+                                                <div id="a1" class="panel-collapse collapse">
+                                                    <div class="panel-body">
+<div class="section" id="session-objects">
+<p>会话对象让你能够跨请求保持某些参数。它也会在同一个 Session 实例发出的所有请求之间保持 cookie，
+期间使用 <code class="docutils literal"><span class="pre">urllib3</span></code> 的 <a class="reference external" href="http://urllib3.readthedocs.io/en/latest/reference/index.html#module-urllib3.connectionpool">connection pooling</a> 功能。所以如果你向同一主机发送多个请求，底层的 TCP 连接将会被重用，从而带来显著的性能提升。 (参见 <a class="reference external" href="https://en.wikipedia.org/wiki/HTTP_persistent_connection">HTTP persistent connection</a>).</p>
+<p>会话对象具有主要的 Requests API 的所有方法。</p>
+<p>我们来跨请求保持一些 cookie:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">Session</span><span class="p">()</span>
+
+<span class="n">s</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'http://httpbin.org/cookies/set/sessioncookie/123456789'</span><span class="p">)</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"http://httpbin.org/cookies"</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+<span class="c1"># '{"cookies": {"sessioncookie": "123456789"}}'</span>
+</pre></div>
+</div>
+<p>会话也可用来为请求方法提供缺省数据。这是通过为会话对象的属性提供数据来实现的：</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">Session</span><span class="p">()</span>
+<span class="n">s</span><span class="o">.</span><span class="n">auth</span> <span class="o">=</span> <span class="p">(</span><span class="s1">'user'</span><span class="p">,</span> <span class="s1">'pass'</span><span class="p">)</span>
+<span class="n">s</span><span class="o">.</span><span class="n">headers</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">'x-test'</span><span class="p">:</span> <span class="s1">'true'</span><span class="p">})</span>
+
+<span class="c1"># both 'x-test' and 'x-test2' are sent</span>
+<span class="n">s</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'http://httpbin.org/headers'</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s1">'x-test2'</span><span class="p">:</span> <span class="s1">'true'</span><span class="p">})</span>
+</pre></div>
+</div>
+<p>任何你传递给请求方法的字典都会与已设置会话层数据合并。方法层的参数覆盖会话的参数。</p>
+<p>不过需要注意，就算使用了会话，方法级别的参数也不会被跨请求保持。下面的例子只会和第一个请求发送 cookie
+，而非第二个：</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">Session</span><span class="p">()</span>
+
+<span class="n">r</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'http://httpbin.org/cookies'</span><span class="p">,</span> <span class="n">cookies</span><span class="o">=</span><span class="p">{</span><span class="s1">'from-my'</span><span class="p">:</span> <span class="s1">'browser'</span><span class="p">})</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+<span class="c1"># '{"cookies": {"from-my": "browser"}}'</span>
+
+<span class="n">r</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'http://httpbin.org/cookies'</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+<span class="c1"># '{"cookies": {}}'</span>
+</pre></div>
+</div>
+<p>如果你要手动为会话添加 cookie，就使用 <a class="reference internal" href="../api.html#api-cookies"><span class="std std-ref">Cookie utility 函数</span></a> 来操纵
+<a class="reference internal" href="../api.html#requests.Session.cookies" title="requests.Session.cookies"><code class="xref py py-attr docutils literal"><span class="pre">Session.cookies</span></code></a>。</p>
+<p>会话还可以用作前后文管理器：</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">requests</span><span class="o">.</span><span class="n">Session</span><span class="p">()</span> <span class="k">as</span> <span class="n">s</span><span class="p">:</span>
+<span class="n">s</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'http://httpbin.org/cookies/set/sessioncookie/123456789'</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>这样就能确保 <code class="docutils literal"><span class="pre">with</span></code> 区块退出后会话能被关闭，即使发生了异常也一样。</p>
+<div class="admonition- admonition">
+<p class="first admonition-title">从字典参数中移除一个值</p>
+<p class="last">有时你会想省略字典参数中一些会话层的键。要做到这一点，你只需简单地在方法层参数中将那个键的值设置为 <code class="docutils literal"><span class="pre">None</span></code> ，那个键就会被自动省略掉。</p>
+</div>
+<p>包含在一个会话中的所有数据你都可以直接使用。学习更多细节请阅读 <a class="reference internal" href="../api.html#sessionapi"><span class="std std-ref">会话 API 文档</span></a>。</p>
+</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <h4 data-toggle="collapse" data-parent="#accordion" href="#a2"><a style="text-decoration: underline;">Advanced# 02</a> 准备的请求 （Prepared Request）</h4>
+                                            <div class="panel panel-default">
+                                                <div id="a2" class="panel-collapse collapse">
+                                                    <div class="panel-body">
+<div class="section" id="prepared-request">
+<p>当你从 API 或者会话调用中收到一个 <a class="reference internal" href="../api.html#requests.Response" title="requests.Response"><code class="xref py py-class docutils literal"><span class="pre">Response</span></code></a>
+对象时，<code class="docutils literal"><span class="pre">request</span></code> 属性其实是使用了 <code class="docutils literal"><span class="pre">PreparedRequest</span></code>。有时在发送请求之前，你需要对
+body 或者 header （或者别的什么东西）做一些额外处理，下面演示了一个简单的做法：</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">requests</span> <span class="k">import</span> <span class="n">Request</span><span class="p">,</span> <span class="n">Session</span>
+
+<span class="n">s</span> <span class="o">=</span> <span class="n">Session</span><span class="p">()</span>
+<span class="n">req</span> <span class="o">=</span> <span class="n">Request</span><span class="p">(</span><span class="s1">'GET'</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span>
+<span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span>
+<span class="n">headers</span><span class="o">=</span><span class="n">header</span>
+<span class="p">)</span>
+<span class="n">prepped</span> <span class="o">=</span> <span class="n">req</span><span class="o">.</span><span class="n">prepare</span><span class="p">()</span>
+
+<span class="c1"># do something with prepped.body</span>
+<span class="c1"># do something with prepped.headers</span>
+
+<span class="n">resp</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">prepped</span><span class="p">,</span>
+<span class="n">stream</span><span class="o">=</span><span class="n">stream</span><span class="p">,</span>
+<span class="n">verify</span><span class="o">=</span><span class="n">verify</span><span class="p">,</span>
+<span class="n">proxies</span><span class="o">=</span><span class="n">proxies</span><span class="p">,</span>
+<span class="n">cert</span><span class="o">=</span><span class="n">cert</span><span class="p">,</span>
+<span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span>
+<span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">resp</span><span class="o">.</span><span class="n">status_code</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>由于你没有对 <code class="docutils literal"><span class="pre">Request</span></code> 对象做什么特殊事情，你立即准备和修改了 <code class="docutils literal"><span class="pre">PreparedRequest</span></code>
+对象，然后把它和别的参数一起发送到 <code class="docutils literal"><span class="pre">requests.*</span></code> 或者 <code class="docutils literal"><span class="pre">Session.*</span></code>。</p>
+<p>然而，上述代码会失去 Requests <a class="reference internal" href="../api.html#requests.Session" title="requests.Session"><code class="xref py py-class docutils literal"><span class="pre">Session</span></code></a> 对象的一些优势，
+尤其 <a class="reference internal" href="../api.html#requests.Session" title="requests.Session"><code class="xref py py-class docutils literal"><span class="pre">Session</span></code></a> 级别的状态，例如 cookie 就不会被应用到你的请求上去。要获取一个带有状态的 <a class="reference internal" href="../api.html#requests.PreparedRequest" title="requests.PreparedRequest"><code class="xref py py-class docutils literal"><span class="pre">PreparedRequest</span></code></a>，
+请用 <a class="reference internal" href="../api.html#requests.Session.prepare_request" title="requests.Session.prepare_request"><code class="xref py py-meth docutils literal"><span class="pre">Session.prepare_request()</span></code></a> 取代
+<a class="reference internal" href="../api.html#requests.Request.prepare" title="requests.Request.prepare"><code class="xref py py-meth docutils literal"><span class="pre">Request.prepare()</span></code></a> 的调用，如下所示：</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">requests</span> <span class="k">import</span> <span class="n">Request</span><span class="p">,</span> <span class="n">Session</span>
+
+<span class="n">s</span> <span class="o">=</span> <span class="n">Session</span><span class="p">()</span>
+<span class="n">req</span> <span class="o">=</span> <span class="n">Request</span><span class="p">(</span><span class="s1">'GET'</span><span class="p">,</span>  <span class="n">url</span><span class="p">,</span>
+<span class="n">data</span><span class="o">=</span><span class="n">data</span>
+<span class="n">headers</span><span class="o">=</span><span class="n">headers</span>
+<span class="p">)</span>
+
+<span class="n">prepped</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">prepare_request</span><span class="p">(</span><span class="n">req</span><span class="p">)</span>
+
+<span class="c1"># do something with prepped.body</span>
+<span class="c1"># do something with prepped.headers</span>
+
+<span class="n">resp</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">prepped</span><span class="p">,</span>
+<span class="n">stream</span><span class="o">=</span><span class="n">stream</span><span class="p">,</span>
+<span class="n">verify</span><span class="o">=</span><span class="n">verify</span><span class="p">,</span>
+<span class="n">proxies</span><span class="o">=</span><span class="n">proxies</span><span class="p">,</span>
+<span class="n">cert</span><span class="o">=</span><span class="n">cert</span><span class="p">,</span>
+<span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span>
+<span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">resp</span><span class="o">.</span><span class="n">status_code</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <h4 data-toggle="collapse" data-parent="#accordion" href="#a3"><a style="text-decoration: underline;">Advanced# 03</a> SSL 证书验证</h4>
+                                            <div class="panel panel-default">
+                                                <div id="a3" class="panel-collapse collapse">
+                                                    <div class="panel-body">
+<div class="section" id="ssl">
+<p>Requests 可以为 HTTPS 请求验证 SSL 证书，就像 web 浏览器一样。SSL 验证默认是开启的，如果证书验证失败，Requests 会抛出 SSLError:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'https://requestb.in'</span><span class="p">)</span>
+<span class="go">requests.exceptions.SSLError: hostname 'requestb.in' doesn't match either of '*.herokuapp.com', 'herokuapp.com'</span>
+</pre></div>
+</div>
+<p>在该域名上我没有设置 SSL，所以失败了。但 Github 设置了 SSL:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'https://github.com'</span><span class="p">,</span> <span class="n">verify</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="go">&lt;Response [200]&gt;</span>
+</pre></div>
+</div>
+<p>你可以为 <code class="docutils literal"><span class="pre">verify</span></code> 传入 CA_BUNDLE 文件的路径，或者包含可信任 CA 证书文件的文件夹路径：</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'https://github.com'</span><span class="p">,</span> <span class="n">verify</span><span class="o">=</span><span class="s1">'/path/to/certfile'</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>或者将其保持在会话中：</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">Session</span><span class="p">()</span>
+<span class="n">s</span><span class="o">.</span><span class="n">verify</span> <span class="o">=</span> <span class="s1">'/path/to/certfile'</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">注解</p>
+<p class="last">如果 <code class="docutils literal"><span class="pre">verify</span></code> 设为文件夹路径，文件夹必须通过 OpenSSL 提供的 c_rehash 工具处理。</p>
+</div>
+<p>你还可以通过 <code class="docutils literal"><span class="pre">REQUESTS_CA_BUNDLE</span></code> 环境变量定义可信任 CA 列表。</p>
+<p>如果你将 <code class="docutils literal"><span class="pre">verify</span></code> 设置为 False，Requests 也能忽略对 SSL 证书的验证。</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'https://kennethreitz.org'</span><span class="p">,</span> <span class="n">verify</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="go">&lt;Response [200]&gt;</span>
+</pre></div>
+</div>
+<p>默认情况下， <code class="docutils literal"><span class="pre">verify</span></code> 是设置为 True 的。选项 <code class="docutils literal"><span class="pre">verify</span></code> 仅应用于主机证书。</p>
+<p># 对于私有证书，你也可以传递一个 CA_BUNDLE 文件的路径给 <code class="docutils literal"><span class="pre">verify</span></code>。你也可以设置
+# <code class="docutils literal"><span class="pre">REQUEST_CA_BUNDLE</span></code> 环境变量。</p>
+</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <h4 data-toggle="collapse" data-parent="#accordion" href="#a4"><a style="text-decoration: underline;">Advanced# 04</a> 事件挂钩</h4>
+                                            <div class="panel panel-default">
+                                                <div id="a4" class="panel-collapse collapse">
+                                                    <div class="panel-body">
+<div class="section" id="event-hooks">
+<p>Requests有一个钩子系统，你可以用来操控部分请求过程，或信号事件处理。</p>
+<p>可用的钩子:</p>
+<dl class="docutils">
+<dt><code class="docutils literal"><span class="pre">response</span></code>:</dt>
+<dd>从一个请求产生的响应</dd>
+</dl>
+<p>你可以通过传递一个 <code class="docutils literal"><span class="pre">{hook_name:</span> <span class="pre">callback_function}</span></code> 字典给 <code class="docutils literal"><span class="pre">hooks</span></code> 请求参数为每个请求分配一个钩子函数：</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">hooks</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">response</span><span class="o">=</span><span class="n">print_url</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal"><span class="pre">callback_function</span></code> 会接受一个数据块作为它的第一个参数。</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">print_url</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">url</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>若执行你的回调函数期间发生错误，系统会给出一个警告。</p>
+<p>若回调函数返回一个值，默认以该值替换传进来的数据。若函数未返回任何东西，也没有什么其他的影响。</p>
+<p>我们来在运行期间打印一些请求方法的参数：</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'http://httpbin.org'</span><span class="p">,</span> <span class="n">hooks</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">response</span><span class="o">=</span><span class="n">print_url</span><span class="p">))</span>
+<span class="go">http://httpbin.org</span>
+<span class="go">&lt;Response [200]&gt;</span>
+</pre></div>
+</div>
+</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <h4 data-toggle="collapse" data-parent="#accordion" href="#a5"><a style="text-decoration: underline;">Advanced# 05</a> 流式请求</h4>
+                                            <div class="panel panel-default">
+                                                <div id="a5" class="panel-collapse collapse">
+                                                    <div class="panel-body">
+<div class="section" id="streaming-requests">
+<p>使用 <a class="reference internal" href="../api.html#requests.Response.iter_lines" title="requests.Response.iter_lines"><code class="xref py py-meth docutils literal"><span class="pre">Response.iter_lines()</span></code></a> 你可以很方便地对流式 API
+（例如 <a class="reference external" href="https://dev.twittercom/docs/streaming-api">Twitter 的流式 API</a> ）
+进行迭代。简单地设置 <code class="docutils literal"><span class="pre">stream</span></code> 为 <code class="docutils literal"><span class="pre">True</span></code> 便可以使用 <a class="reference internal" href="../api.html#requests.Response.iter_lines" title="requests.Response.iter_lines"><code class="xref py py-meth docutils literal"><span class="pre">iter_lines</span></code></a>
+对相应进行迭代：</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'http://httpbin.org/stream/20'</span><span class="p">,</span> <span class="n">stream</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">r</span><span class="o">.</span><span class="n">iter_lines</span><span class="p">():</span>
+
+<span class="c1"># filter out keep-alive new lines</span>
+<span class="k">if</span> <span class="n">line</span><span class="p">:</span>
+<span class="n">decoded_line</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">'utf-8'</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">decoded_line</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>当使用 <cite>decode_unicode=True</cite> 在
+<a class="reference internal" href="../api.html#requests.Response.iter_lines" title="requests.Response.iter_lines"><code class="xref py py-meth docutils literal"><span class="pre">Response.iter_lines()</span></code></a> 或
+<a class="reference internal" href="../api.html#requests.Response.iter_content" title="requests.Response.iter_content"><code class="xref py py-meth docutils literal"><span class="pre">Response.iter_content()</span></code></a> 中时，你需要提供一个回退编码方式，以防服务器没有提供默认回退编码，从而导致错误：</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'http://httpbin.org/stream/20'</span><span class="p">,</span> <span class="n">stream</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">r</span><span class="o">.</span><span class="n">encoding</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<span class="n">r</span><span class="o">.</span><span class="n">encoding</span> <span class="o">=</span> <span class="s1">'utf-8'</span>
+
+<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">r</span><span class="o">.</span><span class="n">iter_lines</span><span class="p">(</span><span class="n">decode_unicode</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<span class="k">if</span> <span class="n">line</span><span class="p">:</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">line</span><span class="p">))</span>
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">警告</p>
+<p>警告</p>
+<p><a class="reference internal" href="../api.html#requests.Response.iter_lines" title="requests.Response.iter_lines"><code class="xref py py-meth docutils literal"><span class="pre">iter_lines</span></code></a> 不保证重进入时的安全性。多次调用该方法
+会导致部分收到的数据丢失。如果你要在多处调用它，就应该使用生成的迭代器对象:</p>
+<div class="last highlight-default"><div class="highlight"><pre><span></span><span class="n">lines</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">iter_lines</span><span class="p">()</span>
+<span class="c1"># 保存第一行以供后面使用，或者直接跳过</span>
+
+<span class="n">first_line</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">lines</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">:</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <h4 data-toggle="collapse" data-parent="#accordion" href="#a6"><a style="text-decoration: underline;">Advanced# 06</a> 代理</h4>
+                                            <div class="panel panel-default">
+                                                <div id="a6" class="panel-collapse collapse">
+                                                    <div class="panel-body">
+<div class="section" id="proxies">
+<p>如果需要使用代理，你可以通过为任意请求方法提供 <code class="docutils literal"><span class="pre">proxies</span></code> 参数来配置单个请求:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">proxies</span> <span class="o">=</span> <span class="p">{</span>
+<span class="s2">"http"</span><span class="p">:</span> <span class="s2">"http://10.10.1.10:3128"</span><span class="p">,</span>
+<span class="s2">"https"</span><span class="p">:</span> <span class="s2">"http://10.10.1.10:1080"</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"http://example.org"</span><span class="p">,</span> <span class="n">proxies</span><span class="o">=</span><span class="n">proxies</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>你也可以通过环境变量 <code class="docutils literal"><span class="pre">HTTP_PROXY</span></code> 和 <code class="docutils literal"><span class="pre">HTTPS_PROXY</span></code> 来配置代理。</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ export HTTP_PROXY="http://10.10.1.10:3128"
+$ export HTTPS_PROXY="http://10.10.1.10:1080"
+
+$ python
+&gt;&gt;&gt; import requests
+&gt;&gt;&gt; requests.get("http://example.org")
+</pre></div>
+</div>
+<p>若你的代理需要使用HTTP Basic Auth，可以使用 <cite>http://user:password@host/</cite> 语法：</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">proxies</span> <span class="o">=</span> <span class="p">{</span>
+<span class="s2">"http"</span><span class="p">:</span> <span class="s2">"http://user:pass@10.10.1.10:3128/"</span><span class="p">,</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>要为某个特定的连接方式或者主机设置代理，使用 <cite>scheme://hostname</cite> 作为 key，
+它会针对指定的主机和连接方式进行匹配。</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">proxies</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'http://10.20.1.128'</span><span class="p">:</span> <span class="s1">'http://10.10.1.10:5323'</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>注意，代理 URL 必须包含连接方式。</p>
+<div class="section" id="socks">
+<h3>SOCKS<a class="headerlink" href="#socks" title="永久链接至标题">¶</a></h3>
+<div class="versionadded">
+<p><span class="versionmodified">2.10.0 新版功能.</span></p>
+</div>
+<p>除了基本的 HTTP 代理，Request 还支持 SOCKS 协议的代理。这是一个可选功能，若要使用，
+你需要安装第三方库。</p>
+<p>你可以用 <code class="docutils literal"><span class="pre">pip</span></code> 获取依赖:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ pip install requests<span class="o">[</span>socks<span class="o">]</span>
+</pre></div>
+</div>
+<p>安装好依赖以后，使用 SOCKS 代理和使用 HTTP 代理一样简单：</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">proxies</span> <span class="o">=</span> <span class="p">{</span>
+<span class="s1">'http'</span><span class="p">:</span> <span class="s1">'socks5://user:pass@host:port'</span><span class="p">,</span>
+<span class="s1">'https'</span><span class="p">:</span> <span class="s1">'socks5://user:pass@host:port'</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <h4 data-toggle="collapse" data-parent="#accordion" href="#a7"><a style="text-decoration: underline;">Advanced# 07</a> 响应头链接字段</h4>
+                                            <div class="panel panel-default">
+                                                <div id="a7" class="panel-collapse collapse">
+                                                    <div class="panel-body">
+<div class="section" id="link-headers">
+<p>许多 HTTP API 都有响应头链接字段的特性，它们使得 API 能够更好地自我描述和自我显露。</p>
+<p>GitHub 在 API 中为 <a class="reference external" href="http://developer.github.com/v3/#pagination">分页</a> 使用这些特性，例如:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">url</span> <span class="o">=</span> <span class="s1">'https://api.github.com/users/kennethreitz/repos?page=1&amp;per_page=10'</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="n">url</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">r</span><span class="o">.</span><span class="n">headers</span><span class="p">[</span><span class="s1">'link'</span><span class="p">]</span>
+<span class="go">'&lt;https://api.github.com/users/kennethreitz/repos?page=2&amp;per_page=10&gt;; rel="next", &lt;https://api.github.com/users/kennethreitz/repos?page=6&amp;per_page=10&gt;; rel="last"'</span>
+</pre></div>
+</div>
+<p>Requests 会自动解析这些响应头链接字段，并使得它们非常易于使用:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">r</span><span class="o">.</span><span class="n">links</span><span class="p">[</span><span class="s2">"next"</span><span class="p">]</span>
+<span class="go">{'url': 'https://api.github.com/users/kennethreitz/repos?page=2&amp;per_page=10', 'rel': 'next'}</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">r</span><span class="o">.</span><span class="n">links</span><span class="p">[</span><span class="s2">"last"</span><span class="p">]</span>
+<span class="go">{'url': 'https://api.github.com/users/kennethreitz/repos?page=7&amp;per_page=10', 'rel': 'last'}</span>
+</pre></div>
+</div>
+</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="margin-top: 40px"></div>
+                            <h3>社区链接</h3>
+                            <li><a href="http://github.com/requests/requests">Requests @ GitHub</a></li>
+                            <li><a href="http://pypi.python.org/pypi/requests">Requests @ PyPI</a></li>
+                            <li><a href="http://github.com/requests/requests/issues">Issue Tracker</a></li>
+                            <li><a href="http://docs.python-requests.org/en/latest/community/updates/#software-updates">Release History</a></li>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--// Service Page Bottom -->
+            <!-- Service Page Pagination -->
+            <div class="pg-service__pagination">
+                <a href="m-requests.html" class="service-pagination prev">Prev</a>
+                <a href="m-pymysql.html" class="service-pagination next">Next</a>
+            </div>
+            <!--// Service Page Pagination -->
+    </section>
+    <!--// Page Service Area -->
+    <!-- Funfact Area -->
+    <div id="funfact-area" class="funfact-area section-padding--lg bg--white bg-image--1" data-overlay="8">
+        <div class="container">
+            <div class="row">
+                <!--  Single Funfact -->
+                <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                    <div class="funfact-wrapper">
+                        <div class="funfact">
+                            <span class="funfact-icon">
+                                <i class="pe-7s-look"></i>
+                            </span>
+                            <div class="funfact-content">
+                                <h3><span class="counter">1397</span>+</h3>
+                                <h5>Watch</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--//  Single Funfact -->
+                <!--  Single Funfact -->
+                <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                    <div class="funfact-wrapper">
+                        <div class="funfact">
+                            <span class="funfact-icon">
+                                <i class="pe-7s-graph3"></i>
+                            </span>
+                            <div class="funfact-content">
+                                <h3><span class="counter">36817</span>+</h3>
+                                <h5>Start</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--//  Single Funfact -->
+                <!--  Single Funfact -->
+                <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                    <div class="funfact-wrapper">
+                        <div class="funfact">
+                            <span class="funfact-icon">
+                                <i class="pe-7s-like"></i>
+                            </span>
+                            <div class="funfact-content">
+                                <h3><span class="counter">6732</span>+</h3>
+                                <h5>Fork</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--//  Single Funfact -->
+                <!--  Single Funfact -->
+                <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                    <div class="funfact-wrapper">
+                        <div class="funfact">
+                            <span class="funfact-icon">
+                                <i class="pe-7s-coffee"></i>
+                            </span>
+                            <div class="funfact-content">
+                                <h3><span class="counter">419</span>+</h3>
+                                <h5>Contributors</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--//  Single Funfact -->
+            </div>
+        </div>
+    </div>
+    <!--// Funfact Area -->
+    <div style="margin-top: 80px"></div>
+</main>
+<!-- //Page Conent -->
+{% endblock %}

@@ -1,0 +1,196 @@
+﻿{% extends "base.html" %}
+
+
+{% block breadcrumb %}
+<!-- Breadcrumb Area -->
+<div id="cr-breadcrumb-area" class="cr-breadcrumb-area bg-image--2 section-padding--md" data-overlay="8">
+    <div class="container">
+        <div class="cr-breadcrumb">
+            <div class="cr-breadcrumb__left">
+                <h2>Home</h2>
+                <p>基于在线用户评论的商品特征分析系统</p>
+            </div>
+            <div class="cr-breadcrumb__right">
+                <ul class="cr-breadcrumb__pagination">
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!--// Breadcrumb Area -->
+{% endblock %}
+
+
+{% block main %}
+<!-- Page Conent -->
+<main class="page-content">
+    
+    <!-- About Area -->
+    <section id="about-area" class="cr-section about-area bg--white section-padding--xlg">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="about-area__content">
+                        <h4>指导教师
+                                <span class="color--theme">李春林</span></h4>
+                        <h3 class="cd-headline cx-heading slide">基于在线
+                                <span class="color--theme cd-words-wrapper cd-words-wrapper-2">
+                                    <b class="is-visible">用户评论</b>
+                                    <b>商品特征</b>
+                                </span>
+                                分析</h3>
+                        <p><strong>关键需求：</strong>要求爬取电商平台上用户评论，对文本数据进行分词、词性标注、根据词频、位置、词性等因素提取关键词，生成关键词云等。</p>
+                        <p><strong>功能实现：</strong>Python爬虫获取数据，MySQL存储、中文分词、词频统计及词云、通过Web前端展示成果以及提供应用接口。</p>
+
+                        <a data-toggle="collapse" data-parent="#accordion" href="#aboutDetail" class="cr-btn">
+                                <span>详 情</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="portfolio">
+                        <div class="portfolio-image">
+                            <img src="static/images/gp.jpg" alt="">
+                            </div>
+                            <div class="portfolio-content">
+                                <h5><a href="portfolio-details.html">系统设计流图</a></h5>
+                                <h6>module</h6>
+                            </div>
+                            <a href="static/images/gp.jpg" class="portfolio-zoomicon"><i class="pe-7s-search"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div id="aboutDetail" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        <!-- Features Area -->
+                        <section id="pg-features-area" class="cr-section pg-features-area section-padding--xs">
+                            <div class="container">
+                                <div class="pg-features">
+                                    <div class="row align-items-end">
+                                        <div class="col-xl-8 col-lg-7 order-2 order-lg-1">
+                                            <div class="pg-features__description">
+                                                <span class="pg-features__icon">
+                                                    <i class="flaticon-shield"></i>
+                                                </span>
+                                                <div class="pg-features__content">
+                                                    <h3>主要任务及要求：</h3>
+                                                    <p>1.查阅相关的国内外资料，对国内外的研究现状加以分析</p>
+                                                    <p>2.根据信息系统的开发要求，有计划地完成系统调研。通过各种调查调研方法，结合数字图书馆的文献综述，分析设计系统的功能需求，进行详细的系统分析和系统设计</p>
+                                                    <p>3.用自己熟悉的开发工具和数据库完成系统的开发，要求所设计的系统应能准确无误的反映用户的业务流程，满足用户的各项要求，并具有高可靠性。在此前提下尽可能使系统简洁明了，人机界面友好，易于操作</p>
+                                                    <p>4.要求爬取电商平台上用户评论，对文本数据进行分词、词性标注、根据词频、位置、词性等因素提取关键词，生成关键词云等</p>
+                                                    <p>5.完成不少于3000汉字的英文翻译，完成不少于12000字的毕业论文并提交系统源代码</p>
+                                                    <p>6.按照学校要求定期撰写阶段性报告和中期报告，定期向指导老师汇报工作进展</p>
+                                                    <p>7.设计和论文撰写过程中参阅15篇以上（英文不少于4篇）参考文献，符合毕业论文参考文献的相关规范</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-4 col-lg-5 wow fadeInRight order-1 order-lg-2">
+                                            <div class="pg-features__thumb">
+                                                <img src="static/images/temp/feature-thumb-1.jpg" alt="feature thumb 1">
+                                            </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="pg-features">
+                                        <div class="row align-items-end">
+                                            <div class="col-xl-4 col-lg-5 wow fadeInLeft">
+                                                <div class="pg-features__thumb">
+                                                    <img src="static/images/temp/feature-thumb-2.jpg" alt="feature thumb 1">
+                                            </div>
+                                                </div>
+                                                <div class="col-xl-8 col-lg-7">
+                                                    <div class="pg-features__description">
+                                                        <span class="pg-features__icon">
+                                                    <i class="flaticon-team"></i>
+                                                </span>
+                                                        <div class="pg-features__content">
+                                                            <h3>任务时间节点：</h3>
+                                                            <p>2019.01.18之前：完成毕业设计选题</p> 
+                                                            <p>2019.02.28之前：结合选题和任务书的目标要求，完成开题报告撰写</p> 
+                                                            <p>2019.05.10之前：完成系统的设计和实施、提交论文初稿</p> 
+                                                            <p>2019.05.25之前：根据指导老师的修改意见，完成系统的修改完善和论文的修订</p> 
+                                                            <p>2019.06.08之前：进行毕业设计答辩的相关准备，参加毕业设计答辩</p> 
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="pg-features">
+                                            <div class="row align-items-end">
+                                                <div class="col-xl-8 col-lg-7 order-2 order-lg-1">
+                                                    <div class="pg-features__description">
+                                                        <span class="pg-features__icon">
+                                                    <i class="flaticon-clock"></i>
+                                                </span>
+                                                        <div class="pg-features__content">
+                                                            <h3>必读参考文献：</h3>                              
+                                                            <p>1）王少峰 UML面向对象技术教程， 北京：清华大学出版社 ，2009</p>
+                                                            <p>2）张志清，郑晓玲，杨中华.管理信息系统实用教程[M]北京：电子工业出版社，2005</p>
+                                                            <p>3）韩万江，姜莉新.软件项目管理案例教程[M].北京：机械工业出版社，2010</p>
+                                                            <p>4)覃征，何坚，高洪江，李顺东，黄茹，软件工程与管理北京：清华大学出版社</p>
+                                                            <p>5)陆汝欽，金芝，陈刚面向本体的需求分析[J]软件学报，2000，11（8）：1009-1017</p>
+                                                            <p>6)于松涛.精通SQL Server 2000数据库开发与管理[M]北京：人民邮电出版社，2003</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xl-4 col-lg-5 wow fadeInRight order-1 order-lg-2">
+                                                    <div class="pg-features__thumb">
+                                                        <img src="static/images/temp/feature-thumb-3.jpg" alt="feature thumb 1">
+                                            </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                        </section>
+                        <!--// Features Area -->
+                    </div>
+                </div>
+            </div>
+    </section>
+    <!-- //About Area -->
+    <!-- Testimonial Area -->
+    <div id="testimonial-area" class="testimonial-area section-padding--xlg bg--grey">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-xl-8 col-lg-9 col-md-10 col-12">
+                    <div class="widgets sidebar-widgets widgets--left-side">
+                        <section class="single-widget widget-newsletter">
+                            <h6>按ID分析相关商品</h6>
+                            <form action="collect">
+                                <input type="text" name='item' placeholder="输入商品ID">
+                                <button type="submit"><i class="fa fa-paper-plane-o"></i></button>
+                            </form>
+                        </section>
+                        <section class="single-widget widget-newsletter">
+                            <h6>批量采集与分析</h6>
+                            <form action="collect">
+                                <input type="text" name='cate' placeholder="输入目录ID">
+                                <button type="submit"><i class="fa fa-paper-plane-o"></i></button>
+                            </form>
+                        </section>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--// Testimonial Area -->
+</main>
+<!-- //Page Conent -->
+{% endblock %}
+
+{% block js %}
+<script type="text/javascript">
+        {% if data == 2 %}
+            alert("目录:{{cate_id}} \n相关商品正在采集，商品信息会逐条更新")
+        {% endif %}
+        {% if data == 1 %}
+            alert("商品:{{item_id}} \n相关信息正在采集，请耐心等待约6分钟")
+        {% endif %}
+</script>
+{% endblock %}

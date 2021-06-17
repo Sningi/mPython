@@ -1,0 +1,97 @@
+create table item(
+    id int primary key AUTO_INCREMENT,
+    platform_id bigint unique,
+    name tinytext,
+    price tinytext,
+    shopname tinytext,
+    createtime datetime DEFAULT NULL,
+    paltform varchar(4),
+    comments int default 0,
+    good_percent double default 0,
+    finish tinyint default 0,
+    image_url tinytext default 'static/images/item/example.jpg'
+);
+create table jdcomment(
+    id bigint,
+    item_pid bigint,
+    content text,
+    createtime datetime,
+    score int,
+    nickname varchar(10),
+    userlevel int,
+    isMobile tinyint(1),
+    client int default 0,
+    primary key(id,item_pid),
+    FOREIGN KEY (item_pid) REFERENCES item(platform_id) on delete cascade on update cascade
+);
+
+MariaDB [gp]> desc item;
++--------------+------------+------+-----+----------------------------------+----------------+
+| Field        | Type       | Null | Key | Default                          | Extra          |
++--------------+------------+------+-----+----------------------------------+----------------+
+| id           | int(11)    | NO   | PRI | NULL                             | auto_increment |
+| platform_id  | bigint(20) | YES  | UNI | NULL                             |                |
+| name         | tinytext   | YES  |     | NULL                             |                |
+| price        | tinytext   | YES  |     | NULL                             |                |
+| shopname     | tinytext   | YES  |     | NULL                             |                |
+| createtime   | datetime   | YES  |     | NULL                             |                |
+| paltform     | varchar(4) | YES  |     | NULL                             |                |
+| comments     | int(11)    | YES  |     | 0                                |                |
+| good_percent | double     | YES  |     | 0                                |                |
+| finish       | tinyint(4) | YES  |     | 0                                |                |
+| image_url    | tinytext   | YES  |     | 'static/images/item/example.jpg' |                |
++--------------+------------+------+-----+----------------------------------+----------------+
+11 rows in set (0.000 sec)
+
+MariaDB [gp]> desc jdcomment;
++------------+-------------+------+-----+---------+-------+
+| Field      | Type        | Null | Key | Default | Extra |
++------------+-------------+------+-----+---------+-------+
+| id         | bigint(20)  | NO   | PRI | NULL    |       |
+| item_pid   | bigint(20)  | NO   | PRI | NULL    |       |
+| content    | text        | YES  |     | NULL    |       |
+| createtime | datetime    | YES  |     | NULL    |       |
+| score      | int(11)     | YES  |     | NULL    |       |
+| nickname   | varchar(10) | YES  |     | NULL    |       |
+| userlevel  | int(11)     | YES  |     | NULL    |       |
+| isMobile   | tinyint(1)  | YES  |     | NULL    |       |
+| client     | int(11)     | YES  |     | 0       |       |
++------------+-------------+------+-----+---------+-------+
+9 rows in set (0.001 sec)
+
+MariaDB [gp]> show tables;
++----------------------------+
+| Tables_in_gp               |
++----------------------------+
+| auth_group                 |
+| auth_group_permissions     |
+| auth_permission            |
+| auth_user                  |
+| auth_user_groups           |
+| auth_user_user_permissions |
+| django_admin_log           |
+| django_content_type        |
+| django_migrations          |
+| django_session             |
+| gp_finishitem              |
+| item                       |
+| jdcomment                  |
++----------------------------+
+13 rows in set (0.001 sec)
+
+MariaDB [gp]> desc gp_finishitem;
++--------------+--------------+------+-----+---------+----------------+
+| Field        | Type         | Null | Key | Default | Extra          |
++--------------+--------------+------+-----+---------+----------------+
+| id           | int(11)      | NO   | PRI | NULL    | auto_increment |
+| platform_id  | bigint(20)   | NO   | UNI | NULL    |                |
+| name         | varchar(255) | NO   |     | NULL    |                |
+| price        | int(11)      | NO   |     | NULL    |                |
+| shop_name    | varchar(25)  | NO   |     | NULL    |                |
+| analyse_time | datetime(6)  | NO   |     | NULL    |                |
+| paltform     | varchar(4)   | NO   |     | NULL    |                |
+| comments     | int(11)      | NO   |     | NULL    |                |
+| good_percent | double       | NO   |     | NULL    |                |
+| image_url    | varchar(255) | NO   |     | NULL    |                |
++--------------+--------------+------+-----+---------+----------------+
+10 rows in set (0.001 sec)

@@ -1,0 +1,411 @@
+﻿{% extends "base.html" %}
+
+{% block breadcrumb %}
+<!-- Breadcrumb Area -->
+<div id="cr-breadcrumb-area" class="cr-breadcrumb-area bg-image--2 section-padding--md" data-overlay="8">
+    <div class="container">
+        <div class="cr-breadcrumb">
+            <div class="cr-breadcrumb__left">
+                <h2 style="text-transform:none;">PyMysql</h2>
+                <p>Python语言的MySql(MariaDB)数据库连接器</p>
+            </div>
+            <div class="cr-breadcrumb__right">
+                <ul class="cr-breadcrumb__pagination">
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li>Module Details</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!--// Breadcrumb Area -->
+{% endblock %}
+
+
+{% block main %}
+<!-- Page Conent -->
+<main class="page-content">
+    <!-- Page Service Area -->
+    <section id="pg-service-area" class="cr-section bg--white pg-service-area section-padding--xlg">
+        <!-- Service Page Top -->
+        <div class="pg-service__top">
+            <div class="container">
+                <div class="row align-items-xl-center align-items-start">
+                    <div class="col-lg-6">
+                        <div class="pg-service__thumb wow fadeInLeft">
+                            <img src="static/images/framework/mysql.jpg" alt="service page thumb">
+                        </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="pg-service__content">
+                                <h2>什么是 <span class="color--theme">PyMySQL</span>？</h2>
+                                <p>PyMySQL是从Python连接到MySQL数据库服务器的接口。 它实现了Python数据库API v2.0，并包含一个纯Python的MySQL客户端库。 PyMySQL的目标是成为MySQLdb的替代品。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--// Service Page Top -->
+            <!-- Service Page Bottom -->
+            <div class="pg-service__bottom">
+                <div class="container">
+                    <div class="pg-service__blocks">
+                        <div class="pg-service__block">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <h3>版本要求</h3>
+                                    <div class="section" id="requirements">
+                                        <ul class="simple">
+                                            <li>Python – one of the following:<ul>
+                                                    <li>CPython &gt;= 2.7 or &gt;= 3.5</li>
+                                                    <li>Latest PyPy</li>
+                                                </ul>
+                                            </li>
+                                            <li>MySQL Server – one of the following:<ul>
+                                                    <li>MySQL &gt;= 5.5</li>
+                                                    <li>MariaDB &gt;= 5.5</li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <h3>协议标准</h3>
+                                    <ul>
+                                        <li>DB-API 2.0: <a href="https://www.python.org/dev/peps/pep-0249/" rel="nofollow">https://www.python.org/dev/peps/pep-0249/</a></li>
+                                        <li>MySQL Reference Manuals: <a href="https://dev.mysql.com/doc/" rel="nofollow">https://dev.mysql.com/doc/</a></li>
+                                        <li>MySQL client/server protocol:
+                                            <a href="https://dev.mysql.com/doc/internals/en/client-server-protocol.html" rel="nofollow">https://dev.mysql.com/doc/internals/en/client-server-protocol.html</a></li>
+                                        <li>"Connector" channel in MySQL Community Slack:
+                                            <a href="https://lefred.be/mysql-community-on-slack/" rel="nofollow">https://lefred.be/mysql-community-on-slack/</a></li>
+                                        <li>PyMySQL mailing list: <a href="https://groups.google.com/forum/#!forum/pymysql-users" rel="nofollow">https://groups.google.com/forum/#!forum/pymysql-users</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="pg-service__block">
+                            <h3>用法样例</h3>
+                            <div class="row pg-service__insideblocks">
+                                <div class="container">
+                                    <!-- Nav tabs -->
+                                    <ul class="nav nav-tabs" role="tablist">
+                                        <li class="nav-item">
+                                            <a class="nav-link active" data-toggle="tab" href="#dbconnect">数据库连接</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" data-toggle="tab" href="#dbcreate">创建数据表</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" data-toggle="tab" href="#dbinsert">插入</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" data-toggle="tab" href="#dbselect">查询</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" data-toggle="tab" href="#dbupdate">更新</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" data-toggle="tab" href="#dbdelete">删除</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" data-toggle="tab" href="#dbsql">SQL防注入</a>
+                                        </li>
+                                    </ul>
+                                    <!-- Tab panes -->
+                                    <div class="tab-content">
+                                        <div id="dbconnect" class="container tab-pane active">
+                                            <div style="margin-top: 40px"></div>
+<p>1.导入pymysql库:import pymysql <br />
+2.打开数据库连接</p>
+<pre class="prettyprint"><code class="hljs perl">conn=pymysql.<span class="hljs-keyword">connect</span>(host=<span class="hljs-string">'服务器'</span>,
+             port=端口,
+             user=<span class="hljs-string">'用户'</span>,
+             password=<span class="hljs-string">'密码'</span>,
+             db=<span class="hljs-string">'库名'</span>,
+             charset=<span class="hljs-string">'字符集'</span>)
+</code></pre>
+<p>3.使用cuisor()方法创建游标对象cursor</p>
+<pre class="prettyprint"><code class="hljs fix"><span class="hljs-attribute">cursor</span>=<span class="hljs-string">conn.cursor()
+</span></code></pre>
+<p>4.使用execute()方法 执行SQL命令</p>
+<pre class="prettyprint"><code class="hljs bash">cursor.execute(<span class="hljs-string">'SQL命令'</span>)</code></pre>
+<p>5.使用fetchone()方法获取单条数据</p>
+<pre class="prettyprint"><code class="hljs fix"><span class="hljs-attribute">row_1</span>=<span class="hljs-string">cursor.fetchone()
+print (row_1)</span></code></pre>
+<p>6.提交,不然无法保存新建或者修改的数据</p>
+<pre class="prettyprint"><code class="hljs sql">conn.<span class="hljs-operator"><span class="hljs-keyword">commit</span>()</span></code></pre>
+<p>7.关闭游标</p>
+<pre class="prettyprint"><code class="hljs livecodeserver">cursor.<span class="hljs-built_in">close</span>()</code></pre>
+<p>8.关闭数据库连接</p>
+<pre class="prettyprint"><code class="hljs livecodeserver">conn.<span class="hljs-built_in">close</span>()</code></pre>
+
+                                        </div>
+                                        <div id="dbcreate" class="container tab-pane fade">
+                                            <div style="margin-top: 40px"></div>
+<p>在python07数据库中创建表employee</p>
+
+<pre class="prettyprint"><code class="hljs python"><span class="hljs-keyword">import</span> pymysql
+ap=pymysql.connect(host=<span class="hljs-string">'localhost'</span>,
+             port=<span class="hljs-number">3306</span>,
+             user=<span class="hljs-string">'root'</span>,
+             password=<span class="hljs-string">'*******'</span>,
+             db=<span class="hljs-string">'python07'</span>,
+             charset=<span class="hljs-string">'utf8'</span>)
+cursor = ap.cursor()
+<span class="hljs-comment"># 使用execute()方法执行SQL,如果表存在则删除</span>
+cursor.execute(<span class="hljs-string">'DROP TABLE IF EXISTS EMPLOYEE'</span>)
+sql = <span class="hljs-string">"""CREATE TABLE EMPLOYEE (
+ FIRST_NAME  CHAR(20) NOT NULL,
+ LAST_NAME  CHAR(20),
+ AGE INT,  
+ SEX CHAR(1),
+ INCOME FLOAT )"""</span>
+
+cursor.execute(sql)
+
+cursor.close
+
+db.close()</code></pre>
+                                        </div>
+                                        <div id="dbinsert" class="container tab-pane fade">
+                                            <div style="margin-top: 40px"></div>
+<p>给employee表中添加数据</p>
+<pre class="prettyprint"><code class=" hljs python"><span class="hljs-keyword">import</span> pymysql
+ap=pymysql.connect(host=<span class="hljs-string">'localhost'</span>,
+             port=<span class="hljs-number">3306</span>,
+             user=<span class="hljs-string">'root'</span>,
+             password=<span class="hljs-string">'*******'</span>,
+             db=<span class="hljs-string">'python07'</span>,
+             charset=<span class="hljs-string">'utf8'</span>)
+cursor = ap.cursor()
+
+sql = <span class="hljs-string">"""INSERT INTO EMPLOYEE(FIRST_NAME,
+ LAST_NAME, AGE, SEX, INCOME)
+ VALUES ('Mac', 'Mohan', 20, 'M', 2000)"""</span>
+
+cursor.execute(sql)
+
+db.commit()
+
+db.rollback()
+
+db.close()</code></pre>
+
+                                        </div>
+                                        <div id="dbselect" class="container tab-pane fade">
+                                            <div style="margin-top: 40px"></div>
+<p>python查询mysql使用fetchone()方法获取单条数据,使用fetchall()方法获取多条数据</p>
+<p>fetchone(): 该方法获取一个查询结果集,结果集是一个对象</p>
+<p>fetchall():接受全部的返回结果行</p>
+<p>rowcount:这是一个只读属性,并返回执行execute()方法后影响的行数</p>
+<p>实例:查询employee表第一行数据</p>
+<pre class="prettyprint"><code class="hljs perl">import pymysql
+conn=pymysql.<span class="hljs-keyword">connect</span>(host=<span class="hljs-string">'localhost'</span>,
+             port=<span class="hljs-number">3306</span>,
+             user=<span class="hljs-string">'root'</span>,
+             password=<span class="hljs-string">'*******'</span>,
+             db=<span class="hljs-string">'python07'</span>,
+             charset=<span class="hljs-string">'utf8'</span>)
+cursor = ap.cursor()
+cursor.execute('SELECT * FROM  EMPLOYEE')
+row_1=cursor.fetchone()
+print (row_1)
+
+cursor.close()
+
+conn.close()</code></pre>
+<p>得:</p>
+<pre class="prettyprint"><code class="hljs bash">
+(<span class="hljs-string">'Mac'</span>, <span class="hljs-string">'Mohan'</span>, <span class="hljs-number">20</span>, <span class="hljs-string">'M'</span>, <span class="hljs-number">2000.0</span>)</code></pre>
+
+                                        </div>
+                                        <div id="dbupdate" class="container tab-pane fade">
+                                            <div style="margin-top: 40px"></div>
+<p>实例:将表employee中名字为Mac的用户sex字段改为 s</p>
+
+<pre class="prettyprint"><code class="hljs perl">import pymysql
+
+conn=pymysql.<span class="hljs-keyword">connect</span>(host=<span class="hljs-string">'localhost'</span>,
+             port=<span class="hljs-number">3306</span>,
+             user=<span class="hljs-string">'root'</span>,
+             password=<span class="hljs-string">'*******'</span>,
+             db=<span class="hljs-string">'python07'</span>,
+             charset=<span class="hljs-string">'utf8'</span>)
+cursor = ap.cursor()
+cursor.execute(<span class="hljs-string">'UPDATE EMPLOYEE SET sex="W" WHERE FIRST_NAME="Mac" '</span>)
+conn.commit()
+
+cursor.<span class="hljs-keyword">close</span>()
+
+conn.<span class="hljs-keyword">close</span>()
+</code></pre>
+
+                                        </div>
+                                        <div id="dbdelete" class="container tab-pane fade">
+                                            <div style="margin-top: 40px"></div>
+<p>删除表employee中名字为Mac用户的所有数据</p>
+<pre class="prettyprint"><code class="hljs perl">import pymysql
+
+conn=pymysql.<span class="hljs-keyword">connect</span>(host=<span class="hljs-string">'localhost'</span>,
+             port=<span class="hljs-number">3306</span>,
+             user=<span class="hljs-string">'root'</span>,
+             password=<span class="hljs-string">'*******'</span>,
+             db=<span class="hljs-string">'python07'</span>,
+             charset=<span class="hljs-string">'utf8'</span>)
+cursor = ap.cursor()
+cursor.execute(<span class="hljs-string">'DELETE FROM EMPLOYEE  WHERE FIRST_NAME="Mac" '</span>)
+conn.commit()
+
+cursor.<span class="hljs-keyword">close</span>()
+
+conn.<span class="hljs-keyword">close</span>()</code></pre> 
+                                        </div>
+                                        <div id="dbsql" class="container tab-pane fade">
+                                            <div style="margin-top: 40px"></div>
+<p>1.拼接语句被构造成永真条件，此时就注入成功了。因此要避免这种情况需使用pymysql提供的参数化查询。</p>
+<pre class="prettyprint">user="u1' or '1'-- "
+passwd="u1pass"
+sql="select user,pass from tb7 where user='%s' and pass='%s'" % (user,passwd)
+
+#select user,pass from tb7 where user='u1' or '1'-- ' and pass='u1pass'
+row_count=cursor.execute(sql)</pre>
+<p>2.避免注入，使用pymysql提供的参数化语句</p>
+<pre class="prettyprint">user="u1"
+passwd="u1pass"
+#执行参数化查询
+row_count=cursor.execute("select user,pass from tb7 where user=%s and pass=%s",(user,passwd))
+row_1 = cursor.fetchone()</pre>
+<p>3.使用存mysql储过程动态执行SQL防注入</p>
+<p>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MYSQL存储过程自动提供防注入，动态传入SQL到存储过程执行语句</p>
+<pre class="brush:py;">delimiter \\
+DROP PROCEDURE IF EXISTS proc_sql \\
+CREATE PROCEDURE proc_sql (
+in nid1 INT,
+in nid2 INT,
+in callsql VARCHAR(255)
+)
+BEGIN
+set @nid1 = nid1;
+set @nid2 = nid2;
+set @callsql = callsql;
+PREPARE myprod FROM @callsql;
+--   PREPARE prod FROM 'select * from tb2 where nid&gt;? and nid&lt;?';  传入的值为字符串，？为占位符
+--   用@p1，和@p2填充占位符
+EXECUTE myprod USING @nid1,@nid2;
+DEALLOCATE prepare myprod;
+
+END\\
+delimiter ;</pre>
+<p>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pymsql中调用</p>
+<pre class="brush:py;">import pymysql
+
+conn = pymysql.connect(host='127.0.0.1', port=3306, user='root', passwd='', db='tkq1')
+cursor = conn.cursor()
+mysql="select * from tb7 where nid&gt;? and nid&lt;?"
+cursor.callproc('proc_sql', args=(11, 15, mysql))
+
+rows = cursor.fetchall()
+print rows #((12, 'u1', 'u1pass', 11111), (13, 'u2', 'u2pass', 22222), (14, 'u3', 'u3pass', 11113))
+conn.commit()
+cursor.close()
+conn.close()</pre>
+
+                                        </div>
+                                    </div> 
+                                </div>
+                            </div>
+                            <div style="margin-top: 40px"></div>
+                            <h3>社区链接</h3>
+                            <li><a href="https://github.com/PyMySQL/PyMySQL">PyMySQL @ GitHub</a></li>
+                            <li><a href="https://pypi.org/project/PyMySQL/">PyMySQL @ PyPI</a></li>
+                            <li><a href="https://github.com/PyMySQL/PyMySQL/issues">Issue Tracker</a></li>
+                            <li><a href="https://pypi.org/project/PyMySQL/#history">Release History</a></li>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--// Service Page Bottom -->
+            <!-- Service Page Pagination -->
+            <div class="pg-service__pagination">
+                <a href="m-requests.html" class="service-pagination prev">Prev</a>
+                <a href="m-pymysql.html" class="service-pagination next">Next</a>
+            </div>
+            <!--// Service Page Pagination -->
+    </section>
+    <!--// Page Service Area -->
+    <!-- Funfact Area -->
+    <div id="funfact-area" class="funfact-area section-padding--lg bg--white bg-image--1" data-overlay="8">
+        <div class="container">
+            <div class="row">
+                <!--  Single Funfact -->
+                <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                    <div class="funfact-wrapper">
+                        <div class="funfact">
+                            <span class="funfact-icon">
+                                <i class="pe-7s-look"></i>
+                            </span>
+                            <div class="funfact-content">
+                                <h3><span class="counter">228</span>+</h3>
+                                <h5>Watch</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--//  Single Funfact -->
+                <!--  Single Funfact -->
+                <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                    <div class="funfact-wrapper">
+                        <div class="funfact">
+                            <span class="funfact-icon">
+                                <i class="pe-7s-graph3"></i>
+                            </span>
+                            <div class="funfact-content">
+                                <h3><span class="counter">4736</span>+</h3>
+                                <h5>Start</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--//  Single Funfact -->
+                <!--  Single Funfact -->
+                <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                    <div class="funfact-wrapper">
+                        <div class="funfact">
+                            <span class="funfact-icon">
+                                <i class="pe-7s-like"></i>
+                            </span>
+                            <div class="funfact-content">
+                                <h3><span class="counter">1025</span>+</h3>
+                                <h5>Fork</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--//  Single Funfact -->
+                <!--  Single Funfact -->
+                <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                    <div class="funfact-wrapper">
+                        <div class="funfact">
+                            <span class="funfact-icon">
+                                <i class="pe-7s-coffee"></i>
+                            </span>
+                            <div class="funfact-content">
+                                <h3><span class="counter">75</span>+</h3>
+                                <h5>Contributors</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--//  Single Funfact -->
+            </div>
+        </div>
+    </div>
+    <!--// Funfact Area -->
+    <div style="margin-top: 80px"></div>
+</main>
+<!-- //Page Conent -->
+{% endblock %}
+
+

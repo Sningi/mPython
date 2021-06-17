@@ -1,0 +1,274 @@
+﻿{% extends "base.html" %}
+
+{% block breadcrumb %}
+<!-- Breadcrumb Area -->
+<div id="cr-breadcrumb-area" class="cr-breadcrumb-area bg-image--2 section-padding--md" data-overlay="8">
+    <div class="container">
+        <div class="cr-breadcrumb">
+            <div class="cr-breadcrumb__left">
+                <h2>about</h2>
+                <p>本站相关信息：网站设计与构想、编程语言及开发工具、开源技术应用、测试环境等</p>
+            </div>
+            <div class="cr-breadcrumb__right">
+                <ul class="cr-breadcrumb__pagination">
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li>About</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!--// Breadcrumb Area -->
+{% endblock %}
+
+
+{% block main %}
+<!-- Page Conent -->
+<main class="page-content">
+
+
+<!-- Advisor Details -->
+<div class="advisor-details-area bg--white section-padding--xlg">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="pg-advisor">
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <div class="pg-advisor__experience">
+                                <h3>系统开发进度</h3>
+                                <ul>
+                                    <li>
+                                        <h6>15 january, 2019 - 10 February, 2019</h6>
+                                        <p>选定课题后研究分析电商平台京东评论接口.</p>
+                                    </li>
+                                    <li>
+                                        <h6>15 February, 2019 - 10 March, 2019</h6>
+                                        <p>阅读与翻译参考文献，完成稳定的评论采集爬虫.</p>
+                                    </li>
+                                    <li>
+                                        <h6>10 March, 2019 - 30 March, 2019</h6>
+                                        <p>完成数据库设计及数据可靠存储，设计系统前端界面.</p>
+                                    </li>
+                                    <li>
+                                        <h6>1 April, 2019 - 20 April, 2019</h6>
+                                        <p>完成对商品数据特征分析与数据可视化模块.</p>
+                                    </li>
+                                    <li>
+                                        <h6>20 April, 2019 - 10 May, 2019</h6>
+                                        <p>优化系统逻辑，完善用户接口.</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-8">
+                            <br>
+                            <br>
+                            <br>
+                            <div class="pg-advisor__details">
+                                <h2>系统信息</h2>
+                                <h5>系统运行与分析数据相关信息</h5>
+                                <p>商品特征分析系统在开发完成与经过稳定性测试之后，删除测试信息后所进行的可靠分析商品数量</p>
+                                <div class="pg-advisor__progress">
+                                    <div class="pg-advisor__progress__single">
+                                        <h6>商品数量</h6>
+                                        <div class="progress">
+                                            <div class="progress-bar wow slideInLeft" data-wow-delay="0.2s" role="progressbar" style="width: 70%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"><span>471件</span></div>
+                                        </div>
+                                    </div>
+                                    <div class="pg-advisor__progress__single">
+                                        <h6>用户评论</h6>
+                                        <div class="progress">
+                                            <div class="progress-bar wow slideInLeft" data-wow-delay="0.3s" role="progressbar" style="width: 90%;" aria-valuenow="68" aria-valuemin="0" aria-valuemax="100"><span>528739条</span></div>
+                                        </div>
+                                    </div>
+                                    <div class="pg-advisor__progress__single">
+                                        <h6>特征表</h6>
+                                        <div class="progress">
+                                            <div class="progress-bar wow slideInLeft" data-wow-delay="0.4s" role="progressbar" style="width: 80%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"><span>2300+张</span></div>
+                                        </div>
+                                    </div>
+                                    <div class="pg-advisor__progress__single">
+                                        <h6>词云形状</h6>
+                                        <div class="progress">
+                                            <div class="progress-bar wow slideInLeft" data-wow-delay="0.5s" role="progressbar" style="width: 45%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"><span>366种</span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-12">
+                    <div class="pg-advisor__biography">
+                        <h3>完成情况</h3>
+                        <p>本系统目前能够稳定、批量采集京东平台商品评论数据，但限于京东公开评论数据最多仅每种类型50页×10条，即1500条数据，在数数据库设计方面系统为其他平台预留了可扩展空间。
+                        </p>
+                        <p>数据分析方面，基于jieba中文分词对用户评论进行分词、词性标注、提取关键词等。系统使用matplotlib图形库对商品特征数据进行可视化展示。</p>
+                        <p>用户接口界面基于Django开发，包含对商品分析结果的分类展示，目录索引与关键词检索等。同时，网站对外提供反馈与建议的多种通讯渠道</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--// Advisor Details -->
+
+
+    <!-- Testimonial Area -->
+    <div id="testimonial-area" class="testimonial-area section-padding--xlg bg--grey">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-xl-8 col-lg-9 col-md-10 col-12">
+                    <div class="testimonial text-center">
+                        <!-- Testimonial Content -->
+                        <div class="testimonial__content testimonial-content-slider-active">
+                            <!-- Testimonial Content Single -->
+                            <div class="testimonial__content__single">
+                                <p>Django是一个开放源代码的Web应用框架，由Python写成。采用了MVC的框架模式，即模型M，视图V和控制器C。它最初是被开发来用于管理劳伦斯出版集团旗下的一些以新闻内容为主的网站的，即是CMS（内容管理系统）软件。</p>
+                            </div>
+                            <!--// Testimonial Content Single -->
+                            <!-- Testimonial Content Single -->
+                            <div class="testimonial__content__single">
+                                <p>Bootstrap是美国Twitter公司的设计师Mark Otto和Jacob Thornton合作基于HTML、CSS、JavaScript 开发的简洁、直观、强悍的前端开发框架，使得 Web 开发更加快捷。Bootstrap提供了优雅的HTML和CSS规范，它即是由动态CSS语言Less写成。</p>
+                            </div>
+                            <!--// Testimonial Content Single -->
+                            <!-- Testimonial Content Single -->
+                            <div class="testimonial__content__single">
+                                <p>jQuery是一个快速、简洁的JavaScript框架，是继Prototype之后又一个优秀的JavaScript代码库。jQuery设计的宗旨是“write Less，Do More”，即倡导写更少的代码，做更多的事情。它封装JavaScript常用的功能代码，提供一种简便的JavaScript设计模式，优化HTML文档操作、事件处理、动画设计和Ajax交互。</p>
+                            </div>
+                            <!--// Testimonial Content Single -->
+                            <!-- Testimonial Content Single -->
+                            <div class="testimonial__content__single">
+                                <p>ECharts，一个使用 JavaScript 实现的开源可视化库，可以流畅的运行在 PC 和移动设备上，兼容当前绝大部分浏览器（IE，Chrome，Firefox，Safari等），底层依赖轻量级的矢量图形库 ZRender，提供直观，交互丰富，可高度个性化定制的数据可视化图表。</p>
+                            </div>
+                            <!--// Testimonial Content Single -->
+                        </div>
+                        <!--// Testimonial Content -->
+                        <!-- Testimonial Author -->
+                        <div class="testimonial__author testimonial-author-slider-active">
+                            <!-- Single Author -->
+                            <div class="testimonial__author__single">
+                                <div class="testimonial__author__image">
+                                    <img src="static/images/framework/django.jpg" alt="testimonial author">
+                                    </div>
+                                    <div class="testimonial__author__description">
+                                        <h6 style="text-transform: none;">Django</h6>
+                                        <span>Web框架</span>
+                                    </div>
+                            </div>
+                            <!--// Single Author -->
+                            <!-- Single Author -->
+                            <div class="testimonial__author__single">
+                                <div class="testimonial__author__image">
+                                    <img src="static/images/framework/bootstrap.jpg" alt="testimonial author">
+                                </div>
+                                <div class="testimonial__author__description">
+                                    <h6 style="text-transform: none;">Bootstrap</h6>
+                                    <span>前端UI框架</span>
+                                </div>
+                            </div> 
+                            <!--// Single Author -->
+                            <!-- Single Author -->
+                            <div class="testimonial__author__single">
+                                <div class="testimonial__author__image">
+                                    <img src="static/images/framework/jquery.jpg" alt="testimonial author">
+                                </div>
+                                <div class="testimonial__author__description">
+                                    <h6 style="text-transform:none;">jQuery</h6>
+                                    <span style="text-transform:none;">JavaScript框架</span>
+                                </div>
+                            </div>
+                            <!--// Single Author -->
+                            <!-- Single Author -->
+                            <div class="testimonial__author__single">
+                                <div class="testimonial__author__image">
+                                    <img src="static/images/framework/echart.jpg" alt="testimonial author">
+                                </div>
+                                <div class="testimonial__author__description">
+                                    <h6 style="text-transform:none;">ECharts</h6>
+                                    <span style="text-transform:none;">JavaScript可视化库</span>
+                                </div>
+                            </div>
+                            <!--// Single Author -->
+                        </div>
+                        <!--// Testimonial Author -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--// Testimonial Area -->
+    <!-- Features Area -->
+    <section id="features-area" class="cr-section features-area">
+        <div class="row no-gutters justify-content-center">
+            <!-- Single Feature -->
+            <div class="col-lg-4 col-12">
+                <div class="feature" data-bgimage="static/images/temp/feature-thumb-1.jpg">
+                    <div class="feature__icon">
+                        <span>
+                                <i class="flaticon-shield"></i>
+                            </span>
+                        <span>
+                                <i class="flaticon-shield"></i>
+                            </span>
+                    </div>
+                    <div class="feature__content">
+                        <h4 class="wow fadeInUp">
+                                编程语言
+                            </h4>
+                        <p>后端：Python3.7+SQL</p><p>前端：Html5/CSS3/js</p><p>web框架：Django</p>
+                    </div>
+                </div>
+            </div>
+            <!--// Single Feature -->
+            <!-- Single Feature -->
+            <div class="col-lg-4 col-12">
+                <div class="feature" data-bgimage="static/images/temp/feature-thumb-2.jpg">
+                    <div class="feature__icon">
+                        <span>
+                                <i class="flaticon-team"></i>
+                            </span>
+                        <span>
+                                <i class="flaticon-team"></i>
+                            </span>
+                    </div>
+                    <div class="feature__content">
+                        <h4 class="wow fadeInUp">
+                                开发工具
+                            </h4>
+                        <p>代码编辑：Sublime Text3、PyCharm</p><p>终端工具：gnome-Terminal</p><p>数据库：MariaDB</p>
+                    </div>
+                </div>
+            </div>
+            <!--// Single Feature -->
+            <!-- Single Feature -->
+            <div class="col-lg-4 col-12">
+                <div class="feature" data-bgimage="static/images/temp/feature-thumb-3.jpg">
+                    <div class="feature__icon">
+                        <span>
+                                <i class="flaticon-clock"></i>
+                            </span>
+                        <span>
+                                <i class="flaticon-clock"></i>
+                            </span>
+                    </div>
+                    <div class="feature__content">
+                        <h4 class="wow fadeInUp">
+                                测试环境
+                            </h4>
+                        <p>操作系统：Archlinux（kernel.4.20）</p><p>浏览器：Chromium、Firefox</p><p>测试工具：Django.test</p>
+                    </div>
+                </div>
+            </div>
+            <!--// Single Feature -->
+        </div>
+    </section>
+    <!--// Features Area -->
+    <div style="margin-top: 80px"></div>
+</main>
+<!-- //Page Conent -->
+{% endblock %}

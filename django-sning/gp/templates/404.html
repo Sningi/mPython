@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block breadcrumb %}
+<!-- Breadcrumb Area -->
+<div id="cr-breadcrumb-area" class="cr-breadcrumb-area bg-image--2 section-padding--md" data-overlay="8">
+    <div class="container">
+        <div class="cr-breadcrumb">
+            <div class="cr-breadcrumb__left">
+                <h2>Page Not Find</h2>
+                <p>未查询到相关信息</p>
+            </div>
+            <div class="cr-breadcrumb__right">
+                <ul class="cr-breadcrumb__pagination">
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li>Other</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!--// Breadcrumb Area -->
+{% endblock %}
+{% block main %}
+<div style="min-height: 600px">
+    <div style="padding: 40px;text-align: center;">
+        <H3>ERROR:404<br>请确定信息后重试!</H3>
+    </div>
+</div>
+{% endblock %}

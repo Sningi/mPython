@@ -1,0 +1,4 @@
+https://sclub.jd.com/comment/productPageComments.action?productId=6212482&score=1&sortType=6&pageSize=10&isShadowSku=0&rid=0&fold=1&page=0
+https://sclub.jd.com/comment/productPageComments.action?productId=6212482&score=1&sortType=6&pageSize=10&isShadowSku=0&rid=0&fold=1&page=1
+https://sclub.jd.com/comment/productPageComments.action?productId=6212482&score=1&sortType=6&pageSize=10&isShadowSku=0&rid=0&fold=1&page=2
+https://sclub.jd.com/comment/productPageComments.action?productId=6212482&score=1&sortType=6&pageSize=10&isShadowSku=0&rid=0&fold=1&page=3

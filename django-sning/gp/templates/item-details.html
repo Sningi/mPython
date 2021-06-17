@@ -1,0 +1,151 @@
+﻿{% extends "base.html" %}
+
+{% block breadcrumb %}
+<!-- Breadcrumb Area -->
+<div id="cr-breadcrumb-area" class="cr-breadcrumb-area bg-image--2 section-padding--md" data-overlay="8">
+    <div class="container">
+        <div class="cr-breadcrumb">
+            <div class="cr-breadcrumb__left">
+                <h2>Item Details</h2>
+                <p>商品特征分析相关结果样例</p>
+            </div>
+            <div class="cr-breadcrumb__right">
+                <ul class="cr-breadcrumb__pagination">
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="items.html">Item</a>
+                    </li>
+                    <li>Item Details</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!--// Breadcrumb Area -->
+{% endblock %}
+
+
+{% block main %}
+<!-- Page Conent -->
+<main class="page-content">
+    <!-- BLogs grid -->
+    <div class="cr-section pg-blogs-area section-padding--xlg bg--white">
+        <div class="container">
+            <div class="row">
+                <!-- BLog Details -->
+                <div class="col-lg-8 order-1 order-lg-2">
+                    <article class="pg-blog">
+                            <div class="pg-blog-main">
+                                <h2 class="pg-blog-title">{{item.name}}</h2>
+                                <div class="pg-blog-thumb" align="center"><a href="https://item.jd.com/{{item.platform_id}}.html" target="_blank"><img src="{{item.image_url}}" alt="blog details thumb"></a>
+                                </div>
+                                <ul class="pg-blog-meta">
+                                    <li>{{item.analyse_time}}</li>
+                                    <li><a href="#">{{item.paltform}}.</a></li>
+                                    <li><a href="#">{{item.comments}} comments</a></li>
+                                </ul>
+                                <div class="pg-blog-content clearfix">
+                                    <ul class="alignleft">
+                                        <li><h4>01.商品评论星级分析</h4><img src="static/images/item/{{item.platform_id}}/score.jpg" alt="blog details field" ></li>
+                                        </br>
+                                        <li><h4>02.评论数据来源分析</h4><img src="static/images/item/{{item.platform_id}}/client.jpg" alt="blog details field" ></li>
+                                        </br>
+                                        <li><h4>03.消费者等级分布</h4><img src="static/images/item/{{item.platform_id}}/user.jpg" alt="blog details field" ></li>
+                                        </br>
+                                        <li><h4>04.商品评论发布时间分布</h4><img src="static/images/item/{{item.platform_id}}/time.jpg" alt="blog details field"></li>
+                                        </br>
+                                        <li><h4>05.商品特征词云</h4><img style="max-height:800px;max-width: 600px;"  src="static/images/item/{{item.platform_id}}/cloud1.png" alt="blog details field" ></li>
+                                    </ul>
+                            </div>
+                        </div>
+                    </article>
+                                </div>
+                                <!--// BLog Details -->
+                                <!-- Sidebar -->
+                                <div class="col-lg-4 order-2 order-lg-1">
+                                    <div class="widgets sidebar-widgets widgets--left-side">
+                                        <!-- Single Widget -->
+                                        <section class="single-widget widget-about">
+                                            <header class="widget-about__thumb">
+                                                <img src="static/images/temp/about-widget.jpg" alt="about widget thumb">
+                                            </header>
+                                                <footer class="widget-about__content">
+                                                    <p>欢迎使用与浏览商品特征分析系统：可分析商品销售特征、用户评论统计、评论中文分词与词性标注、生成关键词词云等。</p>
+                                                    <h6>Author:宋高明</h6>
+                                                    <h6><small>UI：bootstrap4</small></h6>
+                                                </footer>
+                                        </section>
+                                        <!--// Single Widget -->
+                                        <!-- Single Widget -->
+                                        <section class="single-widget widget-search">
+                                            <h6>Search</h6>
+                                            <form action="search.html">
+                                                <input type="text" name="Keyword" placeholder="Search Keyword">
+                                                <button type="submit"><i class="fa fa-search"></i></button>
+                                            </form>
+                                        </section>
+                                        <!--// Single Widget -->
+                                        <!-- Single Widget -->
+                                        <section class="single-widget widget-recentpost">
+                                            <h6>Recent analyse</h6>
+                                            <ul>
+                                                {% for item in recent_list %}
+                                                <li>
+                                                    <a class="widget-recentpost__thumb" href="https://item.jd.com/{{item.platform_id}}.html" target="_blank"><img src="{{item.image_url}}"
+                                                         alt="blog thumbnail"></a>
+                                                    <div class="widget-recentpost__content">
+                                                        <span class="date">{{item.analyse_time}}</span>
+                                                        <h6><a href="item-{{item.platform_id}}.html">{{item.name}}</a></h6>
+                                                    </div>
+                                                </li>
+                                                {% endfor %}
+                                            </ul>
+                                        </section>
+                                        <!--// Single Widget -->
+                                        <!-- Single Widget -->
+                                        <!-- Single Widget -->
+                                        <section class="single-widget widget-categories">
+                                            <h6>platform</h6>
+                                            <ul>
+                                                <li><a href="items.html">京东 <span>({{dlen}})</span></a></li>
+                                                <li><a href="#">苏宁 <span>(0)</span></a></li>
+                                                <li><a href="#">淘宝 <span>(0)</span></a></li>
+                                                <li><a href="#">天猫 <span>(0)</span></a></li>
+                                            </ul>
+                                        </section>
+                                        <!--// Single Widget -->
+                                        <!-- Single Widget -->
+                                        <section class="single-widget widget-newsletter">
+                                            <h6>Quick Visit</h6>
+                                            <form action="getitem.html">
+                                                <input type="text" name='id' placeholder="Enter item id">
+                                                <button type="submit"><i class="fa fa-paper-plane-o"></i></button>
+                                            </form>
+                                        </section>
+                                        <!--// Single Widget -->
+
+                                        <!-- Single Widget -->
+                                        <section class="single-widget widget-tags">
+                                            <h6>perfect</h6>
+                                            <ul>
+                                                <li><a href="item-1769180.html">戴尔显示器</a></li>
+                                                <li><a href="item-777938.html">MacBook Air</a></li>
+                                                <li><a href="item-1852856.html">高达</a></li>
+                                                <li><a href="item-100000208933.html">华硕飞行堡垒</a></li>
+                                                <li><a href="item-5920351.html">原浆</a></li>
+                                                <li><a href="item-3772877.html">儿童玩具</a></li>
+                                            </ul>
+                                        </section>
+                                        <!--// Single Widget -->
+                                    </div>
+                                </div>
+                                <!--// Sidebar -->
+                            </div>
+                        </div>
+                    </div>
+                    <!--// BLogs grid -->
+</main>
+<!-- //Page Conent -->
+{% endblock %}

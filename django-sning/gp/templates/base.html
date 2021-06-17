@@ -1,0 +1,178 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Favicons -->
+    <link rel="shortcut icon" href="static/images/favicon.ico">
+    <link rel="apple-touch-icon" href="static/images/icon.png">
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static/css/plugins.css">
+    <link rel="stylesheet" href="static/style.css">
+    <!-- Cusom css -->
+    <link rel="stylesheet" href="static/css/custom.css">
+</head>
+
+<body>
+    <div class="nofakeloader"></div>
+    <!-- Main wrapper -->
+    <div class="wrapper" id="wrapper">
+        <!-- Header -->
+        <header id="header" class="header sticky--header">
+            <!-- Header Bottom Area -->
+            <div class="header__bottom bg--white">
+                <div class="container d-none d-lg-block">
+                    <div class="header__bottom__inner">
+                        <div class="header__logo">
+                            <a href="index.html">
+                                <img style="width:40px;height: 40px"  src="static/images/temp/home.jpg" alt="header logo">商品特征分析系统
+                            </a>
+                        </div>
+                        <!-- Main Navigation -->
+                        <nav id="main-navigation" class="header__menu main-navigation">
+                            <ul>
+                                <li>
+                                    <a href="index.html">首页</a>
+                                </li>
+                                <li>
+                                    <a href="items.html">样品展示</a>
+                                </li>
+                                <li>
+                                    <a href="modules.html">技术应用</a>
+                                </li>
+                                <li>
+                                    <a href="contact.html">联系</a>
+                                </li>
+                                <li>
+                                    <a href="about.html">关于本站</a>
+                                </li>
+                            </ul>
+                        </nav>
+                        <!--// Main Navigation -->
+                    </div>
+                </div>
+                <!-- Mobile Menu -->
+                <div class="container d-block d-lg-none">
+                    <div class="mobile-menu clearfix d-md-block d-lg-none">
+                        <a class="mobile-logo" href="index.html">
+                            <img style="width:40px;height: 40px"  src="static/images/temp/home.jpg"  alt="logo">商品特征分析系统
+                        </a>
+                    </div>
+                </div>
+                <!-- //Mobile Menu -->
+            </div>
+            <!--// Header Bottom Area -->
+        </header>
+        <!-- //Header -->
+        {% block breadcrumb %}{% endblock %}
+        {% block main %}{% endblock %}
+        <!-- Footer Area -->
+        <footer id="footer" class="footer-area fixed--footer">
+            <!-- Footer Widgets Area -->
+            <div class="footer-area__widgets section-padding--md bg--dark--light">
+                <div class="container">
+                    <div class="widget-area footer--widgets">
+                        <!-- Single Widget -->
+                        <div class="widget widget-about">
+                            <div class="footer-area__logo">
+                                <a href="index.html">
+                                    <img style="width:40px;height: 40px"  src="static/images/temp/home.jpg" alt="footer logo">
+                                </a>
+                            </div>
+                            <p>基于在线用户评论的商品特征分析系统。获取电商平台用户评论，对数据进行分词、词性标注、根据词频、位置、词性等因素提取关键词，生成词云</p>
+                        </div>
+                        <!-- Single Widget -->
+                        <div class="widget widget-quick-links">
+                            <h5 class="widget-title">QUICK LINKS</h5>
+                            <ul>
+                                <li>
+                                    <a href="index.html">Home</a>
+                                </li>
+                                <li>
+                                    <a href="items.html">Items</a>
+                                </li>
+                                <li>
+                                    <a href="modules.html">About </a>
+                                </li>
+                                <li>
+                                    <a href="contact.html">Contact me</a>
+                                </li>
+                                <li>
+                                    <a href="about.html">About </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- Single Widget -->
+                        <div class="widget widget-twitter-feed">
+                            <h5 class="widget-title">recommend</h5>
+                            <ul>
+                                <li>
+                                    <a href="item-10139482157.html">
+                                        集星 玩具枪 声光儿童小男孩宝宝电动红外线冲锋枪机关枪 MP5电动声光枪</a>
+                                    <span class="time">
+                                        <a href="item-10139482157.html">MAY 6, 2019, 2:52 A.M</a>
+                                    </span>
+                                </li>
+                                <li>
+                                    <a href="item-3772877.html">
+                                        儿童动物玩具仿真动物模型-长颈鹿（幼崽）</a>
+                                    <span class="time">
+                                        <a href="item-3772877.html">MAY 6, 2019, 2:52 A.M.</a>
+                                    </span>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- Single Widget -->
+                        <div class="widget widget-contact-info">
+                            <h5 class="widget-title">Contact Info</h5>
+                            <ul>
+                                <li>
+                                    <p>Wuhan University of Technology</p>
+                                </li>
+                                <li>
+                                    <p>Phone: 17739458175</p>
+                                </li>
+                                <li>
+                                    <p>E-mail: 1620524565@qq.com</p>
+                                    <p>github: <a href="https://github.com/Sningi">Sningi</a></p>
+                                </li>
+                            </ul>
+                        </div>
+                        <!--// Single Widget -->
+                    </div>
+                </div>
+            </div>
+            <!--// Footer Widgets Area -->
+            <!-- Footer Copyright Area -->
+            <div class="footer-area__copyright bg--dark">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="copyright text-center">
+                                Copyright &copy; 2019 Sning All rights reserved. <a target="_blank" href="http://sc.chinaz.com/moban/">模板来源:站长之家</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--// Footer Copyright Area -->
+        </footer>
+        <!-- //Footer Area -->
+    </div>
+    <!-- //Main wrapper -->
+    <!-- JS Files -->
+    <script src="static/js/vendor/jquery-3.2.1.min.js"></script>
+    <script src="static/js/popper.min.js"></script>
+    <script src="static/js/bootstrap.min.js"></script>
+    <script src="static/js/plugins.js"></script>
+    <script src="static/js/active.js"></script>
+    <script src="static/js/scripts.js"></script>
+    {% block js %}{% endblock %}
+</body>
+
+</html>

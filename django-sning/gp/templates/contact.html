@@ -1,0 +1,178 @@
+﻿{% extends "base.html" %}
+
+
+{% block breadcrumb %}
+<!-- Breadcrumb Area -->
+<div id="cr-breadcrumb-area" class="cr-breadcrumb-area bg-image--2 section-padding--md" data-overlay="8">
+    <div class="container">
+        <div class="cr-breadcrumb">
+            <div class="cr-breadcrumb__left">
+                <h2>CONTACT  ME</h2>
+                <p>网站问题反馈，bug报告，代码优化建议等</p>
+            </div>
+            <div class="cr-breadcrumb__right">
+                <ul class="cr-breadcrumb__pagination">
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li>Contact Me</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!--// Breadcrumb Area -->
+{% endblock %}
+
+
+{% block main %}
+<!-- Page Conent -->
+<main class="page-content">
+    <!-- Pg Contact -->
+    <div class="pg-contact bg--white">
+        <!-- Contact Form -->
+        <div class="pg-contact-form-area bg--white section-padding--xlg">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-12">
+                        <div class="pg-appintment">
+                            <div class="pg-appintment__title">
+                                <h2>SEND A MESSAGE</h2>
+                            </div>
+                            <div class="pg-appintment__box">
+                                <form id="contact-form" action="put-message">
+                                    <div class="row">
+                                        <div class="col-lg-6 col-md-6">
+                                            <div class="single-input">
+                                                <input type="text" name="name" id="name" placeholder="Name">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6">
+                                            <div class="single-input">
+                                                <input type="email" name="email" id="email" placeholder="Email">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6">
+                                            <div class="single-input">
+                                                <input type="text" name="subject" id="subject" placeholder="Subject">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6">
+                                            <div class="single-input">
+                                                <input type="text" name="phone" id="phone" placeholder="Phone">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <div class="single-input">
+                                                <textarea name="message" cols="30" rows="5" placeholder="Message"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <div class="single-input button text-left">
+                                                <button type="submit" class="cr-btn"><span>提 交</span></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                                <p class="form-message"></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-12">
+                        <div class="pg-contact__content">
+                            <h1>say hello to me</h1>
+                            <p>物联网工程本科生，关注前沿技术，对编程充满热情；熟悉Linux系统，Python、C/C++、Java等编程语言。</p>
+                            <div class="pg-contact__blocks">
+                                <div class="single-block address">
+                                    <h6>地 址</h6>
+                                    <p>中国·湖北省 武汉市武昌区 杨园街道 武汉理工大学</p>
+                                </div>
+                                <div class="single-block phone">
+                                    <h6>手 机</h6>
+                                    <p><a href="#">+086 177 3945 8175</a></p>
+                                </div>
+                                <div class="single-block web">
+                                    <h6>邮 箱</h6>
+                                    <p><a href="#">1620524565@qq.com</a></p>
+                                    <p><a href="#">song_sning@163.com</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--// Contact Form -->
+        <!-- Google Map -->
+        <div class="google-map-wrapper">
+            <div id="google-map" class="google-map"></div>
+        </div>
+        <!--// Google Map -->
+    </div>
+    <!--// Pg Contact -->
+    <!-- Call To Action Area -->
+    <section class="cta-area section-padding--md bg--grey--light bg--abstruct-mask">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-xl-9 col-lg-10">
+                    <div class="calltoaction text-center">
+                        <h3>快速 <span class="color--theme">反馈问题</span>
+                        </h3>
+                        <p></p>
+                        <div class="calltoaction-button mt-4">
+                            <span class="calltoaction-icon"><i class="flaticon-phone"></i></span>
+                            <a href="#">+86 177-3945-8175</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--// Call To Action Area -->
+</main>
+<!-- //Page Conent -->
+{% endblock %}
+
+{% block js %}
+<!-- Google Map -->
+<script src="https://webapi.amap.com/maps?v=1.4.12&key=您申请的key值"></script>
+<script type="text/javascript">
+    var map = new AMap.Map('google-map',{
+        zoom: 14,
+        center: [114.3564748764,30.6075183290]
+    });
+
+    // 同时引入工具条插件，比例尺插件和鹰眼插件
+    AMap.plugin([
+        'AMap.ToolBar',
+        'AMap.Scale',
+        'AMap.OverView',
+        'AMap.MapType',
+        'AMap.Geolocation',
+    ], function(){
+        // 在图面添加工具条控件，工具条控件集成了缩放、平移、定位等功能按钮在内的组合控件
+        map.addControl(new AMap.ToolBar());
+
+        // 在图面添加比例尺控件，展示地图在当前层级和纬度下的比例尺
+        map.addControl(new AMap.Scale());
+
+        // 在图面添加鹰眼控件，在地图右下角显示地图的缩略图
+        map.addControl(new AMap.OverView({isOpen:true}));
+       
+        // 在图面添加类别切换控件，实现默认图层与卫星图、实施交通图层之间切换的控制
+        map.addControl(new AMap.MapType());
+       
+        // 在图面添加定位控件，用来获取和展示用户主机所在的经纬度位置
+        map.addControl(new AMap.Geolocation());
+    });
+    // 创建一个 Marker 实例：
+    var marker = new AMap.Marker({
+        position: new AMap.LngLat(114.3564748764,30.6075183290),   // 经纬度对象，也可以是经纬度构成的一维数组[116.39, 39.9]
+        title: '武汉理工大学'
+    });
+
+    // 将创建的点标记添加到已有的地图实例：
+    map.add(marker);
+</script>
+<script src="https://webapi.amap.com/demos/js/liteToolbar.js"></script>
+{% endblock %}

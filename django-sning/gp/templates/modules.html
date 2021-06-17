@@ -1,0 +1,228 @@
+﻿{% extends "base.html" %}
+
+{% block breadcrumb %}
+<!-- Breadcrumb Area -->
+<div id="cr-breadcrumb-area" class="cr-breadcrumb-area bg-image--2 section-padding--md" data-overlay="8">
+    <div class="container">
+        <div class="cr-breadcrumb">
+            <div class="cr-breadcrumb__left">
+                <h2>Item</h2>
+                <p>样例商品集</p>
+            </div>
+            <div class="cr-breadcrumb__right">
+                <ul class="cr-breadcrumb__pagination">
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li>Item</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!--// Breadcrumb Area -->
+{% endblock %}
+
+
+{% block main %}
+<!-- Page Conent -->
+<main class="page-content">
+    <!-- Page Service Area -->
+    <section id="pg-services-area" class="cr-section pg-services-area section-padding--xlg">
+        <!-- Pg Service Area Top -->
+        <div class="pg-services-area__description">
+            <div class="container">
+                <div class="row align-items-center justify-content-center">
+                    <div class="col-xl-6 col-lg-7 order-2 order-lg-1">
+                        <div class="pg-services__details">
+                            <h4>毕设课题：</h4>
+                            <h3>基于在线用户评论的
+                                <span class="color--theme">商品特征分析</span>
+                            </h3>
+                            <p>根据课题要求及功能需求主要实现如下功能：</p>
+                            <p>1.数据爬虫，获取电商平台上用户评论</p>
+                            <p>2.数据分析，对文本数据进行分词、词性标注、根据词频、位置、词性等因素提取关键词，生成关键词云</p>
+                            <p>3.用户接口，通过web展示项目成果、提供商品查询接口</p>
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-5 col-md-8 order-1 order-lg-2">
+                        <div class="pg-services__thumb wow fadeInRight">
+                            <img src="static/images/temp/modules.png" alt="services thumb">
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--// Pg Service Area Top -->
+            <!-- Services Styles Bottom -->
+            <div class="service-area section-padding-top--sm">
+                <div class="container">
+                    <div class="row mt-30-reverse">
+                        <!-- Single Service -->
+                        <div class="col-lg-4 col-md-6 col-12 wow flipInX">
+                            <div class="service">
+                                <div class="service__icon">
+                                    <i class="flaticon-bar-chart"></i>
+                                </div>
+                                <div class="service__content">
+                                    <h5 style="text-transform:none;">
+                                    <a href="m-requests.html">Requests</a>
+                                </h5>
+                                    <p>HTTP Requests for Humans! 基于urllib3，功能完善，代码简洁的强大非转基因的Python HTTP库</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!--// Single Service -->
+                        <!-- Single Service -->
+                        <div class="col-lg-4 col-md-6 col-12 wow flipInX">
+                            <div class="service">
+                                <div class="service__icon">
+                                    <i class="flaticon-growth"></i>
+                                </div>
+                                <div class="service__content">
+                                    <h5 style="text-transform:none;">
+                                    <a href="m-pymysql.html">PyMySQL</a>
+                                </h5>
+                                    <p>PyMySQL 是在 Python3.x 版本中用于连接 MySQL 服务器的一个库，该模块本质就是一个套接字客户端</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!--// Single Service -->
+                        <!-- Single Service -->
+                        <div class="col-lg-4 col-md-6 col-12 wow flipInX">
+                            <div class="service">
+                                <div class="service__icon">
+                                    <i class="flaticon-internet"></i>
+                                </div>
+                                <div class="service__content">
+                                    <h5 style="text-transform:none;">
+                                    <a href="m-jieba.html">jieba</a>
+                                </h5>
+                                    <p>自然语言处理中文分词，词性标注模块，支持三种分词模式，支持繁体分词、支持自定义词典</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!--// Single Service -->
+                        <!-- Single Service -->
+                        <div class="col-lg-4 col-md-6 col-12 wow flipInX">
+                            <div class="service">
+                                <div class="service__icon">
+                                    <i class="flaticon-creative"></i>
+                                </div>
+                                <div class="service__content">
+                                    <h5 style="text-transform:none;">
+                                    <a href="m-wordcloud.html">WordCloud</a>
+                                </h5>
+                                    <p>用于构建词云的第三方库, 功能强大,可以自定义图片、形状颜色、文字排版，快捷高效</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!--// Single Service -->
+                        <!-- Single Service -->
+                        <div class="col-lg-4 col-md-6 col-12 wow flipInX">
+                            <div class="service">
+                                <div class="service__icon">
+                                    <i class="flaticon-hand-shake"></i>
+                                </div>
+                                <div class="service__content">
+                                    <h5 style="text-transform:none;">
+                                    <a href="m-bs4.html">BeautifulSoup</a>
+                                </h5>
+                                    <p>非常优雅的专门用于进行HTML/XML数据解析的第三方库，可以很好的分析和筛选指定的规则数据</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!--// Single Service -->
+                        <!-- Single Service -->
+                        <div class="col-lg-4 col-md-6 col-12 wow flipInX">
+                            <div class="service">
+                                <div class="service__icon">
+                                    <i class="flaticon-risk"></i>
+                                </div>
+                                <div class="service__content">
+                                    <h5>
+                                    <a href="single-service.html">Matplotlib</a>
+                                </h5>
+                                    <p>Matplotlib 是一个 Python 的 2D绘图库,便可以生成绘图，直方图，功率谱，条形图，错误图，散点图等。</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!--// Single Service -->
+                    </div>
+                </div>
+            </div>
+            <!--// Services Styles Bottom -->
+    </section>
+    <!--// Page Service Area -->
+    <!-- Funfact Area -->
+    <div id="funfact-area" class="funfact-area section-padding--lg bg--white bg-image--1" data-overlay="8">
+        <div class="container">
+            <div class="row">
+                <!--  Single Funfact -->
+                <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                    <div class="funfact-wrapper">
+                        <div class="funfact">
+                            <span class="funfact-icon">
+                                <i class="pe-7s-look"></i>
+                            </span>
+                            <div class="funfact-content">
+                                <h3><span class="counter">5</span>+</h3>
+                                <h5>Programming<br>Language</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--//  Single Funfact -->
+                <!--  Single Funfact -->
+                <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                    <div class="funfact-wrapper">
+                        <div class="funfact">
+                            <span class="funfact-icon">
+                                <i class="pe-7s-graph3"></i>
+                            </span>
+                            <div class="funfact-content">
+                                <h3><span class="counter">50</span>+</h3>
+                                <h5>Source<br>File</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--//  Single Funfact -->
+                <!--  Single Funfact -->
+                <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                    <div class="funfact-wrapper">
+                        <div class="funfact">
+                            <span class="funfact-icon">
+                                <i class="pe-7s-like"></i>
+                            </span>
+                            <div class="funfact-content">
+                                <h3><span class="counter">15</span>+</h3>
+                                <h5>Python<br>Module</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--//  Single Funfact -->
+                <!--  Single Funfact -->
+                <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                    <div class="funfact-wrapper">
+                        <div class="funfact">
+                            <span class="funfact-icon">
+                                <i class="pe-7s-coffee"></i>
+                            </span>
+                            <div class="funfact-content">
+                                <h3><span class="counter">10</span>+</h3>
+                                <h5> OpenSource<br>Framework</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--//  Single Funfact -->
+            </div>
+        </div>
+    </div>
+    <!--// Funfact Area -->
+    <div style="margin-top: 80px"></div>
+</main>
+<!-- //Page Conent -->
+{% endblock %}
